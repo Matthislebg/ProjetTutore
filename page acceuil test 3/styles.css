@@ -1,0 +1,90 @@
+ .pop{
+    transition: width 0.75s ease-in-out;
+    transform: translate(-50%,-50%);
+    fill: red;
+    width: 10vh;
+    position: absolute;
+ }
+
+
+.logo-container{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    width: 45vh;
+}
+
+body{
+    overflow: hidden;
+}
+
+
+img{
+    width: 45vh;
+    position: absolute;
+    transform: translate(-59%,-59%);
+
+}
+
+.logo-path{
+    transition: width 1s ease-in-out;
+
+}
+
+.logo-path2{
+    transition: width 0.75s ease-in-out;
+}
+
+div.borders div:nth-child(1){
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0%;
+    left: 0%;
+
+    transition: 0.5s ease-in-out;
+    background: rgb(29,178,80);
+}
+
+div.borders div:nth-child(2){
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0%;
+    left: 50%;
+
+    transition: 0.5s ease-in-out;
+    background: rgb(11,131,198);
+}
+
+div.borders div:nth-child(3){
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 0%;
+
+    transition: 0.5s ease-in-out;
+    background: rgb(212,73,154);
+}
+
+div.borders div:nth-child(4){
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+
+    transition: 0.5s ease-in-out;
+    background: rgb(238,184,29);
+}
+
+div.borders div:nth-child(5){
+    position: absolute;
+    width: 96%;
+    height: 92%;
+    top: 4%;
+    left: 2%;
+    background: white;
+}
