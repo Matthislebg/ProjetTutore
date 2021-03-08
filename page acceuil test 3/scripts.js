@@ -21,7 +21,7 @@ $(document).ready(function(){
             printPic(mX, mY, count);
             count++
 
-            if(count > 63){     // Garder la variable count sur 90 bits
+            if(count > 63){     // Garder la variable count sur 64 bits
             count=0;
             }
         }else{
