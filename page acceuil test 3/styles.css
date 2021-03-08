@@ -1,8 +1,8 @@
  .pop{
-    transition: width 0.75s ease-in-out;
+    transition: 0.75s ease-in-out;
     transform: translate(-50%,-50%);
     fill: red;
-    width: 10vh;
+    width: 2.5vh;
     position: absolute;
  }
 
@@ -17,14 +17,6 @@
 
 body{
     overflow: hidden;
-}
-
-
-img{
-    width: 45vh;
-    position: absolute;
-    transform: translate(-59%,-59%);
-
 }
 
 .logo-path{

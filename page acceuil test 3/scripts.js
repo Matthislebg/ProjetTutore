@@ -4,30 +4,34 @@ $(document).ready(function(){
 
     var timeout,count = 0;
 
-    var imageSrc = ["image/matthis1.jpg","image/matthis2.png","image/matthis3.png","image/matthis4.png"];
-
-    
-    $(document).mousedown(function(e){
+    var mouseJustMoved,imageSrc = ["image/_Audiovisuel.svg","image/_Com.svg","image/_Design.svg","image/_Programmation.svg"];
+    var timer = false;
 
 
 
+    $(document).mousemove(function(e){
+
+        mouseJustMoved=true;
+        
+        if(!timer){
+            timer=true;
         timeout = setInterval(function(){
-            
+        if(mouseJustMoved){
+            mouseJustMoved=false;
             printPic(mX, mY, count);
             count++
 
-            if(count > 62){     // Garder la variable count sur 64 bits
+            if(count > 63){     // Garder la variable count sur 90 bits
             count=0;
             }
-
-        }, 150);
+        }else{
+            clearInterval(timeout);
+            timer=false;
+        }
+        
+        }, 90);
+    }
     
-        return false;
-    });
-    
-    $(document).mouseup(function(){
-        clearInterval(timeout);
-        return false;
     });
 
 
@@ -38,14 +42,14 @@ $(document).ready(function(){
 
         $("body").add($("<img src="+imageSrc[Math.floor(Math.random()*imageSrc.length)]+" id="+i+" class='pop'>")).appendTo($("body"))
 
-        $("#"+i).css({"left": X, "top": Y});
+        $("#"+i).css({"left": X, "top": Y, "transform": "rotate("+(Math.floor(Math.random()*60)-30)+"deg)"});
 
         setTimeout(function(){
-            $("#"+i).css("width", "25vh");
+            $("#"+i).css({"width": "5vh"});
         }, 25)
 
         setTimeout(function(){
-            $("#"+i).css("width", "0vh");
+            $("#"+i).css({"width": "0vh", "transform": "rotate(0deg)"});
         }, 1000)
 
         setTimeout(function(){
@@ -154,5 +158,3 @@ $(document).ready(function(){
     
     
 })
-
-
