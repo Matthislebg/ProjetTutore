@@ -36,7 +36,7 @@ $(document).ready(function(){
     function printPic (X, Y, i){
         
 
-        $("body").add($("<img src="+imageSrc[Math.floor(Math.random()*imageSrc.length)]+" width='10vh' id="+i+" class='pop'>")).appendTo($("body"))
+        $("body").add($("<img src="+imageSrc[Math.floor(Math.random()*imageSrc.length)]+" id="+i+" class='pop'>")).appendTo($("body"))
 
         $("#"+i).css({"left": X, "top": Y});
 
