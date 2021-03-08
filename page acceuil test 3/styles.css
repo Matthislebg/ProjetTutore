@@ -1,9 +1,9 @@
- header{
+header{
     background-color: whitesmoke;
     border-bottom: solid #1a1a1a 2px;
- }
+}
 
- header img{
+header img{
     height: 5vh;
     margin: 2vh;
 }
