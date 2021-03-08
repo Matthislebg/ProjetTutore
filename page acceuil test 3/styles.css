@@ -18,6 +18,7 @@
 
 body{
     overflow: hidden;
+    
 }
 
 .logo-path{
@@ -98,4 +99,9 @@ img{                            /* retirer la selection des images */
    -moz-user-select: none; 
     -ms-user-select: none; 
         user-select: none;
+}
+
+header img{
+    height: 7vh;
+    margin: 5vh;
 }

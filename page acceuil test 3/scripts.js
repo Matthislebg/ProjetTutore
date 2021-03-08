@@ -1,6 +1,38 @@
 $(document).ready(function(){
 
 
+    var flag = false;
+
+    $(".portal").on("click", function(e){
+      e.preventDefault();
+      var id = $(this).attr("href");
+      $("html, body").animate({scrollTop: ($(id).offset().top)}, 750);
+
+      setTimeout(function(){
+        $("body").css({"overflow-y": "visible"});
+        flag=true;
+    }, 750)
+
+   
+    })
+
+
+    $(document).on("scroll", function(){
+
+        if((($(window).scrollTop()) < (($("#scrolled").offset().top)-1)) && flag){
+
+            $("html, body").animate({scrollTop: 0}, 750); 
+            setTimeout(function(){
+                $("body").css({"overflow-y": "hidden"});
+            }, 750)
+            flag=false;
+        }
+
+    })
+
+
+
+
 
     var timeout,count = 0;
 
