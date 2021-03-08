@@ -30,6 +30,16 @@ $(document).ready(function(){
 
     })
 
+    $("header img").on("click", function(){
+
+        $("html, body").animate({scrollTop: 0}, 750); 
+            setTimeout(function(){
+                $("body").css({"overflow-y": "hidden"});
+            }, 750)
+            flag=false;
+    })
+
+
 
 
 

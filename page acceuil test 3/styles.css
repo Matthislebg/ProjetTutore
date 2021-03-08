@@ -1,3 +1,23 @@
+ header{
+    background-color: whitesmoke;
+    border-bottom: solid #1a1a1a 2px;
+ }
+
+ header img{
+    height: 5vh;
+    margin: 2vh;
+}
+ 
+#scrolled{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0%;
+    background: white;
+}
+ 
+ 
  .pop{
     transition: 0.75s ease-in-out;
     transform: translate(-50%,-50%);
@@ -83,14 +103,7 @@ div.borders div:nth-child(5){
     background: white;
 }
 
-div.borders div:nth-child(6){
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 100%;
-    left: 0%;
-    background: red;
-}
+
 
 img{                            /* retirer la selection des images */
 -webkit-touch-callout: none; 
@@ -99,9 +112,4 @@ img{                            /* retirer la selection des images */
    -moz-user-select: none; 
     -ms-user-select: none; 
         user-select: none;
-}
-
-header img{
-    height: 7vh;
-    margin: 5vh;
 }
