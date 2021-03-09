@@ -18,13 +18,12 @@ header img{
 }
  
  
- .pop{
+.pop{
     transition: 0.75s ease-in-out;
-    transform: translate(-50%,-50%);
     fill: red;
     width: 2.5vh;
     position: absolute;
- }
+}
 
 
 .logo-container{
@@ -101,6 +100,7 @@ div.borders div:nth-child(5){
     top: 4%;
     left: 2%;
     background: white;
+    
 }
 
 

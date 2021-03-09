@@ -6,7 +6,7 @@ $(document).ready(function(){
     $(".portal").on("click", function(e){
       e.preventDefault();
       var id = $(this).attr("href");
-      $("html, body").animate({scrollTop: ($(id).offset().top)}, 750);
+      $("html, body").animate({scrollTop: (($(id).offset().top)+1)}, 750);
 
       setTimeout(function(){
         $("body").css({"overflow-y": "visible"});
@@ -22,9 +22,9 @@ $(document).ready(function(){
         if((($(window).scrollTop()) < (($("#scrolled").offset().top)-1)) && flag){
 
             $("html, body").animate({scrollTop: 0}, 750); 
-            setTimeout(function(){
+            // setTimeout(function(){
                 $("body").css({"overflow-y": "hidden"});
-            }, 750)
+            // }, 750)
             flag=false;
         }
 
