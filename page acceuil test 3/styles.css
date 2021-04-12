@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 body{
     overflow: hidden;
 }
 
-=======
-=======
->>>>>>> f4c32888f7a036fa27cd686ae75923f4b5e878b7
-=======
->>>>>>> f4c32888f7a036fa27cd686ae75923f4b5e878b7
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 .header {
@@ -65,15 +57,6 @@ section div:nth-child(4){
     border-radius: 0% 2vw 0% 2vw;
 }
 
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> f4c32888f7a036fa27cd686ae75923f4b5e878b7
-=======
->>>>>>> f4c32888f7a036fa27cd686ae75923f4b5e878b7
-=======
->>>>>>> f4c32888f7a036fa27cd686ae75923f4b5e878b7
 header{
     background-color: whitesmoke;
     border-bottom: solid grey 1px;
@@ -158,14 +141,11 @@ header img{
     z-index: 100;
 }
 
-<<<<<<< HEAD
-=======
 body{
     overflow: hidden;
     margin: 0;
 }
 
->>>>>>> f4c32888f7a036fa27cd686ae75923f4b5e878b7
 .logo-path{
     transition: width 1s ease-in-out;
 
