@@ -1,0 +1,22 @@
+.jeuDev h1{
+    margin-top: 5vh;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+.jeuDev h1:first-letter{
+    color: rgb(238,184,29);
+}
+
+.jeuDev>div{
+    height: 5px;
+    width: 35rem;
+    background-color: black;
+    margin:auto;
+}
+
+.jeuDev>p{
+    font-size: 1rem;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+}
