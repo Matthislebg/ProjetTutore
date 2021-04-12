@@ -9,7 +9,7 @@ $(document).ready(function(){
       $("html, body").animate({scrollTop: (($(id).offset().top)+1)}, 750);
 
       setTimeout(function(){
-        $("body").css({"overflow-y": "visible"});
+        // $("body").css({"overflow-y": "visible"});
         flag=true;
     }, 750)
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
 
             $("html, body").animate({scrollTop: 0}, 750); 
             // setTimeout(function(){
-                $("body").css({"overflow-y": "hidden"});
+                // $("body").css({"overflow-y": "hidden"});
             // }, 750)
             flag=false;
         }
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
         $("html, body").animate({scrollTop: 0}, 750); 
             setTimeout(function(){
-                $("body").css({"overflow-y": "hidden"});
+                // $("body").css({"overflow-y": "hidden"});
             }, 750)
             flag=false;
     })
