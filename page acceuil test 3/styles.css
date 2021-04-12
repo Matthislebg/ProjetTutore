@@ -1,3 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+.header {
+    width: 100vw;
+    height: 100px;
+    background-color: black;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+}
+
+section div:nth-child(n) {
+    width: 45vw;
+    height: 32vh;
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    /* box-shadow: black 10px 10px ; */
+}
+
+section div:nth-child(1){
+    background-color: #1DB250;
+    left: 3vw;
+    top: 5vw;
+    border-radius: 0% 2vw 0% 2vw;
+}
+
+section div:nth-child(2){
+    background-color: #0B83C6;
+    right: 3vw;
+    top: 5vw;
+    border-radius: 2vw 0% 2vw 0%;
+}
+
+section div:nth-child(3){
+    background-color: #D4499A;
+    left: 3vw;
+    bottom: 5vw;
+    border-radius: 2vw 0% 2vw 0%;
+}
+
+section div:nth-child(4){
+    background-color: #EEB81D;
+    right: 3vw;
+    bottom: 5vw;
+    border-radius: 0% 2vw 0% 2vw;
+}
+
+
+
 header{
     background-color: whitesmoke;
     border-bottom: solid #1a1a1a 2px;
@@ -37,7 +94,7 @@ header img{
 
 body{
     overflow: hidden;
-    
+    margin: 0;
 }
 
 .logo-path{
