@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+}
+
+header{
+    /* position: fixed; */
+    height: 125px;
+    width: 100vw;
+    background-color: blueviolet;
+}
+
+.metiers{
+    background-color: brown;
+    width: 90vw;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.metiers div{
+    height: 180px;
+    width: 360px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #1DB250;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
