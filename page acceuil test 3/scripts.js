@@ -22,9 +22,9 @@ $(document).ready(function(){
         if((($(window).scrollTop()) < (($("#scrolled").offset().top)-1)) && flag){
 
             $("html, body").animate({scrollTop: 0}, 750); 
-            // setTimeout(function(){
+            setTimeout(function(){
                 $("body").css({"overflow-y": "hidden"});
-            // }, 750)
+            }, 750)
             flag=false;
         }
 

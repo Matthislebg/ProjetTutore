@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap');
+
+body {
+    background-color: #1DB250;
+    color: white;
+    font-family: 'Lexend Exa', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+.section1 {
+    margin: 15vh 10vw 10vh 10vw;
+    text-align: justify;
+}
+
+.section2 {
+    margin: 15vh 10vw 10vh 10vw;
+}
+
+section {
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section div{
+    color: black;
+    height: 5vh;
+    width: 15vw;
+    /* margin: 0 auto; */
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top:2vh;
+    margin-right: 2vw;
+    margin-top: 1.5vw;
+    border-radius: 10px;
+
+}
+
+.nom div {
+    display: inline-block;
+    height: 5vh;
+    width: 15vw;
+    /* margin: 0 auto; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2vw;
+}
