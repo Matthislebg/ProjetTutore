@@ -17,8 +17,8 @@ $(document).ready(function(){
     })
 
 
-    $(document).on("scroll", function(){
-
+    $(document).on("scroll", function(e){
+        console.log(e)
         if((($(window).scrollTop()) < (($("#scrolled").offset().top)-1)) && flag){
 
             $("html, body").animate({scrollTop: 0}, 750); 
