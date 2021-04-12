@@ -14,15 +14,35 @@ body {
 } 
 .container>div:nth-child(1) {
     background-color: #1DB250;
+    transition: 1s;
 }
 .container>div:nth-child(2)  {
     background-color: #D4499A;
+    transition: 1s;
 }
 .container>div:nth-child(3)  {
     background-color: #0B83C6;
+    transition: 1s;
 }
 .container>div:nth-child(4)  {
     background-color: #EEB81D;
+    transition: 1s;
+}
+.container>div:nth-child(1):hover {
+    transform: scale(1.5);
+    transition: 1s;
+}
+.container>div:nth-child(2):hover  {
+    transform: scale(1.5);
+    transition: 1s;
+}
+.container>div:nth-child(3):hover  {
+    transform: scale(1.5);
+    transition: 1s;
+}
+.container>div:nth-child(4):hover  {
+    transform: scale(1.5);
+    transition: 1s;
 }
 .container_2 {
     width: 100%;
