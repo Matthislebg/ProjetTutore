@@ -21,10 +21,6 @@ summary {
     font-family: 'Roboto', sans-serif;
 }
 
-summary::-webkit-details-marker {
-	display: none;
-}
-
 details[open] summary:before {
 	content: '';
 	display: block;
@@ -85,6 +81,8 @@ input[type=radio] {
 }
 
 input[type=radio]:checked {
+	pointer-events: none;
+	outline: none;
 	display: inline;
 }
 
@@ -104,6 +102,10 @@ label {
 	cursor: pointer;
 }
 
+.code>div>img{
+	height: 25%;
+}
+
 .code>div{
     background: rgb(240, 240, 240);
     border: 4px solid black;
@@ -115,14 +117,17 @@ label {
 
 .code>div>h2{
     font-family: 'Lexend Exa', sans-serif;
-    color: rgb(238,184,29);
-    font-size: 1rem;
-    text-align: center;
 }
 
 .outils>h2{
     font-size: 1rem;
     font-family: 'Lexend Exa', sans-serif;
+}
+
+.outils>input[type="checkbox"]{
+	margin: 0px 7vw;
+	width: 20px;
+	height: 20px;
 }
 
 .jeuDev{
