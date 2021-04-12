@@ -9,17 +9,104 @@ header{
     background-color: blueviolet;
 }
 
-.metiers{
-    background-color: brown;
-    width: 90vw;
-    height: 40vh;
+.metierItem{
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #1DB250;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.ligne1, .ligne2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.metiers{
+    height: 75vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.metiers{
+    position: relative;
+    width: 100vw;
+    max-width: 1000px;
+    height: 35vh;
+    margin: auto;
+}
+
+.metiers div{
+    height: 50%;
+    width: 35%;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #1DB250;
+    position: absolute;
+}
+
+.metiers div:nth-child(1){
+    left: 5vw;
+}
+
+.metiers div:nth-child(2){
+    right: 5vw;
+}
+
+.metiers div:nth-child(3){
+    left: 5vw;
+    top: 25vh;
+}
+
+.metiers div:nth-child(4){
+    top: 25vh;
+    right: 5vw;
+} */
+
+
+
+
+/* .metiers{
+    background-color: brown;
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+}
+
+.metiersContainer1{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.metiersContainer2{
+    display: flex;
     justify-content: space-around;
     align-items: flex-start;
 }
 
-.metiers div{
+.metiersContainer div{
     height: 180px;
     width: 360px;
     border-radius: 10px;
@@ -29,4 +116,4 @@ header{
     justify-content: space-around;
     align-items: center;
     color: white;
-}
+} */
