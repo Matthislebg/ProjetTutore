@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap');
+body {
+    margin: 0;
+    font-family: 'Lexend Exa', sans-serif;
+}
+.link_footer {
+    margin-top: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.link_footer>a {
+    text-decoration: none, underline;
+    color: black ;
+    margin-top: 20px;
+}
+.link_footer>a:hover {
+   color: #1DB250;
+}
+.color_footer {
+    margin-top: 20px;
+    display: flex;
+}
+.green, .pink, .blue, .yellow {
+    width: 25%;
+    height: 25px;
+    float: left;
+} 
+.green {
+    background-color: #1DB250;
+}
+.pink {
+    background-color: #D4499A;
+}
+.blue {
+    background-color: #0B83C6 ;
+}
+.yellow {
+    background-color: #EEB81D;
+}
