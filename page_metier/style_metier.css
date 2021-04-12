@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap');
+body {
+    margin: 0;
+    font-family: 'Lexend Exa', sans-serif;
+}
+.header {
+    width: 100%;
+    height: 115px;
+    background-color: lightblue;
+}
+.image {
+    background-image: url("images/background.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: white;
+    font-size: 5vw;
+}
+h2 {
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 5vw;
+    color: #1DB250;
+}
+.container_1 {
+    width: 100vw;
+    height: 40vh;
+    display: inline-block
+}
+.container_1>div {
+    width: 6px;
+    height: 20vh;
+    background-color: black;
+}
