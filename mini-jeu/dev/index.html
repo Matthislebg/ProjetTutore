@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,61 @@
     <script src="scripts.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="jeuDev">
+    <div class="dev">
         <h1>Devenez notre dev Front-end !</h1>
         <div></div>
         <p>changez le css de cette page à votre guise</p>
+    <div class="jeuDev">
+        <div class="code">
+            <div>
+                <h2>Intéressé par le métier de développeur ?</h2>
+                <p>C'est un métier plutôt dédié à des personnes ayant un oeil artistique ainsi que des capacitées de reflexion logique. Cette profession est très complète de par les différents domaines qu'elle aborde mais également le milieu dans lequel on y évolue. C'est également un métier très libre et beaucoup de personnes fonctionnent en free-lance.</p>
+                <img src="images/logo.svg">
+            </div>
+        </div>
+        <div class="outils">
+            <h2>Quelle balise voulez-vous changer ?</h2>
+            <details class="custom-select">
+                <summary class="radios">
+                    <input type="radio" name="item" id="default" title="Selectionnez" checked>
+                    <input type="radio" name="item" id="h2" title="h2">
+                    <input type="radio" name="item" id="p" title="p">
+                    <input type="radio" name="item" id="img" title="img">
+                    <input type="radio" name="item" id="div" title="div">
+                </summary>
+                <ul class="list">
+                    <li>
+                        <label for="div">div</label>
+                    </li>
+                    <li>
+                        <label for="h2">h2</label>
+                    </li>
+                    <li>
+                        <label for="p">p</label>
+                    </li>
+                    <li>
+                        <label for="img">img</label>
+                    </li>
+                </ul>
+            </details>
+            <h2>font-size</h2>
+            <input type="range" id="fontS" min="100" max="300">
+            <h2>width</h2>
+            <input type="range" id="widthS" min="30" max="80">
+            <h2>color</h2>
+            <input type="color" id="colorS" value="#EEB81D">
+            <h2>background-color</h2>
+            <input type="color" id="bgcolorS" value="#F0F0F0">
+            <h2>text-align</h2>
+            <input type="checkbox" id="tCenterS">
+            <h2>margin: auto;</h2>
+            <input type="checkbox" id="mAutoS">
+        </div>
     </div>
-    
-    <input type="range" id="fontS" name="fontS" min="100" max="300">
+</div>
 
 </body>
 </html>
