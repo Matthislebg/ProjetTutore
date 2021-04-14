@@ -1,5 +1,6 @@
 .outils, .code{
     width: 100%;
+	overflow: hidden;
 }
 
 details {
@@ -103,31 +104,47 @@ label {
 }
 
 .code>div>img{
+	display: flex;
 	height: 25%;
+	transition: height 0.2s linear, width 0.2s linear;
 }
 
 .code>div{
     background: rgb(240, 240, 240);
     border: 4px solid black;
     border-radius: 10px;
-    width: 60%;
-    height: 70vh;
+    width: 30vw;
+    height: 35vw;
     margin: auto;
+	transition: 0.2s linear;
 }
 
 .code>div>h2{
     font-family: 'Lexend Exa', sans-serif;
+	color: #EEB81D;
+	transition: 0.2s linear;
 }
 
-.outils>h2{
+.code>div>p{
+    font-family: 'Lexend Exa', sans-serif;
+	transition: 0.2s linear;
+}
+
+.outils>div>h2, .outils>h2{
     font-size: 1rem;
     font-family: 'Lexend Exa', sans-serif;
 }
 
-.outils>input[type="checkbox"]{
+.outils>div>input[type="checkbox"]{
 	margin: 0px 7vw;
 	width: 20px;
 	height: 20px;
+}
+
+.outils>div>input{
+    display: block;
+    margin: auto;
+    width: 75%;
 }
 
 .jeuDev{
@@ -156,12 +173,6 @@ label {
     margin-bottom: 50px;
     text-align: center;
     font-family: 'Lexend Exa', sans-serif;
-}
-
-.outils>input{
-    display: block;
-    margin: auto;
-    width: 75%;
 }
 
 input[type="color"]{
