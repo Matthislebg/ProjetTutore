@@ -120,6 +120,11 @@ section:nth-of-type(2) .container{
     align-items: center;
     color: white;
     font-size: 3rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.metierItem:hover{
+    transform: scale(1.1);
 }
 
 .ligne1, .ligne2{
