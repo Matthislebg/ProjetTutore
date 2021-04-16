@@ -10,7 +10,7 @@ body {
     height: 115px;
 }
 .image {
-    background-image: url("images/background.png") ;
+    background-image: url("../medias/background_metier.png") ;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
