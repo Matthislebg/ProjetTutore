@@ -53,12 +53,6 @@
             </div>
         </div>
     </section>
-    <section>
-        <h1>MINI-JEU</h1>
-        <div class="jeu">
-            <!-- INCLUDE -->
-        </div>
-    </section>
     <footer>FOOTER</footer>
 </body>
 </html>
