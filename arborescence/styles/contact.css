@@ -26,12 +26,24 @@ form {
 label {
     font-size: 2rem;
     color: white;
+    margin-right: 50px;
 }
 input {
     width: 30vw;
     height: 5vh;
     border: none;
     border-radius: 15px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Lexend Exa', sans-serif;
+}
+/* input:focus {
+    background: #0B83C6;
+    color: white;
+} */
+fieldset {
+    display: none;
+    border: 0px;
 }
 textarea {
     vertical-align: top;
@@ -39,11 +51,18 @@ textarea {
     height: 30vh;
     border: none;
     border-radius: 15px;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Lexend Exa', sans-serif;
 }
 textarea::placeholder {
     font-size: 1.2rem;
     font-family: 'Lexend Exa', sans-serif;
 }
+/* textarea:focus {
+    background: #0B83C6;
+    color: white;
+} */
 button {
     background-color: #BA8D0E;
     border: none;
