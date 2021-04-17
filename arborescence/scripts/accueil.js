@@ -46,7 +46,7 @@ $(document).ready(function(){
 
     var timeout,count = 0;
 
-    var mouseJustMoved,imageSrc = ["image/_Audiovisuel.svg","image/_Com.svg","image/_Design.svg","image/_Programmation.svg"];
+    var mouseJustMoved,imageSrc = ["medias/_Audiovisuel.svg","medias/_Com.svg","medias/_Design.svg","medias/_Programmation.svg"];
     var timer = false;
 
 

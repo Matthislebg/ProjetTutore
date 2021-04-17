@@ -16,7 +16,7 @@ section {
     height: 90vh;
 }
 
-section div:nth-child(n) {
+section a {
     width: 45vw;
     height: 32vh;
     position: absolute;
@@ -29,6 +29,10 @@ section div:nth-child(n) {
     /* box-shadow: black 10px 10px ; */
 }
 
+
+/* 4 liens vers pages En savoir plus */
+
+
 section div:nth-child(1){
     background-color: #1DB250;
     left: 3vw;
@@ -36,14 +40,14 @@ section div:nth-child(1){
     border-radius: 0% 2vw 0% 2vw;
 }
 
-section div:nth-child(2){
+section > a:nth-child(2) > div{
     background-color: #0B83C6;
     right: 3vw;
     top: 5vw;
     border-radius: 2vw 0% 2vw 0%;
 }
 
-section div:nth-child(3){
+section > a:nth-child(3) > div{
     background-color: #D4499A;
     left: 3vw;
     bottom: 5vw;
@@ -56,6 +60,8 @@ section div:nth-child(4){
     bottom: 5vw;
     border-radius: 0% 2vw 0% 2vw;
 }
+
+/* header En savoir plus */
 
 header{
     background-color: whitesmoke;
