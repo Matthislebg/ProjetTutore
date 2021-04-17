@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+body {
+    overflow: hidden;
+    margin: 0px;
+    background-color: #0B83C6;
+}
+header {
+    width: 100vw;
+    height: 10vh;
+    background-color: black;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+}
+section div:nth-child(n) {
+    width: 45vw;
+    height: 32vh;
+    position: absolute;
+    display:flex;
+    align-items: flex-end;
+    justify-content: left;
+    font-size: 2rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    /* box-shadow: black 10px 10px ; */
+}
+p {
+    margin-left: 30px;
+}
+section div:nth-child(1){
+    background-image: url("../medias/lucien.png");
+    left: 3vw;
+    top: 5vw;
+    border-radius: 0% 2vw 0% 2vw;
+}
+
+section div:nth-child(2){
+    background-image: url("../medias/lucien.png");
+    right: 3vw;
+    top: 5vw;
+    border-radius: 2vw 0% 2vw 0%;
+}
+
+section div:nth-child(3){
+    background-image: url("../medias/lucien.png");
+    left: 3vw;
+    bottom: 5vw;
+    border-radius: 2vw 0% 2vw 0%;
+}
+
+section div:nth-child(4){
+    background-image: url("../medias/lucien.png");
+    right: 3vw;
+    bottom: 5vw;
+    border-radius: 0% 2vw 0% 2vw;
+}
