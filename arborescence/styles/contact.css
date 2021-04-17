@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap');
+body {
+    margin: 0;
+    background-color: #EEB81D;
+    font-family: 'Lexend Exa', sans-serif;
+    overflow-x: hidden;
+    text-align: center;
+}
+h1 {
+    font-size: 5rem;
+    color: white;
+}
+div {
+    margin-top: 5vh;
+}
+.container {
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    text-align: right;
+}
+label {
+    font-size: 2rem;
+    color: white;
+}
+input {
+    width: 30vw;
+    height: 5vh;
+    border: none;
+    border-radius: 15px;
+}
+textarea {
+    vertical-align: top;
+    width: 30vw;
+    height: 30vh;
+    border: none;
+    border-radius: 15px;
+}
+textarea::placeholder {
+    font-size: 1.2rem;
+    font-family: 'Lexend Exa', sans-serif;
+}
+button {
+    background-color: #BA8D0E;
+    border: none;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 2rem;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: 1s;
+    text-align: center;
+}
+button:hover {
+    background-color: white;
+    color: black;
+}
