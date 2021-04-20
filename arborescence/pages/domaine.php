@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page_Domaine</title>
-    <!-- <link rel="stylesheet" href="../styles/header.css"> -->
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
     <script src=".../scripts/domaine.js"></script>
@@ -24,14 +24,15 @@
             <?php
                 // include '../../connexion.php';
 
-// $link = new PDO('mysql:host=sqletud.u-pem.fr;dbname=mbouanch_db', 'USER', 'PASS', array
-// (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
-                $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
-                $req = $link -> prepare($sql);
-                $req -> execute();
-                echo $data['presentation'];
-                $req = null;
+// // $link = new PDO('mysql:host=sqletud.u-pem.fr;dbname=mbouanch_db', 'USER', 'PASS', array
+// // (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+                // $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
+                // $req = $link -> prepare($sql);
+                // $req -> execute();
+                // echo $data['presentation'];
+                // $req = null;
             ?>
         </p>
             <img src="" alt="illustration"> 
