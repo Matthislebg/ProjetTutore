@@ -21,7 +21,7 @@
                 <div></div>
             </div>
             <div class="container_2">
-                <a href=""><img src="../medias/logo.png"></a>
+                <a href="../index.php"><img src="../medias/logo.png"></a>
                 <h1>DOMAINE</h1>
                 <div class="container_3">
                     <div class="search_bar">

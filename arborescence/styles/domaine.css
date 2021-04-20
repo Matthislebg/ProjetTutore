@@ -6,6 +6,10 @@ body {
     position: relative;
 }
 
+a {
+    text-decoration: none;
+}
+
 footer{
     background-color: blueviolet;
     position: absolute;

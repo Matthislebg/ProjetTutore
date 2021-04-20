@@ -62,7 +62,7 @@ section {
     width: fit-content;
     border-left: black 10px solid ;
 }
-img[src="images/presentation.svg"],img[src="images/qualites.svg"],img[src="images/competences.svg"],img[src="images/formation.svg"] {
+.container img {
     width: 88px;
     margin-left: 5vw;
 }

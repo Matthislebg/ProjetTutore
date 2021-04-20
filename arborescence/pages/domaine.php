@@ -29,12 +29,20 @@
         <h1>LES METIERS</h1>
         <div class="container">
             <div class="ligne1">
-                <div class="metierItem">métier 1</div>
-                <div class="metierItem">métier 2</div>
+                <a href="metier.php">
+                    <div class="metierItem">métier 1</div>
+                </a>
+                <a href="metier.php">
+                    <div class="metierItem">métier 2</div>
+                </a>
             </div>
             <div class="ligne2">
-                <div class="metierItem">métier 3</div>
-                <div class="metierItem">métier 4</div>
+                <a href="metier.php">
+                    <div class="metierItem">métier 3</div>
+                </a>
+                <a href="metier.php">
+                    <div class="metierItem">métier 4</div>
+                </a>
             </div>
         </div>
     </section>
