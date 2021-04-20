@@ -61,6 +61,8 @@
             
             <div class="video">
 
+                                        <!-- /!\ REGLAGE TAILLE VIDEO A REVOIR /!\ -->
+
                 <!-- taille à régler soit ici soit en css (en supprimant la ligne ci dessous)-->
                 <iframe 
                 width="100%" height="100%" 
