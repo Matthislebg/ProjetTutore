@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page_Domaine</title>
+    <!-- <link rel="stylesheet" href="../styles/header.css"> -->
     <link rel="stylesheet" href="../styles/domaine.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
     <script src=".../scripts/domaine.js"></script>
 </head>
 <body>
