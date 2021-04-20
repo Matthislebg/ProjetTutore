@@ -10,7 +10,12 @@
     <script src=".../scripts/domaine.js"></script>
 </head>
 <body>
-    <header>HEADER</header>
+    <header>
+        <?php
+            include 'header.php';
+        ?>
+    </header>
+
     <section>
         <h1>PRESENTATION</h1>
         <div class="container">
@@ -60,6 +65,11 @@
         <div class="jeu">
             <!-- INCLUDE -->
         </div>
+    </section>
+
+    <section>
+        <h1>PROJET</h1>
+        <P>...</P>
     </section>
     <footer>FOOTER</footer>
 </body>
