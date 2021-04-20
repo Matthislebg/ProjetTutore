@@ -20,7 +20,20 @@
     <section>
         <h1>PRESENTATION</h1>
         <div class="container">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae cupiditate laboriosam dolor esse natus ab animi quisquam, inventore consequatur quas aperiam, possimus omnis quibusdam minus voluptatem accusantium autem eum modi.</p>
+            <p>
+            <?php
+                // include '../../connexion.php';
+
+// $link = new PDO('mysql:host=sqletud.u-pem.fr;dbname=mbouanch_db', 'USER', 'PASS', array
+// (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+                $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
+                $req = $link -> prepare($sql);
+                $req -> execute();
+                echo $data['presentation'];
+                $req = null;
+            ?>
+        </p>
             <img src="" alt="illustration"> 
         </div>
     </section>
