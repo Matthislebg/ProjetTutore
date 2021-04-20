@@ -91,9 +91,9 @@ section{
 }
 
 section .container p{    
-    padding-right: 20px;
+    padding-right: 30px;
     margin: 0px;
-    max-width: 20%;
+    max-width: 40%; 
 }
 
 section img{
@@ -119,6 +119,8 @@ section:first-of-type{
 section:first-of-type .container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 50%;
 }
 
 /* METIERS */

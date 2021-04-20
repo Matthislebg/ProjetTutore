@@ -18,29 +18,30 @@
     </header>
 
     <section>
-        <h1>PRESENTATION</h1>
+        <h1>PRÉSENTATION</h1>
         <div class="container">
             <p>
-            <?php
-                // include '../../connexion.php';
+                <!-- PRESENTATION    -->
+                <?php
+                    // include '../../connexion.php';
 
+                    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
+                    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
-// // $link = new PDO('mysql:host=sqletud.u-pem.fr;dbname=mbouanch_db', 'USER', 'PASS', array
-// // (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-
-                // $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
-                // $req = $link -> prepare($sql);
-                // $req -> execute();
-                // echo $data['presentation'];
-                // $req = null;
-            ?>
-        </p>
+                    $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
+                    $req = $link -> prepare($sql);
+                    $req -> execute();
+                    $data = $req -> fetch();
+                    echo $data['presentation'];
+                    $req = null;
+                ?>
+            </p>
             <img src="" alt="illustration"> 
         </div>
     </section>
     
     <section>
-        <h1>LES METIERS</h1>
+        <h1>LES MÉTIERS</h1>
         <div class="container">
             <div class="ligne1">
                 <a href="metier.php">
