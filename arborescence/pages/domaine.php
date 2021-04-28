@@ -9,7 +9,7 @@
                         header("Location: erreur.php");
                     }                    
                     
-                    $sql = "SELECT domaine.presentation, domaine.nomDomaine, metier.nomMetier FROM `domaine`, `metier` WHERE nomDomaine = '" . $domaine . "'";
+                    $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
 
                     // if ($_GET['page'] == "programmation"){
 
@@ -30,7 +30,18 @@
                         $titre = $data['nomDomaine'];
                         $presentation = $data['presentation'];
                     }
-                    // $req = null;
+                    $req = null;
+
+                    $sql = "SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = '" . $domaine . "'";
+                    $req = $link -> prepare($sql);
+                    $req -> execute();
+                    $i = 0;
+                    while ($data = $req -> fetch()){
+                        $metier[$i] = $data['nomMetier'];
+                        $i++;
+                    }
+                    $req = null;
+
                 ?>
                 
 <!DOCTYPE html>
@@ -80,18 +91,34 @@
         <div class="container">
             <div class="ligne1">
                 <a href="metier.php">
-                    <div class="metierItem">métier 1</div>
+                    <div class="metierItem">
+                        <?php 
+                            echo $metier[0];
+                        ?>
+                    </div>
                 </a>
                 <a href="metier.php">
-                    <div class="metierItem">métier 2</div>
+                    <div class="metierItem">
+                        <?php 
+                            echo $metier[1];
+                        ?>
+                    </div>
                 </a>
             </div>
             <div class="ligne2">
                 <a href="metier.php">
-                    <div class="metierItem">métier 3</div>
+                <div class="metierItem">
+                        <?php 
+                            echo $metier[2];
+                        ?>
+                    </div>
                 </a>
                 <a href="metier.php">
-                    <div class="metierItem">métier 4</div>
+                <div class="metierItem">
+                        <?php 
+                            echo $metier[3];
+                        ?>
+                    </div>
                 </a>
             </div>
         </div>
