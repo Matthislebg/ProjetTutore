@@ -1,49 +1,37 @@
 <?php
-                    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
-                    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
+    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
+    // REQUETE 1
+    if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
+        $domaine = $_GET['page'];
+    } else {
+        header("Location: erreur.php");
+    }               
+    
+    $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
+    $req = $link -> prepare($sql);
+    $req -> execute();
+    while ($data = $req -> fetch()){
+        $titre = $data['nomDomaine'];
+        $presentation = $data['presentation'];
+        $image = $data['imageUrl'];
+        $video = $data['videoUrl'];
+        $description = $data['videoDescription'];
+    }
+    $req = null;
 
-                    if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
-                        $domaine = $_GET['page'];
-                    } else {
-                        header("Location: erreur.php");
-                    }                    
-                    
-                    $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
-
-                    // if ($_GET['page'] == "programmation"){
-
-                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
-                    // } elseif ($_GET['page'] == "design"){
-                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'design'";
-                    // } elseif ($_GET['page'] == "audiovisuel"){
-                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'audiovisuel'";
-                    // } elseif ($_GET['page'] == "communication"){
-                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'communication'";
-                    // } else {
-                    //     header("Location: erreur.php");
-                    // }
-
-                    $req = $link -> prepare($sql);
-                    $req -> execute();
-                    while ($data = $req -> fetch()){
-                        $titre = $data['nomDomaine'];
-                        $presentation = $data['presentation'];
-                    }
-                    $req = null;
-
-                    $sql = "SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = '" . $domaine . "'";
-                    $req = $link -> prepare($sql);
-                    $req -> execute();
-                    $i = 0;
-                    while ($data = $req -> fetch()){
-                        $metier[$i] = $data['nomMetier'];
-                        $i++;
-                    }
-                    $req = null;
-
-                ?>
-                
+    // REQUETE 2 : noms de métiers
+    $sql = "SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = '" . $domaine . "'";
+    $req = $link -> prepare($sql);
+    $req -> execute();
+    $i = 0;
+    while ($data = $req -> fetch()){
+        $metier[$i] = $data['nomMetier'];
+        $i++;
+    }
+    $req = null;
+?>                
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -72,17 +60,18 @@
         <h1>PRÉSENTATION</h1>
         <div class="container">
             <p>
-                <!-- PRESENTATION    -->
-                    <?php 
-                    echo $presentation;
-                    ?>
+            <!-- PRESENTATION    -->
+                <?php 
+                echo $presentation;
+                ?>
             </p>
             <?php 
-                // rajouter la balise img avec le bon chemin dans la bdd : <img src="../medias etc" alt="illustration"> 
+                echo $image;
             ?>
 
             <!-- en attendant de mettre dans la bdd -->
             <img src="" alt="illustration"> 
+
         </div>
     </section>
     
@@ -128,12 +117,19 @@
         <h1>INTERVIEW</h1>
         <div class="interview">
             <div class="description">
+            <?php 
+                // echo $description;
+            ?>
+
+            <!-- en attendant de mettre dans la bdd -->
                 <h2>Description</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nobis ullam dolorum nam, quasi voluptas officiis. Inventore dolor facilis quibusdam, pariatur nihil laboriosam sint numquam quas corporis obcaecati! Ab, enim.
                 </p>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorum iure sequi in labore necessitatibus vel delectus nam eum quaerat molestiae et tempora nostrum ut, blanditiis perspiciatis hic quidem similique.
                 </p>
+
+
             </div>
             
             <div class="video">
@@ -143,15 +139,24 @@
                 <!-- taille à régler soit ici soit en css (en supprimant la ligne ci dessous)-->
                 <iframe 
                 width="100%" height="100%" 
-                src="https://www.youtube.com/embed/k_ks5g1ejuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                src="
+                <?php 
+                    // echo $video;
+                ?>
                 
+                https://www.youtube.com/embed/k_ks5g1ejuI
+                " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- URL ICI en attendant de mettre dans la bdd -->
+
             </div>
         </div>
     </section>
     <section>
         <h1>MINI-JEU</h1>
         <div class="jeu">
-            <!-- INCLUDE -->
+            <?php 
+                include 'jeu_'. $domaine . '.php';
+            ?>
         </div>
     </section>
 
