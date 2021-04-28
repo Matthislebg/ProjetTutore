@@ -18,10 +18,14 @@
     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
     $req = $link -> prepare($sql);
     $req -> execute();
-    $data = $req -> fetch();
 
-    // echo les informations tirées de la bdd
-    echo $data['presentation'];
+    // boucle pour récupérer les données
+    while ($data = $req -> fetch()){
+
+        // afficher les informations tirées de la bdd
+        echo $data['presentation'];
+
+    }
 
     $req = null;
     // fin du code
@@ -47,9 +51,39 @@
 
     // présentation > description (page design)
 
+    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
+    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+    $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'design'";
+    $req = $link -> prepare($sql);
+    $req -> execute();
+    $data = $req -> fetch();
+    echo $data['presentation'];
+    $req = null;
+
     // présentation > description (page communication)
 
+    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
+    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+    $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'communication'";
+    $req = $link -> prepare($sql);
+    $req -> execute();
+    $data = $req -> fetch();
+    echo $data['presentation'];
+    $req = null;
+
     // présentation > description (page audiovisuel)
+
+    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
+    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+    $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'audiovisuel'";
+    $req = $link -> prepare($sql);
+    $req -> execute();
+    $data = $req -> fetch();
+    echo $data['presentation'];
+    $req = null;
 
 
 // métiers

@@ -31,8 +31,9 @@
                     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
                     $req = $link -> prepare($sql);
                     $req -> execute();
-                    $data = $req -> fetch();
-                    echo $data['presentation'];
+                    while ($data = $req -> fetch()){
+                        echo $data['presentation'];                
+                    }
                     $req = null;
                 ?>
             </p>
