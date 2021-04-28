@@ -23,16 +23,25 @@
             <p>
                 <!-- PRESENTATION    -->
                 <?php
-                    // include '../../connexion.php';
-
                     $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
                     (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+                    
+                    if ($_GET['page'] == "programmation"){
+                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
+                    } elseif ($_GET['page'] == "design"){
+                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'design'";
+                    } elseif ($_GET['page'] == "audiovisuel"){
+                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'audiovisuel'";
+                    } elseif ($_GET['page'] == "communication"){
+                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'communication'";
+                    } else {
+                        header("Location: erreur.php");
+                    }
 
-                    $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
                     $req = $link -> prepare($sql);
                     $req -> execute();
                     while ($data = $req -> fetch()){
-                        echo $data['presentation'];                
+                        echo $data['presentation'];
                     }
                     $req = null;
                 ?>
