@@ -16,7 +16,7 @@ section {
     height: 90vh;
 }
 
-section div:nth-child(n) {
+section div{
     width: 45vw;
     height: 32vh;
     position: absolute;
