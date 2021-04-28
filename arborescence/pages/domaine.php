@@ -1,18 +1,28 @@
 <?php
                     $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
                     (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-                    
-                    if ($_GET['page'] == "programmation"){
-                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
-                    } elseif ($_GET['page'] == "design"){
-                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'design'";
-                    } elseif ($_GET['page'] == "audiovisuel"){
-                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'audiovisuel'";
-                    } elseif ($_GET['page'] == "communication"){
-                        $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'communication'";
+
+
+                    if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
+                        $domaine = $_GET['page'];
                     } else {
                         header("Location: erreur.php");
-                    }
+                    }                    
+                    
+                    $sql = "SELECT domaine.presentation, domaine.nomDomaine, metier.nomMetier FROM `domaine`, `metier` WHERE nomDomaine = '" . $domaine . "'";
+
+                    // if ($_GET['page'] == "programmation"){
+
+                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
+                    // } elseif ($_GET['page'] == "design"){
+                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'design'";
+                    // } elseif ($_GET['page'] == "audiovisuel"){
+                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'audiovisuel'";
+                    // } elseif ($_GET['page'] == "communication"){
+                    //     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'communication'";
+                    // } else {
+                    //     header("Location: erreur.php");
+                    // }
 
                     $req = $link -> prepare($sql);
                     $req -> execute();
@@ -42,6 +52,7 @@
 <body>
     <header>
         <?php
+        // upcase ?
             include 'header.php';
         ?>
     </header>
@@ -53,11 +64,13 @@
                 <!-- PRESENTATION    -->
                     <?php 
                     echo $presentation;
-                    // while ($data = $req -> fetch()){
-                    //     echo $data['presentation'];
-                    // }
                     ?>
             </p>
+            <?php 
+                // rajouter la balise img avec le bon chemin dans la bdd : <img src="../medias etc" alt="illustration"> 
+            ?>
+
+            <!-- en attendant de mettre dans la bdd -->
             <img src="" alt="illustration"> 
         </div>
     </section>
