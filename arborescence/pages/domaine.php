@@ -42,6 +42,7 @@
     <title><?php 
         echo $titre . " - MMI FYW";
     ?></title>
+    <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
@@ -161,6 +162,8 @@
         <h1>PROJET</h1>
         <P>...</P>
     </section>
-    <footer>FOOTER</footer>
+    <footer><?php 
+        include 'footer.php';
+    ?></footer>
 </body>
 </html>

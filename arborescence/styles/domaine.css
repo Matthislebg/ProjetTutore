@@ -11,14 +11,8 @@ a {
 }
 
 footer{
-    background-color: blueviolet;
     position: absolute;
     bottom: 0px;
-    height: 150px;
-    width: 100vw;
-    text-align: center;
-    padding: 50px;
-    box-sizing: border-box;
 }
 
 header{
