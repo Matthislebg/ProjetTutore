@@ -11,6 +11,7 @@
     // include '../../connexion.php';     ne sera rajoutée que une fois passé sur le serveur upem
 
     // link pour utiliser avec xampp
+    //  /!\ UN SEUL LINK PAR PAGE EST NECESSAIRE /!\
     $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
     (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
