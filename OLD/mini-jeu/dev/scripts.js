@@ -146,10 +146,24 @@ $(document).on("ready",function(){
                 
             });
 
+            $(document).on('input', '.p>#mAutoS', function() {
+
+                if($(this).is(":checked")){
+                    $(".code>div>"+id).css({
+                        "margin": "auto"
+                    })
+                }else{
+                    $(".code>div>"+id).css({
+                        "margin": "left"
+                    })
+                }
+                
+            });
+
             $(document).on('input', '.p>#widthS', function() {
     
                 $(".code>div>"+id).css({
-                    "width": $(this).val()*2+"%",
+                    "width": $(this).val()+"%",
                     "border": "2px solid rgb(238,184,29)"
                 })
                 
@@ -185,10 +199,10 @@ $(document).on("ready",function(){
             });
 
         }
-        if(id=="img"){
-            $(".img").fadeIn();
+        if(id=="svg"){
+            $(".svg").fadeIn();
 
-            $(document).on('input', '.img>#mAutoS', function() {
+            $(document).on('input', '.svg>#mAutoS', function() {
 
                 if($(this).is(":checked")){
                     $(".code>div>"+id).css({
@@ -202,42 +216,34 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '.img>#widthS', function() {
+            $(document).on('input', '.svg>#scaleS', function() {
     
                 $(".code>div>"+id).css({
-                    "width": $(this).val()*2+"%",
-                    "border": "2px solid rgb(238,184,29)"
+                    "transform": "scale("+($(this).val()/100)+")"
                 })
                 
             });
 
-            $(document).on('input', '.img>#heightS', function() {
-    
-                $(".code>div>"+id).css({
-                    "height": $(this).val()*1.3+"%",
-                    "border": "2px solid rgb(238,184,29)"
-                })
-                
-            });
-            
-            $(document).on('mouseleave', '.img>#widthS, .img>#heightS', function() {
-                $(".code>div>"+id).css({
-                    "border": "0px"
-                })
-            })
-
-            $(document).on('input', '.img>#mTopS', function() {
+            $(document).on('input', '.svg>#mTopS', function() {
 
                 $(".code>div>"+id).css({
-                    "margin-top": $(this).val()+"vw"
+                    "margin-top": $(this).val()+"%"
                 })
 
             });
 
-            $(document).on('input', '.img>#opacityS', function() {
+            $(document).on('input', '.svg>#opacityS', function() {
 
                 $(".code>div>"+id).css({
                     "opacity": $(this).val()+"%"
+                })
+
+            });
+
+            $(document).on('input', '.svg>#fillS', function() {
+
+                $(".code>div>"+id+">path").css({
+                    "fill": $(this).val()
                 })
 
             });

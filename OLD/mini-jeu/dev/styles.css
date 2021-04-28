@@ -102,9 +102,10 @@ label {
 	cursor: pointer;
 }
 
-.code>div>img{
+.code>div>svg{
 	display: flex;
-	height: 25%;
+	width: 430px;
+	height: 317px;
 	transition: height 0.2s linear, width 0.2s linear;
 }
 
