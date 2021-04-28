@@ -1,6 +1,5 @@
 .outils, .code{
     width: 100%;
-	overflow: hidden;
 }
 
 details {
@@ -117,17 +116,20 @@ label {
     height: 35vw;
     margin: auto;
 	transition: 0.2s linear;
+	overflow: hidden;
 }
 
 .code>div>h2{
     font-family: 'Lexend Exa', sans-serif;
 	color: #EEB81D;
 	transition: 0.2s linear;
+	font-size: 1.5rem;
 }
 
 .code>div>p{
     font-family: 'Lexend Exa', sans-serif;
 	transition: 0.2s linear;
+	font-size: 1rem;
 }
 
 .outils>div>h2, .outils>h2{

@@ -11,9 +11,9 @@ $(document).on("ready",function(){
         id=$(this).attr('id');
 
         if(id=="div"){
-            $(".outils>div:nth-child(4), .outils>div:nth-child(5), .outils>div:nth-child(7)").fadeIn();
+            $(".div").fadeIn();
 
-            $(document).on('input', '#widthS', function() {
+            $(document).on('input', '.div>#widthS', function() {
     
                 $(".code>"+id).css({
                     "width": $(this).val()+"vw"
@@ -21,27 +21,44 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#heightS', function() {
+            $(document).on('input', '.div>#heightS', function() {
     
                 $(".code>"+id).css({
-                    "height": $(this).val()+"vh"
+                    "height": $(this).val()+"vw"
                 })
                 
             });
             
-            $(document).on('input', '#bgcolorS', function() {
+            $(document).on('input', '.div>#bgcolorS', function() {
 
-                console.log("changes "+$(this).val())
                 $(".code>"+id).css({
                     "background": $(this).val()
                 })
 
             });
-        }
-        if(id=="h2"){
-            $(".outils>div:nth-child(3), .outils>div:nth-child(6), .outils>div:nth-child(8), .outils>div:nth-child(10)").fadeIn();
+            
+            $(document).on('input', '.div>#bRadiusS', function() {
 
-            $(document).on('input', '#fontS', function() {
+                $(".code>"+id).css({
+                    "border-radius": $(this).val()+"px"
+                })
+
+            });
+            
+            $(document).on('input', '.div>#borderColorS, .div>#borderSizeS', function() {
+
+                $(".code>"+id).css({
+                    "border": $('.div>#borderColorS').val()+" solid "+$('.div>#borderSizeS').val()+"px"
+                })
+
+            });
+            
+        }
+
+        if(id=="h2"){
+            $(".h2").fadeIn();
+
+            $(document).on('input', '.h2>#fontS', function() {
 
                 $(".code>div>"+id).css({
                     "font-size": ($(this).val()/100)+"rem"
@@ -49,7 +66,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#colorS', function() {
+            $(document).on('input', '.h2>#colorS', function() {
 
                 $(".code>div>"+id).css({
                     "color": $(this).val()
@@ -57,7 +74,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#tCenterS', function() {
+            $(document).on('input', '.h2>#tCenterS', function() {
 
                 if($(this).is(":checked")){
                     $(".code>div>"+id).css({
@@ -71,19 +88,35 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#mBottomS', function() {
+            $(document).on('input', '.h2>#mBottomS', function() {
 
                 $(".code>div>"+id).css({
-                    "margin-bottom": $(this).val()+" vh"
+                    "margin-bottom": $(this).val()+"vw"
+                })
+
+            });
+
+            $(document).on('input', '.h2>#mTopS', function() {
+
+                $(".code>div>"+id).css({
+                    "margin-top": $(this).val()+"vw"
+                })
+
+            });
+
+            $(document).on('input', '.h2>#opacityS', function() {
+
+                $(".code>div>"+id).css({
+                    "opacity": $(this).val()+"%"
                 })
 
             });
 
         }
         if(id=="p"){
-            $(".outils>div:nth-child(3), .outils>div:nth-child(4), .outils>div:nth-child(6), .outils>div:nth-child(8), .outils>div:nth-child(9), .outils>div:nth-child(10)").fadeIn();
+            $(".p").fadeIn();
             
-            $(document).on('input', '#fontS', function() {
+            $(document).on('input', '.p>#fontS', function() {
 
                 $(".code>div>"+id).css({
                     "font-size": ($(this).val()/100)+"rem"
@@ -91,7 +124,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#colorS', function() {
+            $(document).on('input', '.p>#colorS', function() {
 
                 $(".code>div>"+id).css({
                     "color": $(this).val()
@@ -99,7 +132,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#tCenterS', function() {
+            $(document).on('input', '.p>#tCenterS', function() {
 
                 if($(this).is(":checked")){
                     $(".code>div>"+id).css({
@@ -113,7 +146,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#widthS', function() {
+            $(document).on('input', '.p>#widthS', function() {
     
                 $(".code>div>"+id).css({
                     "width": $(this).val()*2+"%",
@@ -122,14 +155,14 @@ $(document).on("ready",function(){
                 
             });
             
-            $(document).on('mouseleave', '#widthS', function() {
+            $(document).on('mouseleave', '.p>#widthS', function() {
                 $(".code>div>"+id).css({
                     "border": "0px"
                 })
             })
 
             
-            $(document).on('input', '#mAutoS', function() {
+            $(document).on('input', '.p>#mAutoS', function() {
 
                 if($(this).is(":checked")){
                     $(".code>div>"+id).css({
@@ -143,19 +176,19 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#mBottomS', function() {
+            $(document).on('input', '.p>#opacityS', function() {
 
                 $(".code>div>"+id).css({
-                    "margin-bottom": $(this).val()
+                    "opacity": $(this).val()+"%"
                 })
-                
+
             });
 
         }
         if(id=="img"){
-            $(".outils>div:nth-child(5), .outils>div:nth-child(4), .outils>div:nth-child(9)").fadeIn();
+            $(".img").fadeIn();
 
-            $(document).on('input', '#mAutoS', function() {
+            $(document).on('input', '.img>#mAutoS', function() {
 
                 if($(this).is(":checked")){
                     $(".code>div>"+id).css({
@@ -169,7 +202,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#widthS', function() {
+            $(document).on('input', '.img>#widthS', function() {
     
                 $(".code>div>"+id).css({
                     "width": $(this).val()*2+"%",
@@ -178,7 +211,7 @@ $(document).on("ready",function(){
                 
             });
 
-            $(document).on('input', '#heightS', function() {
+            $(document).on('input', '.img>#heightS', function() {
     
                 $(".code>div>"+id).css({
                     "height": $(this).val()*1.3+"%",
@@ -187,11 +220,27 @@ $(document).on("ready",function(){
                 
             });
             
-            $(document).on('mouseleave', '#widthS, #heightS', function() {
+            $(document).on('mouseleave', '.img>#widthS, .img>#heightS', function() {
                 $(".code>div>"+id).css({
                     "border": "0px"
                 })
             })
+
+            $(document).on('input', '.img>#mTopS', function() {
+
+                $(".code>div>"+id).css({
+                    "margin-top": $(this).val()+"vw"
+                })
+
+            });
+
+            $(document).on('input', '.img>#opacityS', function() {
+
+                $(".code>div>"+id).css({
+                    "opacity": $(this).val()+"%"
+                })
+
+            });
             
         }
 
