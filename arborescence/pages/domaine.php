@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page_Domaine</title>
-    <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/domaine.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
-    <script src=".../scripts/domaine.js"></script>
-</head>
-<body>
-    <header>
-        <?php
-            include 'header.php';
-        ?>
-    </header>
-
-    <section>
-        <h1>PRÉSENTATION</h1>
-        <div class="container">
-            <p>
-                <!-- PRESENTATION    -->
-                <?php
+<?php
                     $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
                     (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
                     
@@ -41,10 +17,46 @@
                     $req = $link -> prepare($sql);
                     $req -> execute();
                     while ($data = $req -> fetch()){
-                        echo $data['presentation'];
+                        $titre = $data['nomDomaine'];
+                        $presentation = $data['presentation'];
                     }
-                    $req = null;
+                    // $req = null;
                 ?>
+                
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?php 
+            echo $titre;
+        ?>
+    </title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/domaine.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
+    <script src=".../scripts/domaine.js"></script>    
+</head>
+<body>
+    <header>
+        <?php
+            include 'header.php';
+        ?>
+    </header>
+                    
+    <section>
+        <h1>PRÉSENTATION</h1>
+        <div class="container">
+            <p>
+                <!-- PRESENTATION    -->
+                    <?php 
+                    echo $presentation;
+                    // while ($data = $req -> fetch()){
+                    //     echo $data['presentation'];
+                    // }
+                    ?>
             </p>
             <img src="" alt="illustration"> 
         </div>
