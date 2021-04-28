@@ -27,8 +27,9 @@
     $req -> execute();
     $i = 0;
     while ($data = $req -> fetch()){
+        $idMetier[$i] = $data['idMetier'];
         $metier[$i] = $data['nomMetier'];
-        $i++;
+        $i++;       
     }
     $req = null;
 ?>                
@@ -38,23 +39,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?php 
-            echo $titre;
-        ?>
-    </title>
+    <title><?php 
+        echo $titre . " - MMI FYW";
+    ?></title>
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
     <script src=".../scripts/domaine.js"></script>    
 </head>
 <body>
-    <header>
-        <?php
+    <header><?php
         // upcase ?
-            include 'header.php';
-        ?>
-    </header>
+        include 'header.php';
+    ?></header>
                     
     <section>
         <h1>PRÉSENTATION</h1>
@@ -79,35 +76,35 @@
         <h1>LES MÉTIERS</h1>
         <div class="container">
             <div class="ligne1">
-                <a href="metier.php">
-                    <div class="metierItem">
-                        <?php 
+                <a href="metier.php<?php 
+                        echo "?page=" . $idMetier[0];
+                    ?>">
+                    <div class="metierItem"><?php 
                             echo $metier[0];
-                        ?>
-                    </div>
+                        ?></div>
                 </a>
-                <a href="metier.php">
-                    <div class="metierItem">
-                        <?php 
+                <a href="metier.php<?php 
+                        echo "?page=" . $idMetier[1];
+                    ?>">
+                    <div class="metierItem"><?php 
                             echo $metier[1];
-                        ?>
-                    </div>
+                        ?></div>
                 </a>
             </div>
             <div class="ligne2">
-                <a href="metier.php">
-                <div class="metierItem">
-                        <?php 
+                <a href="metier.php<?php 
+                        echo "?page=" . $idMetier[2];
+                    ?>">
+                    <div class="metierItem"><?php 
                             echo $metier[2];
-                        ?>
-                    </div>
+                        ?></div>
                 </a>
-                <a href="metier.php">
-                <div class="metierItem">
-                        <?php 
+                <a href="metier.php<?php 
+                        echo "?page=" . $idMetier[3];
+                    ?>">
+                    <div class="metierItem"><?php 
                             echo $metier[3];
-                        ?>
-                    </div>
+                    ?></div>
                 </a>
             </div>
         </div>
