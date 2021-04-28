@@ -45,8 +45,9 @@
     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'programmation'";
     $req = $link -> prepare($sql);
     $req -> execute();
-    $data = $req -> fetch();
-    echo $data['presentation'];
+    while ($data = $req -> fetch()){
+        echo $data['presentation'];
+    }
     $req = null;
 
     // présentation > description (page design)
@@ -57,8 +58,9 @@
     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'design'";
     $req = $link -> prepare($sql);
     $req -> execute();
-    $data = $req -> fetch();
-    echo $data['presentation'];
+    while ($data = $req -> fetch()){
+        echo $data['presentation'];
+    }
     $req = null;
 
     // présentation > description (page communication)
@@ -69,8 +71,9 @@
     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'communication'";
     $req = $link -> prepare($sql);
     $req -> execute();
-    $data = $req -> fetch();
-    echo $data['presentation'];
+    while ($data = $req -> fetch()){
+        echo $data['presentation'];
+    }
     $req = null;
 
     // présentation > description (page audiovisuel)
@@ -81,8 +84,9 @@
     $sql = "SELECT presentation, nomDomaine FROM `Domaine` WHERE nomDomaine = 'audiovisuel'";
     $req = $link -> prepare($sql);
     $req -> execute();
-    $data = $req -> fetch();
-    echo $data['presentation'];
+    while ($data = $req -> fetch()){
+        echo $data['presentation'];
+    }
     $req = null;
 
 
