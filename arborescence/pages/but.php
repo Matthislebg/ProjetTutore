@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le BUT MMI - MMI FYW</title>
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/but.css">
 </head>
 <body>
+    <header><?php
+        $titre = "";
+        include 'header.php';
+    ?></header>
     <section>
     <h1>Le BUT MMI</h1>
 
