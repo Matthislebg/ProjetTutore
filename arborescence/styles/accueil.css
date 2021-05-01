@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 body{
     overflow: hidden;
+    margin: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
-
-.header {
+/* .header {
     width: 100vw;
     height: 100px;
     background-color: black;
-}
+} */
 
 section {
     position: relative;
@@ -145,11 +145,6 @@ header img{
     top: 50%;
     width: 45vh;
     z-index: 100;
-}
-
-body{
-    overflow: hidden;
-    margin: 0;
 }
 
 .logo-path{

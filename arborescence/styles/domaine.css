@@ -11,14 +11,8 @@ a {
 }
 
 footer{
-    background-color: blueviolet;
     position: absolute;
     bottom: 0px;
-    height: 150px;
-    width: 100vw;
-    text-align: center;
-    padding: 50px;
-    box-sizing: border-box;
 }
 
 header{
@@ -140,8 +134,9 @@ section:nth-of-type(2) .container{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     transition: transform 0.3s ease-in-out;
 }
 
