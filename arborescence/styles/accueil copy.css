@@ -16,7 +16,7 @@ section {
     height: 90vh;
 }
 
-section a{
+section div{
     width: 45vw;
     height: 32vh;
     position: absolute;
@@ -26,7 +26,6 @@ section a{
     font-size: 2rem;
     font-family: 'Lexend Deca', sans-serif;
     color: white;
-    text-decoration: none;
     /* box-shadow: black 10px 10px ; */
 }
 
@@ -34,28 +33,28 @@ section a{
 /* 4 liens vers pages En savoir plus */
 
 
-section a:nth-child(1){
+section div:nth-child(1){
     background-color: #1DB250;
     left: 3vw;
     top: 5vw;
     border-radius: 0% 2vw 0% 2vw;
 }
 
-section a:nth-child(2){
+section div:nth-child(2){
     background-color: #0B83C6;
     right: 3vw;
     top: 5vw;
     border-radius: 2vw 0% 2vw 0%;
 }
 
-section a:nth-child(3){
+section div:nth-child(3){
     background-color: #D4499A;
     left: 3vw;
     bottom: 5vw;
     border-radius: 2vw 0% 2vw 0%;
 }
 
-section a:nth-child(4){
+section div:nth-child(4){
     background-color: #EEB81D;
     right: 3vw;
     bottom: 5vw;
