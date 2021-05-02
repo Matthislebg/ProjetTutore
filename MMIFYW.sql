@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Client :  sqletud.u-pem.fr
--- Généré le :  Sam 03 Avril 2021 à 04:04
--- Version du serveur :  5.5.62-0+deb8u1-log
--- Version de PHP :  7.0.33-0+deb9u7
+-- Hôte : 127.0.0.1
+-- Généré le : lun. 03 mai 2021 à 00:54
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `crexharr_db`
+-- Base de données : `mmifyw`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Contact`
+-- Structure de la table `contact`
 --
 
-CREATE TABLE `Contact` (
+CREATE TABLE `contact` (
   `idContact` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
@@ -34,29 +35,29 @@ CREATE TABLE `Contact` (
   `email` varchar(100) NOT NULL,
   `sujet` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `dateHeure` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `dateHeure` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Domaine`
+-- Structure de la table `domaine`
 --
 
-CREATE TABLE `Domaine` (
-  `idDomaine` int(4) NOT NULL DEFAULT '0',
+CREATE TABLE `domaine` (
+  `idDomaine` int(4) NOT NULL DEFAULT 0,
   `nomDomaine` varchar(30) DEFAULT NULL,
-  `presentation` text,
-  `videoDescription` text,
+  `presentation` text DEFAULT NULL,
+  `videoDescription` text DEFAULT NULL,
   `videoUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `Domaine`
+-- Déchargement des données de la table `domaine`
 --
 
-INSERT INTO `Domaine` (`idDomaine`, `nomDomaine`, `presentation`, `videoDescription`, `videoUrl`, `imageUrl`) VALUES
+INSERT INTO `domaine` (`idDomaine`, `nomDomaine`, `presentation`, `videoDescription`, `videoUrl`, `imageUrl`) VALUES
 (1, 'Audiovisuel', 'Le domaine de l’audiovisuel correspond à la fois aux matériels, techniques et méthodes d’information, de communication ou d’enseignement associant le son et l’image. On part de  la conception à la diffusion en passant par la réalisation, le tournage et la finalisation. \r\nLes métiers de l’audiovisuel sont assez nombreux et variés avec des activités de différentes natures que ce soit au niveau technique ou artistique. Ces métiers peuvent concerner divers médias : le cinéma, la télévision, la radio, le jeu vidéo, la vidéo en streaming… \r\n\r\nVoici quelques métiers de l’audiovisuel que vous pourrez exercer après un DUT MMI : \r\n', '', '', ''),
 (2, 'Communication', 'Le domaine de la communication-marketing correspond à la gestion de toutes les informations qui émanent d’une structure afin de transmettre un message à un public ciblé en promouvant l’image d’un produit, d’un service, d’une personne, d’une organisation ou d’un événement. Il s’agit aussi de déterminer les conditions dans lesquelles sera vendu un produit (prix, distribution, promotion etc.) afin de remplir les objectifs commerciaux. \r\nLes métiers de ce domaine peuvent être exercés dans différents types d’entreprises : en agence (de communication, de publicité), dans les services internes de communication d’une organisation (entreprise, association..), en indépendant (journalistes d’entreprise, conseillers en communication…). \r\n\r\nVoici quelques métiers en communication que vous pourrez exercer après un DUT MMI : ', '', '', ''),
 (3, 'Design', 'Le domaine du design graphique (aussi appelé design de communication) correspond à l’activité de conception ayant pour but de mettre en œuvre et coordonner la réalisation d’une communication visuelle en associant image et texte, sur imprimé ou écran. \r\nLes métiers du design graphique interviennent dans l’élaboration de supports de communication variés : les produits numériques et interactifs (site web, séquences animées en motion design, logo), les imprimés (livres, revues, affiches, brochures…),  le packaging, la publicité… \r\nVoici quelques métiers du design graphique que vous pourrez exercer après un DUT MMI : ', '', '', ''),
@@ -65,27 +66,49 @@ INSERT INTO `Domaine` (`idDomaine`, `nomDomaine`, `presentation`, `videoDescript
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Metier`
+-- Structure de la table `jeucm`
 --
 
-CREATE TABLE `Metier` (
-  `idMetier` int(20) NOT NULL DEFAULT '0',
+CREATE TABLE `jeucm` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(20) NOT NULL,
+  `textMsg` varchar(200) NOT NULL,
+  `certif` tinyint(1) DEFAULT NULL,
+  `couleur` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `jeucm`
+--
+
+INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
+(9, 'Lucien', 'Wouhou !!!\r\nC\'est le premier message de ce mini-jeu, on a passé pas mal de temps dessus mais bon, nous sommes content du résultat !!!', 1, '#00a6ff'),
+(10, 'Lucien', 'Ceci est un test pour le main automatique', 1, '#0b83c6');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `metier`
+--
+
+CREATE TABLE `metier` (
+  `idMetier` int(20) NOT NULL DEFAULT 0,
   `nomMetier` varchar(50) DEFAULT NULL,
-  `presentation` text,
-  `qualite` text,
-  `competence` text,
-  `formation` text,
-  `salaire` text,
-  `structure` text,
+  `presentation` text DEFAULT NULL,
+  `qualite` text DEFAULT NULL,
+  `competence` text DEFAULT NULL,
+  `formation` text DEFAULT NULL,
+  `salaire` text DEFAULT NULL,
+  `structure` text DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `Metier`
+-- Déchargement des données de la table `metier`
 --
 
-INSERT INTO `Metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
+INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
 (1, 'Vidéaste', 'Le métier de vidéaste consiste à effectuer le montage des images et des sons de films, de reportages, d’émissions, de vidéos publicitaires.... Cela se fait à partir des rushes de tournages, d’éléments d’archives…\r\nOn retrouve sous ce terme de vidéaste, deux métiers distincts : le cadreur qui réalise les prises de vue et le monteur qui, lui, assemble les différentes parties du film. \r\n\r\nMissions :\r\n• il conçoit et réalise des programmes vidéo\r\n• Il visionne les rushes du tournage et sélectionne les prises pour le montage\r\n• Il détermine le début et la fin d’une image, d’un plan\r\n• Il numérise des rushes \r\n• Il mixe les sources sonores\r\n• Il assemble des plans et des images pour un produit audiovisuel\r\n• Il gére, coordonne et fait le suivi d’un projet vidéo\r\n• Il encadre une production vidéo\r\n• Il contrôle la qualité des dialogues enregistrés lors d’un tournage\r\n• Il réalise un montage des sons directs\r\n• Il compose les ambiances et les effets sonores d’un produit audiovisuel\r\n• Il négocie les contrats de prestation', '- intérêt pour le cinéma\r\n- être autonome\r\n- avoir un esprit de synthèse\r\n- être rigoureux\r\n- avoir des qualités artistiques\r\n- aisance à l’oral\r\n- avoir un bon relation\r\n- être un bon communicant\r\n- sens de l’organisation\r\n- être passionnée\r\n- être curieux \r\n- sens de l’écoute\r\n', '- connaissances en l’histoire du cinéma\r\n- compétences en conception vidéo et en production audiovisuelle\r\n- maîtrise des techniques d’écriture du scénario\r\n- connaissances en droit du cinéma\r\n- connaissances des techniques de montage des sons, montage vidéo et numérique \r\n- maîtrise des logiciels de création vidéo et de la bureautique \r\n- connaissances des caractéristiques des logiciels de montage\r\n- Savoir gérer une photothèque \r\n- maîtrise de l’outil informatique (PAO, palettes graphiques)\r\n', 'Ce métier est accessible par diverses formations allant d’un Bac+3  à Bac+5.\r\nEx : BTS en audiovisuel (Bac+2) + une expérience professionnelle dans le montage \r\nEx : Ecoles Esec, Etpa, Esra : enseignements dans le secteur de l’image cinématographique, de la photo et du multimédia. \r\n', 'En ce qui concerne la rémunération d’un vidéaste, cela dépend du niveau de ses prestations, mais aussi des horaires variables en fonction de l’événement à filmer. \r\nSon salaire peut varier entre 170€-180€ brut la journée et entre 750€- 830€ brut la semaine, selon les conditions de tournage. \r\n', 'Exercice au sein de chaînes de télévision -  Agence de publicité -  Entreprise d’édition phonographique - Société de post-production cinématographique - Société de production audiovisuelle, cinématographique - Studio de développement de jeux vidéo - Studio de films d’animation\r\n', '', 1),
 (2, 'Concepteur multimédia', 'Chief technical officer, Chief technology officer, DSI Digital, DSI e-commerce\r\nLe concepteur multimédia accompagne la naissance d’un produit multimédia : cédérom éducatif ou commercial, jeu vidéo, DVD ou site Internet. Il en détermine l’architecture générale, c’est-à-dire qu’il organise et met en scène les différents contenus (textes, musiques, vidéos, animations et images) pour les rendre attractifs. Puis il conçoit les moyens de navigation qui permettent d’accéder aux informations.\r\n\r\nMissions :\r\n• Il crée un lien entre les textes, les images et les sons pour donner vie à un produit multimédia.\r\n• Il imagine un produit correspondant aux besoins d’une cible bien particulière.\r\n• Il établit ainsi une charte graphique et organise les éléments visuels sonores et textuels de façon à ce qu’ils soient les plus attractifs possibles.\r\n• Il travaille en collaboration avec des professionnels tels que des graphistes, des auteurs et des scénaristes.\r\n\r\nIl est possible pour le concepteur multimédia de se spécialiser dans les jeux vidéo, un domaine qui connaît une croissance depuis quelques années. \r\n', '- Le concepteur multimédia est sur tous les fronts : technique, design, contenu… Polyvalence et culture générale sont de mise pour mener à bien ces défis, ainsi qu’une solide organisation et une grande rigueur.\r\n- En parallèle, l’imagination, l’originalité, la curiosité intellectuelle et la créativité sont indispensables pour créer des mondes interactifs, que le visiteur ait envie de visiter.\r\n- Enfin, la multiplicité de ses partenaires et collaborateurs (développeurs, scénaristes, auteurs, graphistes, directeurs artistiques…) impose un excellent relationnel.\r\n', '- une créativité sans limites : de toute évidence, s’il y a une qualité que ce professionnel doit posséder, c’est bien celle-là ! Sans imagination de la part de son créateur, un produit ne peut se démarquer et séduire la cible à atteindre.\r\n- une grande curiosité : veille nécessaire lorsque l’on conçoit ! Pour donner naissance à un projet cohérent, il est essentiel de se tenir au courant des nouvelles tendances, de se réinventer en fonction des évolutions.\r\n- une certaine polyvalence : Le concepteur de produit multimédia doit créer mais également prendre en compte les contraintes techniques pour réaliser son projet. De plus, il n’est pas toujours accompagné de professionnels de l’écriture pour les scénarios ou de chargé marketing pour élaborer les budgets.\r\n', 'Pour devenir concepteur multimédia, après un bac général (S de préférence), on peut passer, au niveau bac+2, par un BTS Design graphique option Communication et médias numériques ou un DUT Métiers du multimédia et de l’Internet.\r\n\r\nA bac+3, il existe de nombreuses licences pros spécialisées en développement web ou en communication multimédia.\r\nA bac+5 plusieurs masters pros, en ingénierie de la création multimédia par exemple. \r\n\r\nLe marché compte de nombreuses écoles spécialisées, pour la plupart privées (l’École multimédia, Supinfocom, l’Institut international du multimédia Léonard de Vinci…), publiques (Les Gobelins). Mais aussi des formations d’ingénieur, comme l’IMAC (Institut du multimédia et architecture de la communication) et l’ENIC (Ecole nouvelle d’ingénieurs en communication).\r\n', 'Un concepteur multimédia débutant gagne autour de 2 000 euros bruts par mois.\r\nSelon son entreprise et son ancienneté, son salaire peut progresser jusqu’à 4000 euros brut par mois ou plus.\r\n', 'Le concepteur multimédia peut travailler chez divers employeurs : société éditrice de produits multimédias (dans le secteur privé et public), studio de création, société sous-traitante spécialisée dans la réalisation de produits interactifs, agence de communication et de publicité, entreprise des médias (TV).\r\n', '', 1),
 (3, 'Monteur truquiste ', 'Le monteur truquiste intervient essentiellement en phase de post-production au cinéma, à la télévision. C’est un monteur vidéo spécialisé dans la :\r\n• Il réalise d’effets spéciaux et de trucages\r\n• Il met en place de l’habillage graphique et de génériques\r\n• Il s’occupe notamment des Incrustations, du compositing et de la VFX 3D.\r\n\r\n', '- Le monteur truquiste doit avoir une sensibilité artistique et de la créativité pour pouvoir imaginer et concevoir des effets inventifs\r\n- Travaillant sous la direction du réalisateur et du superviseur d’effets spéciaux, en étroite collaboration avec les autres métiers de la post-production, il doit aimer travailler en équipe\r\n- Passionné par son métier,  il doit se tenir au courant des progrès technologiques, qui d’année en année permettent l’utilisation de techniques de plus en plus avancées\r\n', '- En plus des logiciels de montage vidéo classiques, le monteur truquiste doit maîtriser des logiciels d’effets spéciaux (Adobe After Effects, Davinci Resolve, la suite Avid)\r\n- Pour réaliser des effets 3D, il doit également connaître les logiciels de modélisation et d’animation 3D\r\n- Capable d’imaginer et de concevoir des éléments d’habillage\r\n', 'Le monteur truquiste est issu d’une formation dans l’audiovisuel, mais s’est spécialisé grâce à des stages et à son expérience professionnelle, mais également par des formations dispensées par l’INA (Institut National de l’Audiovisuel), par des écoles de cinéma ou encore par certaines écoles privées.\r\n', '- Débutant : à partir de 25 000 € bruts par an\r\n- Sous statut d’intermittent, le salaire est conventionné à 31,79 € bruts de l’heure.\r\n', 'Le métier de truquiste peut également s’exercer dans des émissions en direct à la télévision : les missions sont équivalentes, mais les outils - adaptés aux contraintes du direct - peuvent être très différents.\r\nPar ailleurs, le métier de monteur truquiste se rapproche de certains métiers du jeu vidéo et de l’animation.\r\n', '', 1),
@@ -104,70 +127,84 @@ INSERT INTO `Metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `compe
 (16, 'Administrateur réseau', 'Le métier d’administrateur réseau consiste à s’occuper du bon fonctionnement et de l’optimisation des réseaux de la structure (entreprise, association). Ils ont pour but de garantir la bonne circulation de l’information dans l’entreprise en analysant les performances du réseau informatique, en veillant au bon fonctionnement des équipements  et en répondant au besoin des utilisateurs. \r\n\r\nMissions :\r\n• Il gére le câblage physique du réseau\r\n• Il gére le bon routage (la bonne circulation des informations immatérielles)\r\n• Il assure la sécurité du réseau\r\n• Il gére les différents comptes utilisateurs et droits d’accès\r\n• Il repére les anomalies et trouve des solutions pour les résoudre\r\n• Il gére l’accès des utilisateurs\r\n• Il vérifie la compatibilité du nouveau matériel \r\n• Il assure la bonne gestion des droits d’accès, pour les machines d’une part, et pour les utilisateurs d’autre part, dans le respect des règles de sécurité de l’entreprise.\r\n• Il suit le budget d’exploitation des réseaux.\r\n• Il installe les logiciels d’administration de réseau.\r\n• Il effectue les réglages des paramètres \r\n• Il assure l’ensemble des sauvegardes nécessaires pour maintenir la sécurité des données circulant dans le réseau de l’entreprise.\r\n• Il met en place les normes de sécurité, notamment celles liées aux conditions d’accès.\r\n• Il assure une veille technologique afin d’anticiper les évolutions nécessaires à l’optimisation du réseau.\r\n• Il suit les évolutions technologiques des systèmes et définit les plans de rénovation ou d’extension du réseau avec les ingénieurs et les techniciens. \r\n', '- qualités relationnelles \r\n- sens de l’écoute et du dialogue pour bien comprendre les besoins des utilisateurs\r\n- rigueur et sens de la méthode\r\n- méthode\r\n- autonomie\r\n- réactivité et disponibilité pour assurer un service performant aux utilisateurs\r\n- résistance au stress \r\n- patience\r\n- adaptabilité et curiosité\r\n', '- bonnes compétences en informatique \r\n- bonnes compétences en informatique des réseaux (câblage, protocole de routage, cybersécurité et gestions des droits d’accès)\r\n- bonnes connaissances de l’architecture et des fonctionnalités du système informatique  de l’entreprise\r\n- bonne compétences en systèmes d’exploitation\r\n- capacité à résoudre des problèmes complexes et nouveaux \r\n- capacités en gestion de projet\r\n- savoir se tenir au courant de toutes les évolutions technologiques, des changements dans les normes (pour fournir à l’entreprise la meilleure solution possible)\r\n- connaître les infrastructures et supports qui permettent de relier les matériaux entre eux \r\n- maîtrise des protocoles de communication\r\n- maîtrise de logiciels d’analyse pour surveiller le fonctionne du réseau \r\n- bonne connaissance en technologies télécoms, Internet (Web, XML, PHP…), ainsi qu’en bases de données (Oracle, SQL Server...)\r\n- très bonnes connaissances des principaux systèmes d’exploitation (Windows et Unix)\r\n- maîtrise de l’anglais technique\r\n', 'Niveau bac +2 : BTS en informatique, réseaux et télécommunication.\r\nex : BTS Systèmes numériques option A informatique et réseaux\r\n\r\nNIveau bac +3: BUT ou Licences pro en informatique, télécommunications et réseaux.\r\nex : BUT réseaux et télécommunications \r\nex : Licence pro mention métiers de l’informatique : administration et sécurité\r\n\r\nNiveau bac +5: master professionnel ou master de recherche spécialité ingénierie des réseaux ou spécialité systèmes, réseaux et architecture.\r\nex : Master mention méthodes informatiques appliquées à la gestion des entreprises\r\n\r\nOu :Niveau bac +5: Diplôme d’ingénieur orienté réseaux.\r\nex : Diplôme d’ingénieur de l’École nationale supérieure d’électronique,\r\n', 'Le salaire d’un administrateur réseau varie entre 32 000 à 48 000 € brut par an en fonction du niveau d’expérience et du secteur.\r\nPour les débutants : environ 2200€ brut par mois \r\nJeune cadre : entre 20 et 35 k€\r\nCadre confirmé : entre 35 et 50 k€\r\n', 'L’administrateur réseau peut virtuellement exercer partout où il y a un réseau plus ou moins complexe à installer et/ou à faire évoluer. Dans la pratique, il peut être embauché au sein d’une entreprise, d’une structure gouvernementale ou d’une association. Il peut même être employé par une société de services externe qui la mettra sous contrat de mission avec diverses structures clientes.\r\n', '', 4),
 (17, 'CTO/Directeur Technique Web', ' Chief technical officer, Chief technology officer, DSI Digital, DSI e-commerce\r\nLe directeur technique web d’une entreprise est responsable de la partie technique et des équipes qui le mettent en œuvre. Acteur de l’innovation, il assure la maintenance complète (disponibilité et évolution) de toutes les techniques liées aux sites web et mobile.\r\n\r\nMissions :\r\n• Il définit la stratégie entrepreneuriale concernant les projets digitaux\r\n• Il élabe d’une roadmap\r\n• Il assure la conception des plateformes Web.\r\n• Il assure la conception des interfaces avec le back office avec leurs évolutions futures.\r\n• Il conduit les actions de veille concernant l’innovation technologique et sectorielle.\r\n• Il anime l’équipe technique composée des développeurs, chefs de projets, architectes\r\n• Il coordonne les prestataires régie ou forfait \r\n• Il évalue les projets en fonction des budgets dont il est responsable.\r\n• Il rend compte de ses actions à la direction générale', '- savoir s’organiser et planifier différents projets\r\n- être rigoureux dans son travail afin de piloter un projet\r\n- capacité à stimuler et canaliser la créativité des équipes\r\n- calme et sang froid pour résister à la pression des utilisateurs.\r\n- capacité à prendre des décisions soudaines qui engagent son entreprise.\r\n- bonne capacité d’adaptation \r\n- curiosité\r\n- goût du changement.\r\n', '- expérience significative du management, aptitude à encadrer et à former ses équipes\r\n- maîtrise des méthodologies agiles\r\n- force de conviction pour préconiser les choix technologiques\r\n- qualité d’écoute et d’empathie\r\n- expertise sur le digital et dans les différents langages et frameworks de développement / importante culture technologique', 'Pour devenir directeur, cinq années d’études au moins sont nécessaires après le bac. \r\nLe mieux est d’être diplômé d’une école d’ingénieur ou d’un master d’informatique en Université.\r\nIl est aussi très intéressant d’avoir une solide expérience dans le développement technique web.\r\n', 'Le salaire d’un directeur technique web peut varier selon la taille de la structure qu’il intègre.\r\nSalaire par an :\r\nDans une start-up ou une PME ebusiness, son salaire peut varier de 60 à 80 000 euros.\r\nAu sein d’une grosse PME à la pointe d’une technologie informatique par exemple,  il peut monter jusqu’à 100 000 euros par an.\r\nEnfin, si le CTO travaille dans une direction digitale des grands groupes, son salaire peut parfois monter jusqu’à 110 000 euros\r\n', 'Le Directeur Technique Web doit travailler en entreprise pour pouvoir responsabiliser et gérer ses différentes équipes. \r\n', '', 4),
 (18, 'Développeur Back', 'Alors que le développeur front-end se charge exclusivement de créer une interface claire et simple pour les internautes, le développeur back-end travaille principalement sur le back-office ainsi que sur tous les éléments d’un projet web qui sont ”invisibles” (mais indispensables) lorsque l’on navigue sur un site Internet.\r\nMissions :\r\nLe programmeur Back-end se charge :\r\n• Il se charge de la mise en place du site\r\n• Il effectue la configuration, du développement et de la maintenance du serveur, \r\n• Il s’occupe de la base de données \r\n• Il gère l’application web en général.\r\n', 'Le développeur back-end doit savoir travailler en toute autonomie, respecter les délais mais également dialoguer efficacement avec le client et ses équipes, notamment pour ce qui concerne le front-end. Une certaine polyvalence dans les deux domaines peut quelquefois être recherchée.\r\n', '- En plus d’un grand intérêt pour l’informatique en général, le développeur Back-end se doit de s’intéresser et de connaître parfaitement les langages de programmation et les bases de données : PHP, Ruby, Python et SQL qui seront ses meilleurs amis. \r\n- L’utilisation parfaite de frameworks comme Cake PHP, Symfony ou encore Code Igniter est aussi indispensable.\r\n', 'Comme pour de nombreux autres métiers liés à l’informatique, plusieurs cursus sont possibles pour devenir programmeur back-end. \r\nIntégrer une université, une école d’informatique ou une école d’ingénieur est incontournable pour apprendre à bien manier les langages de programmation ainsi que les bases de données. \r\nVous pourrez commencer votre cursus par un DUT comme notre DUT MMI ou un BTS informatique avant d’approfondir vos connaissances en second cycle.\r\n', 'La rémunération du développeur Back-end est bien souvent considérée comme un peu plus importante que pour celle du programmeur Front-end, même si la différence est de moins en moins palpable. Ainsi, alors qu’un débutant sortant d’une école d’informatique peut espérer toucher 30.000 € par an, un développeur confirmé ayant une connaissance poussée des langages de programmation peut obtenir une rémunération de 40.000 € par an. Sans parler des profils experts que les grandes entreprises n’hésitent pas à fidéliser avec un salaire à la hauteur de leurs compétences\r\n', 'Le métier peut s’exercer dans une agence web, une SSII (société de services en ingénierie informatique), en tant que salarié ou en indépendant, ou encore directement chez le client..\r\n', '', 4);
-INSERT INTO `Metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
+INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
 (19, 'Développeur Front', 'Le développeur front end se doit de :\r\n• Il réalise l’intégration web du site à partir d’une maquette (fournie par un web designer)\r\n• Il assure l’ergonomie visuelle et fonctionnelle du site\r\n• Il assure la portabilité et interopérabilité du site par la prise en compte des différentes plateformes et navigateurs\r\n• Il maîtrise du responsive design, de l’UX et des interfaces mobiles\r\n• Il utilise des outils collaboratifs\r\n• Il garantit l’accessibilité du site grâce au respect des normes W3C\r\n• Il participe à l’optimisation du SEO (référencement naturel) par l’intégration de la sémantique du web lors du développement (balises, mots clefs, optimisation d’URL', '- Le développeur Front-end doit faire preuve de créativité afin de créer une interface web conforme au cahier des charges. \r\n- Une excellente connaissance des spécificités de chaque navigateur est également indispensable de façon à ce que les sites fonctionnent de façon agréable et fluide quelle que soit la configuration. \r\n- La curiosité est également une qualité nécessaire pour rester à jour, les technologies évoluant très rapidement. \r\n', '- Il doit parfaitement maîtriser les normes émises par le W3C et posséder de solides compétences en HTML5 et CSS3 afin de rendre les interfaces accessibles. \r\n- La maîtrise du JavaScript avec des frameworks comme JQuery, AngularJS, Backbone.js ou ExtJS est un plus indéniable dans la mesure où il s’agit du langage le plus utilisé pour gérer les interactions avec l’utilisateur dans un navigateur.\r\n- Le développeur Front-end doit également être familier avec des logiciels de PAO et de traitement d’images.\r\n', 'Le développeur Front-end possède généralement un diplôme universitaire de type DUT ou BTS ou un diplôme de second cycle d’une école d’ingénieur ou d’informatique. Ces formations fournissent de bonnes bases pour ensuite travailler sur le terrain dans des équipes projets.\r\n', '- Junior : 25K€ par an\r\n- Senior : jusqu’à 50K€ pour les plus confirmés.\r\n\r\n', 'Les principaux employeurs des développeurs Front-end sont les agences web et les entreprises de services du numérique (ESN). Il peut aussi être freelance et être contacté par des entreprises ou domaines extérieurs. \r\n', '', 4),
 (20, 'Lead-développeur', 'Le métier de lead-développeur consiste à diriger, accompagner une équipe de développeurs et assurer le développement technique d’un projet. Ce manager pilote des équipes et encadre le projet grâce à ses connaissances techniques approfondies. Il doit aussi créer un programme suivant les besoins de l’entreprise, et en restant au plus près du cahier des charges élaboré par l’utilisateur\r\n\r\nMissions :\r\nLe programmeur Back-end se charge :\r\n• Il supervise le projet : contrôle de la bonne progression des développements, définition de la ligne directrice, des choix techniques, méthodes à utiliser\r\n• Il manage son équipe : accompagnement  des développeurs, résolution des problèmes, les faire monter en compétences et gérer les savoir-faire de son équipe technique\r\n• Il est le référent en matière de code, met en place de bonnes pratiques, et vérifie les actions menées par son équipe, Assure la qualité du code des programmes informatiques\r\n• Il se charge du codage de parties spécifiques du programme\r\n• Il s’assure de la qualité du code grâce à des outils d’analyse et du code automatique\r\n• Il garantit le respect des délais imposés\r\n• Il respecte le budget alloué\r\n• Il met en place des tests/de recettage\r\n• Il s’occupe de la veille technologique\r\n', '- souplesse\r\n- capacité d’analyse \r\n- sens relationnel\r\n- pédagogie\r\n- curiosité\r\n', '- compétences managériales et techniques\r\n- connaissances du langage informatique et de développement (JAVA, PHP, CSS, HTML…)\r\n- capacité de former ses équipes, encadrer et motiver les développeurs\r\n- capacité à animer et collaborer avec son équipe et à faire l’interface avec les interlocuteurs métiers\r\n- maîtrise de l’environnement de développement (IDE, Eclipse, ASP, J2EE…)\r\n- bonnes connaissances en CMS(Système de gestion de contenu)(Drupal, Wordpress…)\r\n- se tenir informé en permanence de toutes les modifications et changements éventuels\r\n- connaissances en méthodes et techniques de programmation\r\n- connaissances en outils de maîtrise totale d’un ou plusieurs systèmes d’exploitation informatique\r\n- Connaissance des outils de tests et du domaine fonctionnel\r\n', 'Le métier de lead développeur est accessible après un parcours en études supérieures et quelques années passées en tant que développeur. \r\n\r\nLes formations à privilégier sont les écoles d’ingénieur ou les diplômes en informatique amenant à un niveau bac + 3 ou bac + 5.\r\n\r\nCette profession est ouverte aux titulaires d’un diplôme de niveau bac+2 (BTS ou DUT informatique, Licence pro informatique, École d’ingénieurs informatique...) dans le secteur des services informatiques, des systèmes réseaux, ou même de l’informatique appliquée aux services techniques des industries. \r\n\r\nEx : Ecole d’ingénieur en informatique ou Bac+5 en informatique\r\n', 'Le salaire d’un lead développeur dépend de plusieurs critères : taille de l’entreprise/start-up, lieu, le nombre d’années d’expérience, l’ancienneté\r\nJunior: 55-65K€/an\r\nSenior: 65-75K€/an\r\nLa rémunération d’un lead développeur est comprise entre 50 000€ et 80 000€\r\n', 'Les studios de développement de jeux vidéo recrutent ces profils. Un lead-développeur peut aussi travailler en tant que freelance, et répondre à différents contrats ou propositions venant d’entreprises ou particuliers. \r\n\r\n\r\n', '', 4);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Projet`
+-- Structure de la table `projet`
 --
 
-CREATE TABLE `Projet` (
+CREATE TABLE `projet` (
   `idProjet` varchar(10) NOT NULL DEFAULT '',
   `nomProjet` varchar(200) DEFAULT NULL,
-  `nomAuteur` text,
-  `presentation` text,
+  `nomAuteur` text DEFAULT NULL,
+  `presentation` text DEFAULT NULL,
   `siteUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `Projet`
+-- Déchargement des données de la table `projet`
 --
 
-INSERT INTO `Projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `siteUrl`, `imageUrl`, `domaineId`) VALUES
+INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `siteUrl`, `imageUrl`, `domaineId`) VALUES
 ('1', 'Portfolio de Philippe Neveu', 'Raphaël Améaume', 'Ce portfolio très original a été élaboré par un développeur français, ancien étudiant en DUT SRC (2011-2013). ', 'https://philippeneveu.com/about', '', '4');
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `Contact`
+-- Index pour la table `contact`
 --
-ALTER TABLE `Contact`
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`idContact`);
 
 --
--- Index pour la table `Domaine`
+-- Index pour la table `domaine`
 --
-ALTER TABLE `Domaine`
+ALTER TABLE `domaine`
   ADD PRIMARY KEY (`idDomaine`);
 
 --
--- Index pour la table `Metier`
+-- Index pour la table `jeucm`
 --
-ALTER TABLE `Metier`
+ALTER TABLE `jeucm`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `metier`
+--
+ALTER TABLE `metier`
   ADD PRIMARY KEY (`idMetier`);
 
 --
--- Index pour la table `Projet`
+-- Index pour la table `projet`
 --
-ALTER TABLE `Projet`
+ALTER TABLE `projet`
   ADD PRIMARY KEY (`idProjet`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT pour la table `Contact`
+-- AUTO_INCREMENT pour la table `contact`
 --
-ALTER TABLE `Contact`
+ALTER TABLE `contact`
   MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `jeucm`
+--
+ALTER TABLE `jeucm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
