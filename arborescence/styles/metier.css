@@ -3,43 +3,29 @@ body {
     margin: 0;
     font-family: 'Lexend Exa', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
-.header {
-    background-color: blueviolet;
-    width: 100%;
-    height: 115px;
+
+header{
+    position: absolute;
+    height: 116px;
+    width: 100vw;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: white;
 }
+
 .image {
     background-image: url("../medias/background_metier.png") ;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 50vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-h1 {
-    color: white;
-    font-size: 5vw;
-}
-h3 {
-    font-size: 3vw;
-    margin-left: 4vw;
-}
-h2 {
-    text-align: center;
-    margin-top: 10vw;
-    font-size: 5vw;
-    color: #1DB250;
-}
-h3::first-letter {
-    font-size: 4.5vw;
-    color: #1DB250;
-}
-p {
-    font-size: 1rem;
-    margin-left: 4vw;
 }
 section {
     width: 100vw;
@@ -50,21 +36,42 @@ section {
     align-items: center;
 }
 .container {
-    margin-top: 100px;
+    margin-top: 20vh;
     width: 80vw;
     height: 40vh;
     display: flex;
     align-items: center;
 }
-
 .text_container {
     margin-left: 30px;
     width: fit-content;
     border-left: black 10px solid ;
 }
-.container img {
+section .container img {
     width: 88px;
     margin-left: 5vw;
+}
+h1 {
+    color: white;
+    font-size: 4vw;
+}
+h2 {
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 4vw;
+    color: #1DB250;
+}
+h3 {
+    font-size: 2vw;
+    margin-left: 4vw;
+}
+h3::first-letter {
+    font-size: 3.5vw;
+    color: #1DB250;
+}
+p {
+    font-size: 1rem;
+    margin-left: 4vw;
 }
 ::-moz-selection { 
     color: white;

@@ -25,18 +25,17 @@
 
             <section>
                 
-                <div> LE PROJET </div>
+                <a href="pages/projet.php">LE PROJET</a> 
                 
                 
-                <div> INTERVIEWS </div>
+                <a href="pages/interviews.php">INTERVIEWS</a> 
             
                 
-                <div> LE BUT MMI </div>
-                               
+                <a href="pages/but.php">LE BUT MMI</a>
+
                 
-                <div> CONTACT </div>
+                <a href="pages/contact.php">CONTACT</a>
                 
-        
                 
             </section>
         </div>

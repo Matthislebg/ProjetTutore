@@ -40,6 +40,11 @@
 
     // présentation > description
 
+    SELECT domaine.presentation, domaine.nomDomaine, metier.nomMetier, metier.domaineId FROM `domaine`, `metier` WHERE nomDomaine = 'audiovisuel' AND metier.domaineId = 1
+ORDER BY metier.domaineId
+
+SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = 'programmation'
+
     $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
     (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
