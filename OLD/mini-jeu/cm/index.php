@@ -40,7 +40,7 @@
 
         // mail($to,$subject,$message,$headers);
 
-        // header('Location: index.php?success');
+        header('Location: index.php?success');
     }
 ?>
 
