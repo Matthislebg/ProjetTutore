@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview</title>
+    <title>Interviews MMI - Find Your Way</title>    
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/interviews.css">
 </head>
 <body>
-    <header></header>
+    <header>
+        <?php 
+        $titre = "";
+        include 'header.php';
+        ?>
+    </header>
     <section>            
-        <div><p>UX DESIGNER</p></div>
-        <div><p>INTEGRATEUR WEB</p></div>  
-        <div><p>COMMUNITY MANAGER</p></div>       
-        <div><p>MOTION DESIGNER</p></div>
+        <div>            
+            <p>DESIGN</p>
+        </div>
+        <div><p>PROGRAMMATION</p></div>  
+        <div><p>COMMUNICATION</p></div>       
+        <div><p>AUDIOVISUEL</p></div>
     </section>
 </body>
 </html>

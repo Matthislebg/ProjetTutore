@@ -6,8 +6,7 @@ body {
 }
 header {
     width: 100vw;
-    height: 10vh;
-    background-color: black;
+    height: 116px;
 }
 
 section {
@@ -15,6 +14,7 @@ section {
     width: 100vw;
     height: 90vh;
 }
+
 section div:nth-child(n) {
     width: 45vw;
     height: 32vh;
@@ -31,28 +31,32 @@ p {
     margin-left: 30px;
 }
 section div:nth-child(1){
-    background-image: url("../medias/lucien.png");
+    background: no-repeat top url("../medias/RL.jpg");
+    background-size: cover;
     left: 3vw;
     top: 5vw;
     border-radius: 0% 2vw 0% 2vw;
 }
 
 section div:nth-child(2){
-    background-image: url("../medias/lucien.png");
+    background: no-repeat top url("../medias/GC.jpg");
+    background-size: cover;
     right: 3vw;
     top: 5vw;
     border-radius: 2vw 0% 2vw 0%;
 }
 
 section div:nth-child(3){
-    background-image: url("../medias/lucien.png");
+    background: no-repeat top url("../medias/CH.jpg");
+    background-size: cover;
     left: 3vw;
     bottom: 5vw;
     border-radius: 2vw 0% 2vw 0%;
 }
 
 section div:nth-child(4){
-    background-image: url("../medias/lucien.png");
+    background: no-repeat top url("../medias/AT.jpg");
+    background-size: cover;
     right: 3vw;
     bottom: 5vw;
     border-radius: 0% 2vw 0% 2vw;
