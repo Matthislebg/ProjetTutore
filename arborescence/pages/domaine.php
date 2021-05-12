@@ -63,13 +63,9 @@
                 echo $presentation;
                 ?>
             </p>
-            <?php 
+            <img src="<?php 
                 echo $image;
-            ?>
-
-            <!-- en attendant de mettre dans la bdd -->
-            <img src="" alt="illustration"> 
-
+            ?>" alt="illustration">
         </div>
     </section>
     
@@ -137,14 +133,12 @@
                 <!-- taille à régler soit ici soit en css (en supprimant la ligne ci dessous)-->
                 <iframe 
                 width="100%" height="100%" 
-                src="
-                <?php 
-                    // echo $video;
-                ?>
+                src="<?php 
+
+                    echo $video;
+
+                ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 
-                https://www.youtube.com/embed/k_ks5g1ejuI
-                " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <!-- URL ICI en attendant de mettre dans la bdd -->
 
             </div>
         </div>
