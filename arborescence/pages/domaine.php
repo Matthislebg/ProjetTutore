@@ -50,7 +50,6 @@
 </head>
 <body>
     <header><?php
-        // upcase ?
         include 'header.php';
     ?></header>
                     
