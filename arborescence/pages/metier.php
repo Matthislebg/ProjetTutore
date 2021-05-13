@@ -41,7 +41,7 @@
     <div class="image">
         <h1><?php 
             echo $metier;
-        ?></h1>
+        ?></h1> 
     </div>
     <!-- <h2>Développeur front</h2> -->
     <section>
@@ -50,11 +50,9 @@
             <div class="bar_1"></div>
             <div class="text_container">
                 <h3>PRÉSENTATION</h3>
-                <p>
                     <?php 
                         echo $presentation;
                     ?>
-                </p>
             </div>
         </div>
         <div class="container">
