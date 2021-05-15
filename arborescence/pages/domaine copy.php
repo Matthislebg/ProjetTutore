@@ -61,21 +61,16 @@
 })
 </script>    
 <script src="../scripts/jquery.fsscroll.js"></script>
-    <script src="../scripts/domaine.js"></script>    
+    <script src=".../scripts/domaine.js"></script>    
 </head>
-
-
 <body>
-    <div class="container" data-fs-scroll>
-        <div class="sections">
-        
-                    
-    <div class="section section0">
-        <header><?php
+    <header><?php
         include 'header.php';
     ?></header>
+                    
+    <section>
         <h1>PRÉSENTATION</h1>
-        <div class="containers">
+        <div class="container">
             <p>
             <!-- PRESENTATION    -->
                 <?php 
@@ -86,11 +81,11 @@
                 echo $image;
             ?>" alt="illustration">
         </div>
-</div>
+    </section>
     
-    <div class="section section1">
+    <section>
         <h1>LES MÉTIERS</h1>
-        <div class="containers">
+        <div class="container">
             <div class="ligne1">
                 <a href="metier.php<?php 
                         echo "?page=" . $idMetier[0];
@@ -124,9 +119,9 @@
                 </a>
             </div>
         </div>
-</div>
+    </section>
 
-    <div class="section section2">
+    <section>
         <h1>INTERVIEW</h1>
         <div class="interview">
             <div class="description">
@@ -161,22 +156,22 @@
 
             </div>
         </div>
-</div>
-    <div class="section section3">
+    </section>
+    <section>
         <h1>MINI-JEU</h1>
         <div class="jeu">
             <?php 
                 include 'jeu_'. $domaine . '.php';
             ?>
         </div>
-</div>
+    </section>
 
-    <div class="section section4">
+    <section>
         <h1>PROJET</h1>
         <P>...</P>
+    </section>
     <footer><?php 
         include 'footer.php';
     ?></footer>
-    </div>
 </body>
 </html>
