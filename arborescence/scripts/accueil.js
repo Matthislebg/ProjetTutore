@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 
 
-    $(document).mousemove(function(e){
+    $(document).mousemove(function(){
 
         mouseJustMoved=true;
         

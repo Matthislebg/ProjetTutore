@@ -13,7 +13,7 @@ details[open] {
 }
 
 summary {
-	padding: 1rem;
+	padding: 0.5rem;
 	cursor: pointer;
 	border-radius: 5px;
 	background-color: #ddd;
@@ -70,12 +70,7 @@ li:last-child {
 	border-bottom: none;
 }
 
-summary.radios {
-	counter-reset: radios;
-}
-
 input[type=radio] {
-	counter-increment: radios;
 	appearance: none;
 	display: none;
 }
@@ -92,15 +87,15 @@ input[type=radio]:after {
 	font-size: 1rem;
 }
 
-ul.list {
-	counter-reset: labels;
-}
-
 label {
 	width: 100%;
 	display: block;
 	cursor: pointer;
 }
+
+
+
+
 
 .code>div>svg{
 	display: flex;
