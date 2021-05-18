@@ -2,15 +2,11 @@
 body {
     margin: 0;
     font-family: 'Lexend Exa', sans-serif;
-    position: relative;
-    height: 100%;
     overflow: hidden;
+    position: relative;
+    height: 100vh;
 }
-.containers, .sections, section {
-      position:relative;
-      height:100vh;
-    }
-    
+
 a {
     text-decoration: none;
 }
@@ -29,9 +25,21 @@ header{
     margin: 0px;
     box-sizing: border-box;
 }
-
+.section{
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+}
+.sections, .container, .section {
+    position: relative;
+    height: 100vh;
+}
 /* titles */
-section h1{
+.section h1{
     /* margin-left: 20vw; */
     margin-left: auto;
     margin-right: auto;
@@ -45,61 +53,50 @@ section h1{
     margin-bottom: 8vh;
 }
 
-section h1::first-letter{
+.section h1::first-letter{
     color: #1DB250;
 }
 
 /* sections - general properties */
-section{
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    position: relative;
-    box-sizing: border-box;
-}
-
 @media (max-width: 1600px){
-    section{
+    .section{
         width: 90vw;
     }
 }
 
 @media (max-width: 1100px){
-    section{
+    .section{
         width: 97vw;
     }
 }
 
-section .container p{    
+.section .containers p{    
     padding-right: 30px;
     margin: 0px;
     max-width: 40%; 
 }
 
-section img{
+p > img{
     background-color: gray;
     width: 40%;
     height: 350px;
 }
 
-section .container{
+.section .containers{
     height: 60%;
 }
 
 /* PRESENTATION */
 
-section:first-of-type h1:first-of-type{
+.section:first-of-type h1:first-of-type{
     margin-top: 155px;
 }
 
-section:first-of-type{
+.section:first-of-type{
     justify-content: flex-start;
 }
 
-section:first-of-type .container{
+.section:first-of-type .container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +105,7 @@ section:first-of-type .container{
 
 /* METIERS */
 
-section:nth-of-type(2) .container{
+.section:nth-of-type(2) .container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;

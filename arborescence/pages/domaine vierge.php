@@ -55,7 +55,7 @@
     index: 1,
     selectors: {
     sections:'.sections',
-    section:'.section',
+    section:'section',
     page:'.page',
     active:'.active' }
 })
