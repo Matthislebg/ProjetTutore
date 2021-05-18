@@ -8,27 +8,35 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
-.top {
+.top{
   width: 100%;
   height: fit-content;
   position: absolute;
   top: 10%;  /* A MODIFIER POUR LA HAUTEUR A LAISSER POUR LE HEADER*/
+  pointer-events: none;
 }
 .top>h1{
   margin-top: 5vh;
   text-align: center;
   font-family: 'Lexend Exa', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .top>h1:first-letter{
   color: #D4499A;
 }
-.top>div:nth-child(2){
+.top>h1::after{
+  content: " ";
+  position: absolute;
   height: 5px;
   width: 35rem;
   background-color: black;
-  margin:auto;
+  bottom: -25%;
 }
 
 .top>p{
@@ -41,6 +49,8 @@ canvas {
   display: block;
   cursor: default;
   background-color: pink;
+  /* height: 100%;
+  width: 100%; */
 }
 
 .toolbar {
@@ -57,6 +67,7 @@ canvas {
   flex-wrap: wrap;
   justify-content: center;
   transition: top 0.5s;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 320px) {
@@ -145,6 +156,9 @@ canvas {
 input[type=radio] {
   display: none;
 }
+input, button{
+  pointer-events: all;
+}
 
 input[type=radio]:checked + .radio__colors:before {
   position: absolute;
@@ -160,7 +174,7 @@ input[type=radio]:checked + .radio__colors:before {
   background-color: #222;
 }
 
-.radio__colors {
+.radio__colors{
   position: relative;
   display: inline-block;
   width: 30px;
@@ -168,7 +182,6 @@ input[type=radio]:checked + .radio__colors:before {
   margin-right: 5px;
   border-radius: 50%;
   background-color: #111;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 2px rgba(0, 0, 0, 0.5) inset;
 }
 
 .radio__colors:nth-child(2) {
@@ -206,12 +219,15 @@ input[type=radio]:checked + .radio__colors:before {
 }
 
 .btn__clear {
-  border-color: #ff5b00;
-  background: #ff5b00;
-}
-
-.btn__clear  {
+  border-radius: 10px;
   font-family: "Ubuntu", sans-serif;
   color: #eee;
+  background-color: #111;
   outline: none;
+  border: 2px solid white;
+}
+
+.btn__clear:active{
+  color: red;
+  border: 10px solid rgba(255, 255, 255, 0);
 }

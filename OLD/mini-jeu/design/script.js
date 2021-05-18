@@ -26,7 +26,13 @@ var draggin = false;
 var ctx = canvas.getContext('2d');
 // Initiating canvas
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight/2;
+canvas.height = window.innerHeight;
+
+$(window).resize(function(){
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
 ctx.lineWidth = radius * 2;
 ctx.strokeStyle = '#111111';
 ctx.fillStyle = '#111111';
