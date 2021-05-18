@@ -2,15 +2,12 @@
 body {
     margin: 0;
     font-family: 'Lexend Exa', sans-serif;
+    overflow-x: hidden;
     position: relative;
-    height: 100%;
-    overflow: hidden;
 }
-.containers, .sections, section {
-      position:relative;
-      height:100vh;
-    }
-    
+.section {
+    height: 100vh;
+}
 a {
     text-decoration: none;
 }
@@ -52,7 +49,7 @@ section h1::first-letter{
 /* sections - general properties */
 section{
     height: 100vh;
-    width: 100vw;
+    width: 60vw;
     margin: auto;
     display: flex;
     justify-content: flex-start;
