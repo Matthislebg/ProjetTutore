@@ -6,24 +6,23 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
   <div class="top">
   <h1>Devenez notre Graphiste</h1>
-  <div></div>
   <p>Laissez votre créativité prendre le contrôle</p>
   </div>
 
 <div id="toolBar" class="toolbar">
   <div id="radiusTool" class="radius__tool">
-    <span>RADIUS</span>
+    <span>Épaisseur</span>
     <input type="range" name="radiusPoint" id="radiusPoint" class="radius__point" min="1" max="20" step="1" value="10">
     <span id="radTextRaduis">10</span>
   </div>
   <div id="radiusTool" class="radius__tool">
-    <span>BLUR</span>
+    <span>Flou</span>
     <input type="range" name="radiusBlur" id="radiusBlur" class="radius__point" min="0" max="20" step="1" value="0">
     <span id="radTextBlur">0</span>
   </div>
@@ -44,7 +43,7 @@
     <label for="black" class="radio__colors"></label>
   </div>
   <div class="buttons__canvas">
-    <button type="button" id="clearCanvas" class="btn__clear">CLEAR</button>
+    <button type="button" id="clearCanvas" class="btn__clear">Effacer</button>
   </div>
 </div>
 <canvas id="canvas">
