@@ -45,35 +45,42 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
-    <link rel="stylesheet" href="../styles/jquery.fsscroll.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-    $('.container').fsScroll({
-    loop:true,
-    keyboard:true,
-    duration: 1000,
-    timing:'linear',
-    index: 1,
-    selectors: {
-    container:'.containers',
-    sections:'.sections',
-    section:'section',
-    page:'.page',
-    active:'.active' }
-})
-</script>    
-<script src="../scripts/jquery.fsscroll.js"></script>
+    $(function() {
+          $.scrollify({
+            section : ".section",
+          });
+        });
+        .scrollify({
+    section : "section",
+    sectionName : "section-name",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1100,
+    offset : 0,
+    scrollbars: true,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
+    before:function() {},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {}
+  });
+    </script>    
+<script src="../scripts/jquery.scrollify.js"></script>
     <script src=".../scripts/domaine.js"></script>    
 </head>
 <body>
-        <div class="containers" data-fs-scroll>
-        <div class="sections">
-            <header><?php
+    
+<div class="section">
+    <header><?php
         include 'header.php';
     ?></header>
-    <section>
-    
                     
-    
+    <section>
         <h1>PRÉSENTATION</h1>
         <div class="container">
             <p>
@@ -87,7 +94,9 @@
             ?>" alt="illustration">
         </div>
     </section>
-    
+    </div>
+   
+    <div class="section"> 
     <section>
         <h1>LES MÉTIERS</h1>
         <div class="container">
@@ -125,7 +134,9 @@
             </div>
         </div>
     </section>
-
+    </div>
+   
+    <div class="section">
     <section>
         <h1>INTERVIEW</h1>
         <div class="interview">
@@ -162,6 +173,9 @@
             </div>
         </div>
     </section>
+    </div>
+
+    <div class="section">
     <section>
         <h1>MINI-JEU</h1>
         <div class="jeu">
@@ -174,12 +188,10 @@
     <section>
         <h1>PROJET</h1>
         <P>...</P>
+    </section>
     <footer><?php 
         include 'footer.php';
     ?></footer>
-    </section>
-    
     </div>
-</div>
 </body>
 </html>

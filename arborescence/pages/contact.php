@@ -11,7 +11,7 @@
     <header></header>
 
     <h1>Contact</h1>
-    <div class="container">
+    <div class="container_2">
     <form action="lienphpjecrois" method="get/post">
       <div>
         <label for="name">nom :</label>
