@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap');
+
 body {
     margin: 0;
     background-color: #EEB81D;
@@ -6,13 +7,16 @@ body {
     overflow-x: hidden;
     text-align: center;
 }
+
 h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     color: white;
 }
+
 div {
-    margin-top: 5vh;
+    margin-top: 3vh;
 }
+
 .container_2 {
     margin-top: 0;
     width: 100%;
@@ -20,23 +24,28 @@ div {
     align-items: center;
     justify-content: center;
 }
+
 form {
     text-align: right;
 }
+
 label {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
-    margin-right: 50px;
+    margin-right: 2vw;
 }
+
 input {
-    width: 30vw;
-    height: 5vh;
+    width: 25vw;
+    height: 4vh;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: 'Lexend Exa', sans-serif;
+    padding-left: 1vw;
 }
+
 /* input:focus {
     background: #0B83C6;
     color: white;
@@ -45,20 +54,24 @@ fieldset {
     display: none;
     border: 0px;
 }
+
 textarea {
+    padding-left: 1vw;
     vertical-align: top;
-    width: 30vw;
-    height: 30vh;
+    width: 25vw;
+    height: 20vh;
     border: none;
     border-radius: 15px;
     outline: none;
     font-size: 1.2rem;
     font-family: 'Lexend Exa', sans-serif;
 }
+
 textarea::placeholder {
     font-size: 1.2rem;
     font-family: 'Lexend Exa', sans-serif;
 }
+
 /* textarea:focus {
     background: #0B83C6;
     color: white;
@@ -67,13 +80,14 @@ button {
     background-color: #BA8D0E;
     border: none;
     font-family: 'Lexend Exa', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     padding: 10px 20px;
     border-radius: 15px;
     transition: 1s;
     text-align: center;
 }
+
 button:hover {
     background-color: white;
     color: black;

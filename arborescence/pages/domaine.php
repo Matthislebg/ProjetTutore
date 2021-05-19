@@ -1,7 +1,5 @@
 <?php
-    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
-    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-
+ include "../connexionPDO.php";
     // REQUETE 1
     if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
         $domaine = $_GET['page'];
@@ -10,7 +8,7 @@
     }               
     
     $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
-    $req = $link -> prepare($sql);
+    $req = $db -> prepare($sql);
     $req -> execute();
     while ($data = $req -> fetch()){
         $titre = $data['nomDomaine'];
@@ -23,7 +21,7 @@
 
     // REQUETE 2 : noms de métiers
     $sql = "SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = '" . $domaine . "'";
-    $req = $link -> prepare($sql);
+    $req = $db -> prepare($sql);
     $req -> execute();
     $i = 0;
     while ($data = $req -> fetch()){
