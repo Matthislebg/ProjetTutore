@@ -1,0 +1,56 @@
+.audiovisuel{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.audiovisuel>h1{
+    margin-top: 5vh;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+.audiovisuel>h1:first-letter{
+    color: #EEB81D;
+}
+
+.audiovisuel>div{
+	position: relative;
+}
+
+.audiovisuel>div>p{
+    font-size: 1rem;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+.audiovisuel>div>p::before{
+	content: " ";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	height: 5px;
+	width: 35rem;
+	background-color: black;
+	transform: translateX(-50%);
+}
+
+.jeuAudiovisuel{
+	height: 37.5vw;
+	width: 85vw;
+	border: 5px solid rgb(20,20,20);
+	border-radius: 0 0 25px 25px;
+	overflow: hidden;
+	background-color: #eeb61d0F;
+}
+.nomLogi{
+	width: 100%;
+    font-family: 'Lexend Exa', sans-serif;
+	font-size: 1rem;
+	background: rgb(20,20,20);
+	color: white;
+	margin: 0;
+	padding: 0.5vw;
+}

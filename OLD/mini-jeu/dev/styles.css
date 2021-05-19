@@ -93,10 +93,6 @@ label {
 	cursor: pointer;
 }
 
-
-
-
-
 .code>div>svg{
 	display: flex;
 	width: 430px;
@@ -117,7 +113,7 @@ label {
 
 .code>div>h2{
     font-family: 'Lexend Exa', sans-serif;
-	color: #EEB81D;
+	color: #1DB250;
 	transition: 0.2s linear;
 	font-size: 1.5rem;
 }
@@ -156,7 +152,7 @@ label {
 }
 
 .dev>h1:first-letter{
-    color: rgb(238,184,29);
+    color: #1DB250;
 }
 
 .dev>div:nth-child(2){

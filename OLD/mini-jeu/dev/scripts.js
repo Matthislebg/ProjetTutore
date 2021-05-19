@@ -6,7 +6,7 @@ $(document).on("ready",function(){
 
     $("body").on("change","input[type='radio']", function(){
 
-        $(".outils>div").fadeOut();
+        $(".outils>div").hide();
 
         id=$(this).attr('id');
 

@@ -21,25 +21,29 @@ body {
   margin-top: 5vh;
   text-align: center;
   font-family: 'Lexend Exa', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.top>h1::first-letter{
+  color: #D4499A;
+}
+
+.top>div{
   position: relative;
 }
 
-.top>h1:first-letter{
-  color: #D4499A;
-}
-.top>h1::after{
+.top>div>p::before{
   content: " ";
   position: absolute;
+  bottom: 150%;
+  left: 50%;
   height: 5px;
   width: 35rem;
   background-color: black;
-  bottom: -25%;
+  transform: translateX(-50%);
 }
 
-.top>p{
+
+.top>div>p{
   font-size: 1rem;
   margin-bottom: 50px;
   text-align: center;
@@ -156,7 +160,7 @@ canvas {
 input[type=radio] {
   display: none;
 }
-input, button{
+input, button, .select__colors{
   pointer-events: all;
 }
 
