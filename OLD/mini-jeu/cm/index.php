@@ -27,18 +27,17 @@
 
 
         // Envoie de mail
+        $to  = 'sb.lucien77144@gmail.com, mmifyw@gmail.com, celine.rexharrison@gmail.com, matthis.rousselle@gmail.com, marin.bouanchaud@gmail.com';
+        $subject = 'Nouveau message sur le jeu du CM !';
 
-        // $to  = 'sb.lucien77144@gmail.com';
-        // $subject = 'Nouveau message sur le jeu du CM !';
+        $message = 'Nouveau message sur le jeu du CM du projet tutoré ! Rendez-vous sur la page admin pour le consulter et/ou le valider !';
 
-        // $message = 'Nouveau message sur le jeu du CM du projet tutoré ! Rendez-vous sur la page admin pour le consulter et/ou le valider !';
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        // $headers = "MIME-Version: 1.0" . "\r\n";
-        // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: jeuCM <CMMMMIFYW@etudiant.u-pem.fr>' . "\r\n";
 
-        // $headers .= 'From: jeuCM <CMMMMIFYW@etudiant.u-pem.fr>' . "\r\n";
-
-        // mail($to,$subject,$message,$headers);
+        mail($to,$subject,$message,$headers);
 
         header('Location: index.php?success');
     }
