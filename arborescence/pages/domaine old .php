@@ -1,7 +1,5 @@
 <?php
-    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
-    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-
+ include "../connexionPDO.php";
     // REQUETE 1
     if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
         $domaine = $_GET['page'];
@@ -10,7 +8,7 @@
     }               
     
     $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
-    $req = $link -> prepare($sql);
+    $req = $db -> prepare($sql);
     $req -> execute();
     while ($data = $req -> fetch()){
         $titre = $data['nomDomaine'];
@@ -23,7 +21,7 @@
 
     // REQUETE 2 : noms de métiers
     $sql = "SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = '" . $domaine . "'";
-    $req = $link -> prepare($sql);
+    $req = $db -> prepare($sql);
     $req -> execute();
     $i = 0;
     while ($data = $req -> fetch()){
@@ -45,25 +43,12 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
-    <link rel="stylesheet" href="../styles/jquery.fsscroll.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-    $('.container').fsScroll({
-    loop:true,
-    keyboard:true,
-    duration: 1000,
-    timing:'linear',
-    index: 1,
-    selectors: {
-    sections:'.sections',
-    section:'.section',
-    page:'.page',
-    active:'.active' }
-})
-</script>    
-<script src="../scripts/jquery.fsscroll.js"></script>
-    <script src=".../scripts/domaine.js"></script>    
+    </script>    
+    <script src="../scripts/domaine.js"></script>    
 </head>
 <body>
+    
     <header><?php
         include 'header.php';
     ?></header>
@@ -82,7 +67,9 @@
             ?>" alt="illustration">
         </div>
     </section>
-    
+    </div>
+   
+    <div class="section"> 
     <section>
         <h1>LES MÉTIERS</h1>
         <div class="container">
@@ -120,7 +107,9 @@
             </div>
         </div>
     </section>
-
+    </div>
+   
+    <div class="section">
     <section>
         <h1>INTERVIEW</h1>
         <div class="interview">
@@ -157,6 +146,9 @@
             </div>
         </div>
     </section>
+    </div>
+
+    <div class="section">
     <section>
         <h1>MINI-JEU</h1>
         <div class="jeu">
@@ -169,9 +161,10 @@
     <section>
         <h1>PROJET</h1>
         <P>...</P>
-    </section>
-    <footer><?php 
+        <footer><?php 
         include 'footer.php';
     ?></footer>
+    </section>
+    
 </body>
 </html>
