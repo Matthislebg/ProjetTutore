@@ -1,9 +1,9 @@
 <div class="headerInclude">
     <div class="container">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <a href="../pages/domaine.php?page=programmation"><p>PROGRAMMATION</p></a>
+        <a href="../pages/domaine.php?page=design"><p>DESIGN</p></a>
+        <a href="../pages/domaine.php?page=communication"><p>COMMUNICATION</p></a>
+        <a href="../pages/domaine.php?page=audiovisuel"><p>AUDIOVISUEL</p></a>
     </div>
     <div class="container_2">
         <a href="../index.php"><img src="../medias/logo.png"></a>
