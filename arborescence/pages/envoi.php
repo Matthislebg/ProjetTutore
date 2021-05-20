@@ -24,16 +24,16 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         'sujet' => $_POST["objet"], 
                         'message' => $_POST["message"]));
 
-                        $to  = 'sb.lucien77144@gmail.com, mmifyw@gmail.com, celine.rexharrison@gmail.com, matthis.rousselle@gmail.com, marin.bouanchaud@gmail.com';
+                        $to  = 'lboiss01@etud-upem.fr, mmifyw@gmail.com, celine.rexharrison@gmail.com, mrouss23@etud.u-pem.fr, mbouanch@etud.u-pem.fr';
                         $subject = 'Nouveau contact sur le CV numérique !';
             
                         $message = '
                         <html>
                         <head>
-                        <title>Nouveau contact</title>
+                        <title>Nouveau messsage </title>
                         </head>
                         <body>
-                        <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau contact reçu, il s\'agit de '.$_POST['nom'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
+                        <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau message reçu, il s\'agit de '.$_POST['nom'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
                         <p> '.$_POST['msg'].' </p>
                         </body>
                         </html>
