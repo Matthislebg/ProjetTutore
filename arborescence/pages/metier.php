@@ -1,11 +1,10 @@
 <?php
-    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
-    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));          
+    include "../connexionPDO.php";          
     
     $idMetier = $_GET['page'];
     
     $sql = "SELECT * FROM metier WHERE idMetier = '" . $idMetier . "'";
-    $req = $link -> prepare($sql);
+    $req = $db -> prepare($sql);
     $req -> execute();
     while ($data = $req -> fetch()){
         $metier = $data['nomMetier'];
