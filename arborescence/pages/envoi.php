@@ -23,6 +23,30 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         'codePostal' => $_POST["codepostal"], 
                         'sujet' => $_POST["objet"], 
                         'message' => $_POST["message"]));
+
+                        $to  = 'sb.lucien77144@gmail.com, mmifyw@gmail.com, celine.rexharrison@gmail.com, matthis.rousselle@gmail.com, marin.bouanchaud@gmail.com';
+                        $subject = 'Nouveau contact sur le CV numérique !';
+            
+                        $message = '
+                        <html>
+                        <head>
+                        <title>Nouveau contact</title>
+                        </head>
+                        <body>
+                        <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau contact reçu, il s\'agit de '.$_POST['nom'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
+                        <p> '.$_POST['msg'].' </p>
+                        </body>
+                        </html>
+                        ';
+            
+                        $headers = "MIME-Version: 1.0" . "\r\n";
+                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+            
+                        $headers .= 'From: CV <cvlucien@etudiant.u-pem.fr>' . "\r\n";
+            
+                        mail($to,$subject,$message,$headers);
+
+
   // $req = null;
   // On affiche l'adresse inscrite en évitant une injection de code JS
   echo "<h1>Merci pour votre message !</h1>";
