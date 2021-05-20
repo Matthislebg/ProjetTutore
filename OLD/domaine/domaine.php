@@ -102,9 +102,8 @@
                         ?></div>
                 </a>
             </div>
-            <div class="ligne2"></div>
-            <div class="ligne3">
-            <a href="metier.php<?php 
+            <div class="ligne2">
+                <a href="metier.php<?php 
                         echo "?page=" . $idMetier[2];
                     ?>">
                     <div class="metierItem"><?php 
@@ -118,7 +117,7 @@
                             echo $metier[3];
                     ?></div>
                 </a>
-        </div>  
+            </div>
         </div>
     </section>
 

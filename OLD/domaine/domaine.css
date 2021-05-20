@@ -28,7 +28,6 @@ header{
 /* titles */
 section h1{
     /* margin-left: 20vw; */
-
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
@@ -121,7 +120,7 @@ section:nth-of-type(2) .container{
     align-items: center;
     text-align: center;
     color: white;
-    font-size: 1.7rem;
+    font-size: 2rem;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -129,7 +128,7 @@ section:nth-of-type(2) .container{
     transform: scale(1.1);
 }
 
-.ligne1, .ligne2, .ligne3{
+.ligne1, .ligne2{
     display: flex;
     justify-content: space-around;
 }
@@ -138,7 +137,7 @@ section:nth-of-type(2) .container{
 
 .video{
     /* background-color: gray; */
-    width: 50%;
+    width: 70%;
     height: 100%;
 }
 
@@ -149,12 +148,11 @@ section:nth-of-type(2) .container{
 .interview .description{
     width: 30%;
     padding-right: 20px;
-    text-align: justify;
 }
 
 .interview{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     height: 50%;
 }

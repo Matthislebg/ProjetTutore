@@ -48,6 +48,9 @@ section .container img {
     width: 88px;
     margin-left: 5vw;
 }
+footer {
+    margin-top: 15vh;
+}
 h1 {
     color: white;
     font-size: 4vw;
