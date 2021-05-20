@@ -7,6 +7,7 @@ html, body {
 }
 
 header{
+    position: fixed;
     margin-top: 0px;
     width: 100vw;
 }
@@ -32,11 +33,11 @@ section {
 }
  section .container {
     width: 80vw;
-    height: 40vh;
+    height: fit-content;
     display: flex;
     align-items: center;
-    margin-bottom: 20vh;
-    margin-top: 20vh;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
 }
 .text_container {
     margin-left: 30px;
@@ -49,7 +50,7 @@ section .container img {
     margin-left: 5vw;
 }
 footer {
-    margin-top: 15vh;
+    margin-top: 5vh;
 }
 h1 {
     color: white;

@@ -16,13 +16,7 @@ footer{
 }
 
 header{
-    position: absolute;
-    height: 116px;
-    width: 100vw;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+    margin-top: 0px;
 }
 
 /* titles */
@@ -73,6 +67,7 @@ section .container p{
     padding-right: 30px;
     margin: 0px;
     max-width: 40%; 
+    text-align: justify;
 }
 
 section img{
@@ -84,7 +79,11 @@ section img{
 section .container{
     height: 60%;
 }
-
+section:nth-child(1) .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 /* PRESENTATION */
 
 section:first-of-type h1:first-of-type{
