@@ -1,12 +1,14 @@
 <?php
-    include "../connexionPDO.php";  
+    
+    include "../connexionPDO.php";
 
     // REQUETE 1
     if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
         $domaine = $_GET['page'];
-    } else {
+
+      } else {
         header("Location: erreur.php");
-    }               
+    } 
     
     $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
     $req = $db -> prepare($sql);
