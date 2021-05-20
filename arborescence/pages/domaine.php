@@ -1,5 +1,7 @@
 <?php
- include "../connexionPDO.php";
+    $link = new PDO('mysql:host=localhost;dbname=MMIFYW', 'root', '', array
+    (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
     // REQUETE 1
     if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
         $domaine = $_GET['page'];
@@ -8,7 +10,7 @@
     }               
     
     $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
-    $req = $db -> prepare($sql);
+    $req = $link -> prepare($sql);
     $req -> execute();
     while ($data = $req -> fetch()){
         $titre = $data['nomDomaine'];
@@ -21,7 +23,7 @@
 
     // REQUETE 2 : noms de métiers
     $sql = "SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId WHERE nomDomaine = '" . $domaine . "'";
-    $req = $db -> prepare($sql);
+    $req = $link -> prepare($sql);
     $req -> execute();
     $i = 0;
     while ($data = $req -> fetch()){
@@ -43,44 +45,37 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
+    <link rel="stylesheet" href="../styles/jquery.fsscroll.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-    $(function() {
-          $.scrollify({
-            section : ".section",
-          });
-        });
-        .scrollify({
-    section : "section",
-    sectionName : "section-name",
-    interstitialSection : "",
-    easing: "easeOutExpo",
-    scrollSpeed: 1100,
-    offset : 0,
-    scrollbars: true,
-    standardScrollElements: "",
-    setHeights: true,
-    overflowScroll: true,
-    updateHash: true,
-    touchScroll:true,
-    before:function() {},
-    after:function() {},
-    afterResize:function() {},
-    afterRender:function() {}
-  });
-    </script>    
-<script src="../scripts/jquery.scrollify.js"></script>
-    <script src=".../scripts/domaine.js"></script>    
+    $('.container').fsScroll({
+    loop:true,
+    keyboard:true,
+    duration: 1000,
+    timing:'linear',
+    index: 1,
+    selectors: {
+    sections:'.sections',
+    section:'.section',
+    page:'.page',
+    active:'.active' }
+})
+</script>    
+<script src="../scripts/jquery.fsscroll.js"></script>
+    <script src="../scripts/domaine.js"></script>    
 </head>
+
+
 <body>
-    
-<div class="section">
-    <header><?php
+    <div class="container" data-fs-scroll>
+        <div class="sections">
+        
+                    
+    <div class="section section0">
+        <header><?php
         include 'header.php';
     ?></header>
-                    
-    <section>
         <h1>PRÉSENTATION</h1>
-        <div class="container">
+        <div class="containers">
             <p>
             <!-- PRESENTATION    -->
                 <?php 
@@ -91,13 +86,11 @@
                 echo $image;
             ?>" alt="illustration">
         </div>
-    </section>
-    </div>
-   
-    <div class="section"> 
-    <section>
+</div>
+    
+    <div class="section section1">
         <h1>LES MÉTIERS</h1>
-        <div class="container">
+        <div class="containers">
             <div class="ligne1">
                 <a href="metier.php<?php 
                         echo "?page=" . $idMetier[0];
@@ -131,11 +124,9 @@
                 </a>
             </div>
         </div>
-    </section>
-    </div>
-   
-    <div class="section">
-    <section>
+</div>
+
+    <div class="section section2">
         <h1>INTERVIEW</h1>
         <div class="interview">
             <div class="description">
@@ -170,23 +161,19 @@
 
             </div>
         </div>
-    </section>
-    </div>
-
-    <div class="section">
-    <section>
+</div>
+    <div class="section section3">
         <h1>MINI-JEU</h1>
         <div class="jeu">
             <?php 
                 include 'jeu_'. $domaine . '.php';
             ?>
         </div>
-    </section>
+</div>
 
-    <section>
+    <div class="section section4">
         <h1>PROJET</h1>
         <P>...</P>
-    </section>
     <footer><?php 
         include 'footer.php';
     ?></footer>
