@@ -19,7 +19,7 @@
 
         <div class="jeuCm">
             <div class="headAdmin">
-                <img class="logotop" src="images/logo.svg">
+                <a href="index.php"><img class="logotop" src="images/logo.svg"></a>
             </div>
 
             <div class="portal">

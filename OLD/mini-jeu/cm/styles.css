@@ -20,7 +20,7 @@ body, html{
 
 .cm>p{
     font-size: 1rem;
-    margin-bottom: 50px;
+    margin-bottom: 2vw;
     font-family: 'Lexend Exa', sans-serif;
 }
 
@@ -211,19 +211,23 @@ body, html{
     font-size: 1rem;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .certif{
     display: flex;
     align-items: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .certif::after{
     content: "Ce message a été certifié";
+    background-color: white;
+    white-space: nowrap;
     font-size: 0.75rem;
     position: absolute;
-    left: 45%;
-    top: 32.5%;
+    left: 0;
+    top: 100%;
     opacity: 0;
     transition: 0.25s ease-in-out;
 }
@@ -460,4 +464,29 @@ input:checked + .slider:before {
     color: red;
     font-family: 'Lexend Exa', sans-serif;
     text-align: center;
+}
+
+svg>path{
+    transition: 0.25s ease-in-out;
+}
+
+.admin{
+    margin-top: 1vw;
+    padding: 0.5vw;
+    border-radius: 20px;
+    background-color: #008FC7;
+    color: white;
+    text-decoration: none;
+    font-family: 'Lexend Exa', sans-serif;
+    text-align: center;
+    font-size: 1vw;
+    transition: 0.25s ease-in-out;
+}
+
+.admin:hover{
+    transform: scale(1.05);
+}
+
+a>.logotop{
+    transform: scale(0.25);
 }

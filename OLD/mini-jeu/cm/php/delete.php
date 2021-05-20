@@ -4,6 +4,4 @@
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_STR);
     $stmt->execute();
-
-    header('Location: ../admin.php');
 ?>

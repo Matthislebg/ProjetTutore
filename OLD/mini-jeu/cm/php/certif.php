@@ -12,6 +12,4 @@
     $stmt->bindParam(':certif', $certif, PDO::PARAM_STR);
     $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_STR);
     $stmt->execute();
-
-    header('Location: ../admin.php');
 ?>
