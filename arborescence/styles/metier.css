@@ -31,12 +31,12 @@ section {
     align-items: center;
 }
  section .container {
-    margin-top: 20vh;
-    margin-bottom: 20vh;
     width: 80vw;
     height: 40vh;
     display: flex;
     align-items: center;
+    margin-bottom: 20vh;
+    margin-top: 20vh;
 }
 .text_container {
     margin-left: 30px;
