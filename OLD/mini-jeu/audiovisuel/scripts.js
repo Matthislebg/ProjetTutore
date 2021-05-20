@@ -15,10 +15,10 @@ $(document).on("ready",function(){
         $(".pButton>path").attr("d","M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z");
     })
 
-    $('.drag').on("click",function(){
-        $(this).css({
-            "border": "2px solid #EEB81D"
-        })
+    $(function  () {
+        $( ".items" ).sortable({
+            distance:10
+        });
+        $( ".items" ).disableSelection();
     });
-
 });
