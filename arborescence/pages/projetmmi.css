@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap');
+
+
+body {
+    font-family: 'Lexend Exa', sans-serif;
+    background: rgb(255, 255, 255);
+}
+
+h1 {
+    font-size: 1.5vw;
+    margin: 1.2em 0;
+    color: #000000;
+    text-align: center;
+}
+
+
+/*Carousel*/
+
+/* RECTANGLE POUR LE CARROUSSEL */
+.carrousel {
+    background: #ffffff;
+    border: #EEB81D solid 4px;
+    /* box-shadow: #EEB81D 20px; */
+    text-align: center;
+    padding: 5vh 0;
+    height: 30vw;
+    max-width: 70vw;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border-bottom: #EEB81D 3vh solid;
+}
+
+
+/* H2 EST LE NOM DU DOMAINE  */
+.carrousel h2 {
+    margin-left: 1.5vw;
+    padding: 0.5vh 1.5vw 0vh 1.5vw;
+    margin-top: -1vh;
+    font-size: 1.25vw;
+    text-align: left;
+    color: #000000;
+}
+
+.domaineprojet {
+    background-color: #EEB81D;
+}
+
+
+/* TOUTES LES DIAPOS  : 4 DIPAOS DONT 400%*/
+.carrousel .diapos {
+    width: 400%;
+    left: 0;
+    padding-left: 0;
+    overflow: hidden;
+    list-style: none;
+    position: relative;
+
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+}
+
+.carrousel .diapos li {
+    width: 25%;
+    position: relative;
+    float: left;
+}
+
+.carrousel li p {
+    margin-top: 0;
+}
+
+.carrousel li h3 {
+    max-width: 30%;
+    /* margin: auto; */
+    color: #666666;
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.carrousel li img {
+    width: 35vw;
+    max-width: 30vw;
+    border-radius: 10px;
+    float: left;
+    margin-left: 5vw;
+    margin-right: 3vw;
+}
+
+.carrousel li span.presentation {
+    font-size: 1.1vw;
+    color: #777777;
+    display: block;
+    text-align: justify;
+    /* width: 30vw; */
+    /* float: right; */
+    margin-right: 3vw;
+
+}
+
+.carrousel li span a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.carrousel li span a:hover {
+    color: #EEB81D;
+}
+
+
+.carrousel .diaposNavigation {
+    display: block;
+    list-style: none;
+    text-align: center;
+    bottom: 1vw;
+    position: absolute;
+    width: 104px;
+    left: 50%;
+    margin-left: -52px;
+}
+
+.carrousel input {
+    display: none;
+}
+
+.carrousel .diaposNavigation label {
+    float: left;
+    margin: 6px;
+    display: block;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 2px #EEB81D;
+    font-size: 0;
+}
+
+/* You have to repeat this with each diapo
+TODO: make it easier with SCSS
+25% movement 100/diapos-num
+*/
+#radio-1:checked~.diapos {
+    transform: translateX(0%);
+}
+
+#radio-2:checked~.diapos {
+    transform: translateX(-25%);
+}
+
+#radio-3:checked~.diapos {
+    transform: translateX(-50%);
+}
+
+#radio-4:checked~.diapos {
+    transform: translateX(-75%);
+}
+
+
+.carrousel .diaposNavigation label:hover {
+    cursor: pointer;
+}
+
+/* You have to repeat this with each diapo/dot */
+.carrousel #radio-1:checked~.diaposNavigation label#dotForRadio-1,
+.carrousel #radio-2:checked~.diaposNavigation label#dotForRadio-2,
+.carrousel #radio-3:checked~.diaposNavigation label#dotForRadio-3,
+.carrousel #radio-4:checked~.diaposNavigation label#dotForRadio-4 {
+    background: #EEB81D;
+}
+
+
+/* @media (max-width: 700px) {
+  .carrousel li span.presentation {
+    font-size: 0.9rem;
+  }
+
+  .carrousel {
+    height: 50vh;
+  }
+
+}
+
+@media (max-width: (500px) {
+    .carrousel li span.presentation {
+      font-size: 0.7rem;
+    }
+
+    .carrousel {
+
+      height: 70vh;
+    }
+
+  } */
