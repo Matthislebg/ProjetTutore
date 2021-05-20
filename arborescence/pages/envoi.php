@@ -42,7 +42,7 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         $headers = "MIME-Version: 1.0" . "\r\n";
                         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
             
-                        $headers .= 'From: CV <cvlucien@etudiant.u-pem.fr>' . "\r\n";
+                        $headers .= 'From: crexharr@etud.u-pem.fr' . "\r\n";
             
                         mail($to,$subject,$message,$headers);
 

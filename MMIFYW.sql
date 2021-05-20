@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 20 mai 2021 à 14:19
+-- Généré le : jeu. 20 mai 2021 à 15:40
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.2
 
@@ -141,6 +141,22 @@ INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `compe
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `profil`
+--
+
+CREATE TABLE `profil` (
+  `id` int(10) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL,
+  `texte` text NOT NULL,
+  `urlPhoto` varchar(255) NOT NULL,
+  `urlCvNum` varchar(255) NOT NULL,
+  `urlCvPapier` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `projet`
 --
 
@@ -197,6 +213,12 @@ ALTER TABLE `domaine`
 --
 ALTER TABLE `metier`
   ADD PRIMARY KEY (`idMetier`);
+
+--
+-- Index pour la table `profil`
+--
+ALTER TABLE `profil`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `projet`
