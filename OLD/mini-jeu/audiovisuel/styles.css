@@ -84,7 +84,9 @@
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	position: relative;
 }
+
 .toolbar{
 	height: 6%;
 	border-top: 5px solid rgb(20,20,20);
@@ -105,24 +107,39 @@
 }
 
 .drag>img{
-	height: 80%;
+	height: 100%;
 	touch-action: none;
 	user-select: none;
 }
 
 .drag{
-	height: 80%;
+	height: 60%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
-.drag>img:hover{
-	border: 2px solid #EEB81D;
+.deroulement{
+	list-style: none;
+	text-align: center;
+	padding: 0.25vw 0;
+    font-family: 'Lexend Exa', sans-serif;
+	font-size: 1vw;
+	position: absolute;
+	right: 1%;
+	color: white;
+	cursor: pointer;
+	width: 1.2vw;
 }
 
-.drag>img{
-	border: 2px solid transparent;
+.deroulement>li{
+	border-radius: 50%;
+	background-color: #dda20000;
 	transition: 0.25s ease-in-out;
+}
+
+.deroulement>li:hover{
+	background-color: #dda200;
 }
