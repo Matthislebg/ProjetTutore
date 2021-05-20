@@ -156,7 +156,7 @@
     </section>
 
     <section>
-        <h1>PROJET</h1>
+        <h1>PROJETS</h1>
         <div class="carrousel">
     <h2> <span class="domaineprojet">Audiovisuel</span></h2>
     <input type="radio" name="diapos" id="radio-1" checked>
