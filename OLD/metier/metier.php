@@ -78,8 +78,7 @@
                 </p>
             </div>
         </div>
-        
-        <div class="container last">
+        <div class="container">
             <img src="../medias/formation.svg">
             <div class="bar_4"></div>
             <div class="text_container">

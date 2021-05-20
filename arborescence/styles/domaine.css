@@ -5,9 +5,7 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-.section {
-    height: 100vh;
-}
+
 a {
     text-decoration: none;
 }
@@ -18,18 +16,13 @@ footer{
 }
 
 header{
-    position: absolute;
-    height: 116px;
-    width: 100vw;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+    margin-top: 0px;
 }
 
 /* titles */
 section h1{
     /* margin-left: 20vw; */
+
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
@@ -74,6 +67,7 @@ section .container p{
     padding-right: 30px;
     margin: 0px;
     max-width: 40%; 
+    text-align: justify;
 }
 
 section img{
@@ -85,7 +79,11 @@ section img{
 section .container{
     height: 60%;
 }
-
+section:nth-child(1) .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 /* PRESENTATION */
 
 section:first-of-type h1:first-of-type{
@@ -122,7 +120,7 @@ section:nth-of-type(2) .container{
     align-items: center;
     text-align: center;
     color: white;
-    font-size: 2rem;
+    font-size: 1.7rem;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -130,7 +128,7 @@ section:nth-of-type(2) .container{
     transform: scale(1.1);
 }
 
-.ligne1, .ligne2{
+.ligne1, .ligne2, .ligne3{
     display: flex;
     justify-content: space-around;
 }
@@ -139,7 +137,7 @@ section:nth-of-type(2) .container{
 
 .video{
     /* background-color: gray; */
-    width: 70%;
+    width: 50%;
     height: 100%;
 }
 
@@ -150,11 +148,12 @@ section:nth-of-type(2) .container{
 .interview .description{
     width: 30%;
     padding-right: 20px;
+    text-align: justify;
 }
 
 .interview{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     height: 50%;
 }
