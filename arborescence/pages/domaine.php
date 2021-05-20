@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
     <link rel="stylesheet" href="../styles/jquery.fsscroll.css">
+    <link rel="stylesheet" href="../styles/projetmmi.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     $('.container').fsScroll({
     loop:true,
@@ -169,7 +170,7 @@
 
     <section>
         <h1>PROJET</h1>
-        <P>...</P>
+        
     </section>
     <footer><?php 
         include 'footer.php';

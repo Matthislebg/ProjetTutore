@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title> Projets MMI</title>
   <link rel="stylesheet" href="../styles/projetmmi.css">
-
+<link rel="stylesheet" href="../styles/projetmmi.css">
 </head>
 
 <body>

@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+header {
+    height: 110px;
+    width: 100vw;
+}
