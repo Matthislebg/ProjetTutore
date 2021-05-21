@@ -15,7 +15,7 @@
     font-family: 'Lexend Exa', sans-serif;
 }
 
-.audiovisuel>h1:first-letter{
+.audiovisuel>h1:first-letter, h4:first-letter, .param>h1:first-letter{
     color: #EEB81D;
 }
 
@@ -57,20 +57,30 @@
 	color: white;
 	margin: 0;
 	padding: 1%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .preview{
-	height: 50%;
-	width: 100%;
-	background-color: rgb(48, 48, 48);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	height: 100%;
+}
+
+.containVideo{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	height: 50%;
+	width: 100%;
+	background-color: rgb(48, 48, 48);
+	position: relative;
 }
 
 .videoPrev{
-	height: 90%;
+	height: 100%;
 }
 
 .items{
@@ -88,7 +98,7 @@
 }
 
 .toolbar{
-	height: 6%;
+	height: 7.5%;
 	border-top: 5px solid rgb(20,20,20);
 	background-color: rgb(25, 25, 25);
 	display: flex;
@@ -98,10 +108,22 @@
 
 .pButton{
 	height: 150%;
-	transition: 0.5s ease-in-out;
 }
 
-.pButton>path{
+.pReload{
+	height: 75%;
+}
+
+.pSkip{
+	height: 60%;
+}
+
+.pButton, .pReload, .pSkip, .menu, input{
+	transition: 0.5s ease-in-out;
+	cursor: pointer;
+}
+
+.pButton>path, .pReload>path, .pSkip>path, .menu>path{
 	fill: white;
 	transition: 0.25s ease-in-out;
 }
@@ -119,6 +141,7 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	cursor: pointer;
 }
 
 .deroulement{
@@ -142,4 +165,94 @@
 
 .deroulement>li:hover{
 	background-color: #dda200;
+}
+
+h4{
+    font-family: 'Lexend Exa', sans-serif;
+	margin: 0;
+	color: white;
+	font-size: 0.75vw;
+	margin: 0.5vw 0;
+}
+
+.volume{
+	width: 100%;
+	height: 0.1vw;
+	padding: 0;
+	cursor: pointer;
+}
+
+.menu{
+	height: 1vw;
+}
+
+.param{
+	height: 100%;
+    background: rgb(20,20,20);
+	width: 0;
+	transition: 0.25s ease-in-out;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+}
+
+.param>h1{
+    font-family: 'Lexend Exa', sans-serif;
+	color: white;
+	font-size: 0.75vw;
+	text-align: center;
+}
+
+.filtre{
+	height: 100%;
+	background-color: black;
+}
+
+.color{
+	height: 80%;
+}
+
+h5{
+    font-family: 'Lexend Exa', sans-serif;
+	margin: 0;
+	color: white;
+	font-size: 0.75vw;
+	margin: 0.5vw 1.5vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.luminosite{
+	width: 80%;
+	margin-top: 0.5vw;
+	height: 0.1vw;
+	align-self: center;
+}
+
+video{
+	transition: 0.25s ease-in-out;
+    outline-offset: 100%;
+	/* border: solid red 10px; */
+}
+
+.bordure{
+	width: 80%;
+	margin-top: 0.5vw;
+	height: 0.1vw;
+	align-self: center;
+}
+
+.bColor, .Fcolor{
+	-webkit-appearance: none;
+	margin-top: 0.25vw;
+	width: 100%;
+	height: 1.25vw;
+	padding: 0;
+	border: 0;
+	border-radius: 50px;
+	background: transparent;
+}
+
+.proprietes>h5{
+	font-size: 0.6vw;
 }
