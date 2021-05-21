@@ -1,5 +1,5 @@
 <?php
-    
+
     include "../connexionPDO.php";
 
     // REQUETE 1
@@ -8,8 +8,8 @@
 
       } else {
         header("Location: erreur.php");
-    } 
-    
+    }
+
     $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
     $req = $db -> prepare($sql);
     $req -> execute();
@@ -30,84 +30,81 @@
     while ($data = $req -> fetch()){
         $idMetier[$i] = $data['idMetier'];
         $metier[$i] = $data['nomMetier'];
-        $i++;       
+        $i++;
     }
     $req = null;
-?>                
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php 
+    <title><?php
         echo $titre . " - MMI FYW";
     ?></title>
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
-    <link rel="stylesheet" href="../styles/projetmmi.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-</script>    
-
-    <script src=".../scripts/domaine.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../scripts/domaine.js"></script>
 </head>
 <body>
     <header><?php
         include 'header.php';
     ?></header>
-                    
+
     <section>
         <h1>PRÉSENTATION</h1>
         <div class="container">
             <p>
             <!-- PRESENTATION    -->
-                <?php 
+                <?php
                 echo $presentation;
                 ?>
             </p>
-            <img src="<?php 
+            <img src="<?php
                 echo $image;
             ?>" alt="illustration">
         </div>
     </section>
-    
+
     <section>
         <h1>LES MÉTIERS</h1>
         <div class="container">
             <div class="ligne1">
-                <a href="metier.php<?php 
+                <a href="metier.php<?php
                         echo "?page=" . $idMetier[0];
                     ?>">
-                    <div class="metierItem"><?php 
+                    <div class="metierItem"><?php
                             echo $metier[0];
                         ?></div>
                 </a>
-                <a href="metier.php<?php 
+                <a href="metier.php<?php
                         echo "?page=" . $idMetier[1];
                     ?>">
-                    <div class="metierItem"><?php 
+                    <div class="metierItem"><?php
                             echo $metier[1];
                         ?></div>
                 </a>
             </div>
             <div class="ligne2"></div>
             <div class="ligne3">
-            <a href="metier.php<?php 
+            <a href="metier.php<?php
                         echo "?page=" . $idMetier[2];
                     ?>">
-                    <div class="metierItem"><?php 
+                    <div class="metierItem"><?php
                             echo $metier[2];
                         ?></div>
                 </a>
                 <a href="metier.php<?php 
                         echo "?page=" . $idMetier[3];
                     ?>">
-                    <div class="metierItem"><?php 
+                    <div class="metierItem"><?php
                             echo $metier[3];
                     ?></div>
                 </a>
-        </div>  
+        </div>
         </div>
     </section>
 
@@ -115,7 +112,7 @@
         <h1>INTERVIEW</h1>
         <div class="interview">
             <div class="description">
-            <?php 
+            <?php
                 // echo $description;
             ?>
 
@@ -129,20 +126,20 @@
 
 
             </div>
-            
+
             <div class="video">
 
                                         <!-- /!\ REGLAGE TAILLE VIDEO A REVOIR /!\ -->
 
                 <!-- taille à régler soit ici soit en css (en supprimant la ligne ci dessous)-->
-                <iframe 
-                width="100%" height="100%" 
-                src="<?php 
+                <iframe
+                width="100%" height="100%"
+                src="<?php
 
                     echo $video;
 
                 ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                
+
 
             </div>
         </div>
@@ -150,7 +147,7 @@
     <section>
         <h1>MINI-JEU</h1>
         <div class="jeu">
-            <?php 
+            <?php
                 include 'jeu_'. $domaine . '.php';
             ?>
         </div>
@@ -234,7 +231,7 @@
     </div>
   </div>
     </section>
-    <footer><?php 
+    <footer><?php
         include 'footer.php';
     ?></footer>
 </body>
