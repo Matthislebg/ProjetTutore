@@ -18,6 +18,8 @@ footer{
 }
 
 header{
+    position: absolute;
+    width: 100vw;
     margin-top: 0px;
 }
 
