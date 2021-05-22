@@ -234,5 +234,27 @@
     <footer><?php
         include 'footer.php';
     ?></footer>
+
+  <div class="btnNav">
+    <div class="btnNavContainer">
+      <div class="btnNavClick">
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><circle cx="8" cy="8" r="8" fill="#1DB250"/></svg>
+      </div>
+      <div class="btnNavClick">
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+      </div>
+      <div class="btnNavClick">
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+      </div>
+      <div class="btnNavClick">
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+      </div>
+      <div class="btnNavClick">
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+      </div>
+      <!-- <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none" class="BtnNavPlainCircle"><circle cx="8" cy="8" r="8" fill="#1DB250"/></svg> -->
+    </div>
+  </div>
+
 </body>
 </html>
