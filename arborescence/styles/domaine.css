@@ -106,8 +106,7 @@ section .container p{
 }
 
 section img{
-    background-color: gray;
-    width: 40%;
+    width: 50%;
 }
 
 section .container{
