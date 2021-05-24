@@ -25,7 +25,7 @@ section {
     margin-right: auto;
 }
 
-section div{
+section a{
     color: black;
     height: 5vh;
     width: 15vw;
@@ -35,14 +35,14 @@ section div{
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding-top:2vh;
+    padding-top:3vh;
     margin-right: 2vw;
     margin-top: 1.5vw;
     border-radius: 10px;
-
+    text-decoration: none;
 }
 
-.nom div {
+.nom div{
     display: inline-block;
     height: 5vh;
     width: 15vw;

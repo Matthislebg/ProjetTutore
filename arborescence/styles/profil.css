@@ -1,8 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
 body {
     margin: 0;
     overflow-x: hidden;
+    font-family: 'Lexend Deca', sans-serif;
 }
-header {
-    height: 110px;
+
+section {
     width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
 }
+section .container_1 {
+    width: 60vw;
+    height: fit-content;
+}
+section h2 {
+    font-size: 3vw;
+}
+section p {
+    margin-top: 50px;
+    font-size: 1.4rem;
+    width: 40vw;
+}
+section .blob {
+    margin-top: 50px;
+    background-color: #D4499A;
+    height: 25vw;
+    width: 25vw;
+    animation: animate 5s linear infinite;
+}
+nav .container_2 {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+nav .container_2>a {
+    text-decoration: none;
+    color: white;
+    background-color: #D4499A;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 2rem;
+    transition: 1s ease;
+}
+nav .container_2>a:hover {
+    transform: scale(1.1);
+} 
+@keyframes animate {
+    0% {
+      border-radius: 57% 43% 70% 30% / 57% 39% 61% 43% ;
+    }
+    25% {
+      border-radius: 40% 60% 49% 51% / 42% 26% 74% 58%  ;
+    }
+    50% {
+      border-radius: 35% 65% 38% 62% / 57% 32% 68% 43%   ;
+    }
+    75% {
+      border-radius: 51% 49% 42% 58% / 53% 58% 42% 47%  ;
+    }
+    87% {
+      border-radius: 53% 47% 57% 43% / 43% 52% 48% 57%  ;
+    }
+    100% {
+      border-radius: 57% 43% 70% 30% / 57% 39% 61% 43% ;
+    }
+  }
