@@ -11,7 +11,6 @@ footer .link_footer {
     flex-direction: column;
 }
 footer .link_footer>a {
-    text-decoration: none, underline;
     color: black ;
     margin-top: 20px;
 }
