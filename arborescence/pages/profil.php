@@ -26,7 +26,7 @@
           <br />
           <br />
           Je suis aussi le C.H.O du projet, je suis donc le Chief Happiness
-          Officer de l’entreprise MMI FYW, je suis responsable du bonheur de mes
+          Officer du projet MMI FYW, je suis responsable du bonheur de mes
           trois camarades. S’ils ont besoin de s’exprimer face à un problème
           interne, comme un conflit avec un camarade, j’essaie de résoudre le
           problème dans un discours respectant les règles de la CNV.

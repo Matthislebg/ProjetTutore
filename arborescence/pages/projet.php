@@ -30,10 +30,10 @@
         </div>
 
       <section>
-        <a href=""> Voir CV </a>
-        <a href=""> Voir CV </a>
-        <a href=""> Voir CV </a>
-        <a href="profil.php"> Voir CV </a>
+        <a href=""> Voir Profil </a>
+        <a href=""> Voir Profil </a>
+        <a href=""> Voir profil </a>
+        <a href="profil.php"> Voir Profil </a>
       <section>
 
     </div>
