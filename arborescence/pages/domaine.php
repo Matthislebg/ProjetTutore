@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/domaine.css">
+    <link rel="stylesheet" href="../styles/projetmmi.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../scripts/domaine.js"></script>
 </head>
