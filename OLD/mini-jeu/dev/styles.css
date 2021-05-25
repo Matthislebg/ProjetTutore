@@ -127,6 +127,7 @@ label {
 .outils>div>h2, .outils>h2{
     font-size: 1rem;
     font-family: 'Lexend Exa', sans-serif;
+	margin-top: 1vw;
 }
 
 .outils>div>input[type="checkbox"]{
