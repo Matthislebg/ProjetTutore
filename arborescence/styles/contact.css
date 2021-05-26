@@ -45,7 +45,10 @@ input {
     font-family: 'Lexend Exa', sans-serif;
     padding-left: 1vw;
 }
-
+input[id="cp"] {
+    width: 5vw;
+    margin-right: 20vw;
+}
 /* input:focus {
     background: #0B83C6;
     color: white;
