@@ -39,7 +39,7 @@
  
             <div class="champ">
                 <label for="cp">code postal </label>
-                <input id="cp" type="text" name ="codepostal" maxlength="5" size="5" placeholder="______" pattern="[0-9]{5}">
+                <input id="cp" type="text" name ="codepostal" maxlength="5" size="5"  pattern="[0-9]{5}">
             </div>
  
  
