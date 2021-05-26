@@ -62,14 +62,14 @@
                 <a class="msg" href="#"><img src="images/message.svg"></a>
                 <div class="params">
                     <h2>Paramètres</h2>
-                    <p>Modération du flux :</p>
-                    <p>Sans
+                    <p>Filtrer les messages :</p>
+                    <p>Non
                         <label class="switch">
                             <input type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
-                    Avec</p>
-                    <p class="infosParam">Cette option permet d'afficher uniquement les messages certifiés</p>
+                    Oui</p>
+                    <p class="infosParam">Cette option permet d'afficher uniquement les messages validés par MMI FYW</p>
                 </div>
             </div>
             <div class="flux">
