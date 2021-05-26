@@ -4,12 +4,6 @@ body{
     margin: 0;
 }
 
-/* .header {
-    width: 100vw;
-    height: 100px;
-    background-color: black;
-} */
-
 section {
     position: relative;
     width: 100vw;
@@ -27,7 +21,6 @@ section a{
     font-family: 'Lexend Deca', sans-serif;
     color: white;
     text-decoration: none;
-    /* box-shadow: black 10px 10px ; */
 }
 
 
@@ -135,6 +128,7 @@ header img{
     transition: 0.75s ease-in-out;
     width: 2.5vh;
     position: absolute;
+    pointer-events: none;
 }
 
 
