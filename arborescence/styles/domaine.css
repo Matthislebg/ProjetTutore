@@ -167,10 +167,15 @@ section:nth-of-type(2) .container{
 }
 
 /* Interview */
+.interview2 {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
 
 .video{
     /* background-color: gray; */
-    width: 50%;
+    width: 40%;
     height: 100%;
 }
 
