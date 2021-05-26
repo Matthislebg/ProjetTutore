@@ -102,3 +102,7 @@ header a>p{
     border: none;
     text-decoration: none;
 }
+
+header a{
+    text-decoration: none;
+}
