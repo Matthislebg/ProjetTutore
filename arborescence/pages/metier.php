@@ -1,9 +1,23 @@
 <?php
-    include "../connexionPDO.php";          
-    
-    $idMetier = $_GET['page'];
-    
-    $sql = "SELECT * FROM metier WHERE idMetier = '" . $idMetier . "'";
+    include "../connexionPDO.php";
+
+    // REQUETE compter nombre de fiches métier
+    $sql = "SELECT COUNT(idMetier) FROM metier";
+    $req = $db -> prepare($sql);
+    $req -> execute();
+    while ($data = $req -> fetch()){
+        $nombreMetiers = $data['COUNT(idMetier)'];
+    }
+    $req = null;
+
+    if (0 < $_GET['page'] && $_GET['page'] <= $nombreMetiers){
+        $idMetier = $_GET['page'];
+      } else {
+        header("Location: erreur.php");
+    }
+
+    // REQUETE contenu du métier
+    $sql = "SELECT idMetier, nomMetier, metier.presentation, qualite, competence, formation, salaire, structure, metier.imageUrl, domaineId, domaine.idDomaine, domaine.nomDomaine FROM metier INNER JOIN domaine ON domaine.idDomaine = metier.domaineId WHERE idMetier = " . $idMetier;
     $req = $db -> prepare($sql);
     $req -> execute();
     while ($data = $req -> fetch()){
@@ -15,6 +29,7 @@
         $salaire = $data['salaire'];
         $structure = $data['structure'];
         $image = $data['imageUrl'];
+        $domaine = $data['nomDomaine'];
     }
     $req = null;
 ?>
@@ -28,13 +43,16 @@
     <title><?php 
         echo $metier . " - MMI FYW";
     ?></title>
+    <link rel="stylesheet" href="../styles/metier.css">    
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/metier.css">
+    <?php
+      echo '<link rel="stylesheet" href="../styles/' . $domaine . 'MetierColor.css">'
+    ?>
 </head>
 
 <body>
     <header><?php
-        $titre = "";
+        $titre = $domaine;
         include 'header.php';
     ?></header>
     <div class="image">

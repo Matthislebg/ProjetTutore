@@ -1,0 +1,17 @@
+section h3::first-letter{
+    color: #0B83C6;
+}
+
+::-moz-selection { 
+    color: white;
+    background: #0B83C6;
+}
+  
+::selection {
+    color: white;
+    background: #0B83C6;
+}
+
+footer .link_footer>a:hover {
+    color: #0B83C6;
+}

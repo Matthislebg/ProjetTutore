@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap');
+*, *::after, *::before{
+	box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Lexend Exa', sans-serif;
@@ -55,7 +58,7 @@ div.btnNavContainer .BtnNavPlainCircle{
 }
 
 /* titles */
-section h1{
+section>h1{
     /* margin-left: 20vw; */
 
     margin-left: auto;
@@ -65,13 +68,8 @@ section h1{
     display: inline-block;
     border-bottom: solid 8px black;
     font-size: 2rem;
-    box-sizing: border-box;
     margin-top: 4vh;
     margin-bottom: 8vh;
-}
-
-section h1::first-letter{
-    color: #1DB250;
 }
 
 /* sections - general properties */
@@ -105,7 +103,7 @@ section .container p{
     text-align: left;
 }
 
-section img{
+section .container>img{
     width: 50%;
 }
 
@@ -147,7 +145,6 @@ section:nth-of-type(2) .container{
     width: 400px;
     margin: 20px;
     border-radius: 10px;
-    background-color: #1DB250;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +171,6 @@ section:nth-of-type(2) .container{
 }
 
 .video{
-    /* background-color: gray; */
     width: 40%;
     height: 100%;
 }
@@ -194,4 +190,10 @@ section:nth-of-type(2) .container{
     justify-content: space-around;
     align-items: flex-start;
     height: 50%;
+}
+
+/* jeu */
+
+section:nth-of-type(4){
+    width: 100vw;
 }

@@ -14,9 +14,6 @@ footer .link_footer>a {
     color: black ;
     margin-top: 20px;
 }
-footer .link_footer>a:hover {
-   color: #1DB250;
-}
 footer .color_footer {
     margin-top: 20px;
     display: flex;

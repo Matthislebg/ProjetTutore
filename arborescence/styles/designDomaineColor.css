@@ -1,0 +1,45 @@
+section h1::first-letter{
+    color: #D4499A;
+}
+
+.metierItem{
+    background-color: #D4499A;
+}
+
+.btnNav{
+    stroke: #D4499A;
+}
+
+.btnNav circle{
+    fill: #D4499A;
+}
+
+footer .link_footer>a:hover {
+    color: #D4499A;
+}
+
+/* carroussel de projets */
+
+.carrousel {
+    border: #D4499A solid 4px;    
+    border-bottom: #D4499A 3vh solid;
+}
+
+.domaineprojet {
+    background-color: #D4499A;
+}
+
+.carrousel li span a:hover {
+    color: #D4499A;
+}
+
+.carrousel .diaposNavigation label {
+    border: solid 2px #D4499A;
+}
+
+.carrousel #radio-1:checked~.diaposNavigation label#dotForRadio-1,
+.carrousel #radio-2:checked~.diaposNavigation label#dotForRadio-2,
+.carrousel #radio-3:checked~.diaposNavigation label#dotForRadio-3,
+.carrousel #radio-4:checked~.diaposNavigation label#dotForRadio-4 {
+    background: #D4499A;
+}

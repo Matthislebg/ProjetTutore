@@ -69,7 +69,6 @@ h3 {
 }
 h3::first-letter {
     font-size: 3.5vw;
-    color: #1DB250;
 }
 section p {
     font-size: 1rem;
@@ -86,23 +85,15 @@ ul{
     margin-left: 4vw;
 }
 
-::-moz-selection { 
-    color: white;
-    background: #1DB250;
-  }
-  
-  ::selection {
-    color: white;
-    background: #1DB250;
-  }
-  header a {
-      text-decoration: none;
-  }
-  header a>p{
-    color: white;
-    text-align: center;
-    margin-top: 5px;
-    opacity: 0%;
-    transition: 0.5s ease-in-out;
-    border: none;
+header a {
+    text-decoration: none;
+}
+
+header a>p{
+color: white;
+text-align: center;
+margin-top: 5px;
+opacity: 0%;
+transition: 0.5s ease-in-out;
+border: none;
 }

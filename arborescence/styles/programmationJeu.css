@@ -1,0 +1,162 @@
+.jeu .outils, .code{
+    width: 100%;
+}
+
+.jeu details {
+	position: relative;
+	width: 300px;
+	margin-right: 1rem;
+}
+
+.jeu details[open] {
+	z-index: 1;
+}
+
+.jeu summary {
+	padding: 0.5rem;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: #ddd;
+	list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jeu details[open] summary:before {
+	content: '';
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	background: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.jeu summary:focus {
+	outline: none;
+}
+
+.jeu details[open] summary:after {
+	transform: rotate(-45deg) translate(0%, 0%);
+}
+
+.jeu ul {
+	width: 100%;
+	background: #ddd;
+	position: absolute;
+	top: calc(100% + .5rem);
+	left: 0;
+	padding: 1rem;
+	margin: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	overflow-y: auto;
+}
+
+.jeu li {
+	margin: 0;
+	padding: 1rem 0;
+	border-bottom: 1px solid #ccc;
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jeu li:first-child {
+	padding-top: 0;
+}
+
+.jeu li:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+
+.jeu input[type=radio] {
+	appearance: none;
+	display: none;
+}
+
+.jeu input[type=radio]:checked {
+	pointer-events: none;
+	outline: none;
+	display: inline;
+}
+
+.jeu input[type=radio]:after {
+	content: attr(title);
+	display: inline;
+	font-size: 1rem;
+}
+
+.jeu label {
+	width: 100%;
+	display: block;
+	cursor: pointer;
+}
+
+.jeu .code>div>svg{
+	display: flex;
+	width: 430px;
+	height: 317px;
+	transition: height 0.2s linear, width 0.2s linear;
+}
+
+.jeu .code>div{
+    background: rgb(240, 240, 240);
+    border: 4px solid black;
+    border-radius: 10px;
+    width: 30vw;
+    height: 35vw;
+    margin: auto;
+	transition: 0.2s linear;
+	overflow: hidden;
+}
+
+.jeu .code>div>h2{
+    font-family: 'Lexend Exa', sans-serif;
+	color: #1DB250;
+	transition: 0.2s linear;
+	font-size: 1.5rem;
+}
+
+.jeu .code>div>p{
+    font-family: 'Lexend Exa', sans-serif;
+	transition: 0.2s linear;
+	font-size: 1rem;
+}
+
+.jeu .outils>div>h2, .outils>h2{
+    font-size: 1rem;
+    font-family: 'Lexend Exa', sans-serif;
+	margin-top: 1vw;
+}
+
+.jeu .outils>div>input[type="checkbox"]{
+	margin: 0px 7vw;
+	width: 20px;
+	height: 20px;
+}
+
+.jeu .outils>div>input{
+    display: block;
+    margin: auto;
+    width: 75%;
+}
+
+.jeu .jeuDev{
+    display: flex;
+}
+
+.jeu input[type="color"]{
+	-webkit-appearance: none;
+	border: 3px solid black;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.jeu input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+.jeu input[type="color"]::-webkit-color-swatch {
+	border: none;
+}

@@ -57,10 +57,10 @@ $(document).ready(function(){
 // NAV BUTTONS
     // nav buttons switch position to match section order
     function buttonswitch(){
-        $("div.btnNav svg").eq(position).html('<circle cx="8" cy="8" r="8" fill="#1DB250"/>')
+        $("div.btnNav svg").eq(position).html('<circle cx="8" cy="8" r="8" stroke="none"/>')
         for(i=0;i<5;i++){
             if (i != position){
-                $("div.btnNav svg").eq(i).html('<path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/>')
+                $("div.btnNav svg").eq(i).html('<path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke-width="2"/>')
             }
         }
         

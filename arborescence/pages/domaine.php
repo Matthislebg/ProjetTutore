@@ -1,8 +1,7 @@
 <?php
-
     include "../connexionPDO.php";
 
-    // REQUETE 1
+    // récupérer nom domaine
     if ($_GET['page'] == "programmation" || $_GET['page'] == "audiovisuel" || $_GET['page'] == "design" || $_GET['page'] == "communication"){
         $domaine = $_GET['page'];
 
@@ -10,6 +9,7 @@
         header("Location: erreur.php");
     }
 
+    // REQUETE 1
     $sql = "SELECT * FROM domaine WHERE nomDomaine = '" . $domaine . "'";
     $req = $db -> prepare($sql);
     $req -> execute();
@@ -42,13 +42,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php
         echo $titre . " - MMI FYW";
-    ?></title>
+    ?></title>    
+    <link rel="stylesheet" href="../styles/domaine.css">
+    <link rel="stylesheet" href="../styles/projetDomaine.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/domaine.css">
-    <link rel="stylesheet" href="../styles/projetmmi.css">
+
+    <?php
+      echo '<link rel="stylesheet" href="../styles/' . $domaine . 'Jeu.css">'
+    ?>
+
+    <?php
+      echo '<link rel="stylesheet" href="../styles/' . $domaine . 'DomaineColor.css">'
+    ?>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../scripts/domaine.js"></script>
+
+    <?php
+      echo '<script src="../scripts/'.$domaine.'Jeu.js"></script>'
+    ?>
+
 </head>
 <body>
     <header><?php
@@ -114,16 +129,16 @@
         <div class="interview">
             <div class="description">
             <?php
-                // echo $description;
+                echo $description;
             ?>
 
             <!-- en attendant de mettre dans la bdd -->
-                <h2>Description</h2>
+                <!-- <h2>Description</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nobis ullam dolorum nam, quasi voluptas officiis. Inventore dolor facilis quibusdam, pariatur nihil laboriosam sint numquam quas corporis obcaecati! Ab, enim.
                 </p>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorum iure sequi in labore necessitatibus vel delectus nam eum quaerat molestiae et tempora nostrum ut, blanditiis perspiciatis hic quidem similique.
-                </p>
+                </p> -->
 
 
             </div>
@@ -146,10 +161,12 @@
         </div>
     </section>
     <section>
-        <h1>MINI-JEU</h1>
+        <?php
+            echo "<h1>TESTEZ VOS CAPACITÉS EN ".strtoupper($domaine)."</h1>";
+        ?>
         <div class="jeu">
             <?php
-                include 'jeu_'. $domaine . '.php';
+                include $domaine . 'Jeu.php';
             ?>
         </div>
     </section>
@@ -239,21 +256,20 @@
   <div class="btnNav">
     <div class="btnNavContainer">
       <div class="btnNavClick">
-        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><circle cx="8" cy="8" r="8" fill="#1DB250"/></svg>
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><circle cx="8" cy="8" r="8" stroke="none"/></svg>
       </div>
       <div class="btnNavClick">
-        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke-width="2"/></svg>
       </div>
       <div class="btnNavClick">
-        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke-width="2"/></svg>
       </div>
       <div class="btnNavClick">
-        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke-width="2"/></svg>
       </div>
       <div class="btnNavClick">
-        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke="#1DB250" stroke-width="2"/></svg>
+        <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none"><path d="M15 8.5C15 12.7001 11.8097 16 8 16C4.19026 16 1 12.7001 1 8.5C1 4.29989 4.19026 1 8 1C11.8097 1 15 4.29989 15 8.5Z" stroke-width="2"/></svg>
       </div>
-      <!-- <svg width="100%" height="100%" viewBox="0 0 16 17" fill="none" class="BtnNavPlainCircle"><circle cx="8" cy="8" r="8" fill="#1DB250"/></svg> -->
     </div>
   </div>
 
