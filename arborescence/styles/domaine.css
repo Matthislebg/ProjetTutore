@@ -37,6 +37,8 @@ div.btnNav{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+    pointer-events: none;
 }
 
 div.btnNavContainer{
@@ -51,6 +53,7 @@ div.btnNav svg{
     margin-top: 10px;
     order: 2;
     cursor: pointer;
+    pointer-events: all;
 }
 
 div.btnNavContainer .BtnNavPlainCircle{
