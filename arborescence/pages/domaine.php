@@ -109,7 +109,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="interview2">
         <h1>INTERVIEW</h1>
         <div class="interview">
             <div class="description">
