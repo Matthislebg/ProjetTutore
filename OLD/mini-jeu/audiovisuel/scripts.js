@@ -9,7 +9,12 @@ $(document).on("ready",function(){
     var diffVid;
     var vidEtat;
     var menu = false;
-    refreshList();
+
+    var random;
+    for(var i=0; i<5; i++){ // Placer les éléments de montage aléatoirement
+        random = Math.floor(Math.random()*5);
+        rePos(random, $(".items>li:nth-child("+random+")").attr("id"));
+    }
 
     $(".pButton").on("click", function(){
         if($(".pButton>path").attr("d")=="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"){
