@@ -33,6 +33,21 @@
         $i++;
     }
     $req = null;
+
+    // REQUETE 3 : contenu section projet
+    $sql = "SELECT nomProjet, nomAuteur, projet.presentation, projet.siteUrl, projet.imageUrl, projet.domaineId, domaine.idDomaine, nomDomaine FROM projet INNER JOIN domaine ON domaine.idDomaine = projet.domaineId WHERE nomDomaine = '" . $domaine . "'";
+    $req = $db -> prepare($sql);
+    $req -> execute();
+    $i = 0;
+    while ($data = $req -> fetch()){
+      $nomProjet[$i] = $data['nomProjet'];
+      $nomAuteur[$i] = $data['nomAuteur'];
+      $imageProjet[$i] = $data['imageUrl'];
+      $presentationProjet[$i] = $data['presentation'];
+      $lienOeuvre[$i] = $data['siteUrl'];
+      $i++;
+    }
+    $req = null;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -59,6 +74,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../scripts/domaine.js"></script>
+    <script src="../scripts/projetDomaine.js"></script>
 
     <?php
       echo '<script src="../scripts/'.$domaine.'Jeu.js"></script>'
@@ -172,82 +188,47 @@
     </section>
 
     <section>
-        <h1>PROJETS</h1>
-        <div class="carrousel">
-    <h2> <span class="domaineprojet">Audiovisuel</span></h2>
-    <input type="radio" name="diapos" id="radio-1" checked>
-    <input type="radio" name="diapos" id="radio-2">
-    <input type="radio" name="diapos" id="radio-3">
-    <input type="radio" name="diapos" id="radio-4">
-    <ul class="diapos">
-      <!-- DIAPO 1 -->
-      <li class="diapo">
-        <p>
-          <h3>CV Vidéo</h3>
-          <span class="presentation">
-            <img src="https://festival2020.iutmmi.fr/img/project/avc_164.jpg">
-            <p class="description">
-              Ce CV vidéo est un projet commun en audiovisuel et en anglais. Ce n'est pas un CV traditionnel comme on a
-              l'habitude de voir, en effet Anastasiya Balan, ancienne élève à l'IUT Gustave Eiffel a cherché à démontrer
-              ses compétences et son savoir-être sans simplement les énoncer.
-              Ce CV Vidéo présenté au Festival MMI 2020 a obtenu le premier prix dans la catégorie Audiovisuel.
-              <p>
-                <a href="https://www.youtube.com/watch?v=PV3bbVQLLYg&feature=youtu.be&ab_channel=FestivalMMI"> Lien vers
-                  l'oeuvre</a>
+      <h1>PROJETS</h1>
+      <div class="carrousel">
+        <h2> <span class="domaineprojet"><?php
 
-          </span>
-        </p>
-      </li>
-      <!-- DIAPO 2 -->
-      <li class="diapo">
-        <p>
-          <h3>Shoot</h3>
-          <span class="presentation">
-            <img src="https://festival2020.iutmmi.fr/img/project/ksm_405.png">
-            Ce projet est un court-métrage réalisé par des anciens élèves en DUT MMI à Limoges en 2020. Cette vidéo
-            raconte l'histoire de Ben, un photographe qui, après avoir essuyé plusieurs échecs, se voit proposer un
-            ultime contrat qui déterminera son avenir dans l’agence. Il n’a qu’un seul cliché à prendre mais cette
-            mission s’annonce périlleuse car la concurrence est rude. Ce court-métrage présenté au Festival MMI 2020 a
-            obtenu un prix dans la catégorie Audiovisuel (2e position) et un prix du public (3e position).
-          </span>
-        </p>
-      </li>
-      <!-- DIAPO 3 -->
-      <li class="diapo">
-        <p>
-          <h3>Super MMI</h3>
-          <span class="presentation">
-            <img src="/medias/audio3.jpg">
-            Super MMI est un projet personnel d'Enzo Cailleton ancien élève en DUT MMI à l'IUT de Laval réalisé de
-            décembre 2019 à avril 2020 (scénario, animation, mixage audio, montage). C'est un court-métrage d'animation
-            3D où l'on retrouve Sylvain un étudiant MMI. Le but de ce projet était de créer une œuvre parlant de la
-            filière MMI de façon originale par rapport à ce qu'on a l'habitude de voir. Ce projet présenté au Festival
-            MMI 2020 a obtenu un prix dans la catégorie Animation (1ère position) et dans la catégorie Son (1ère
-            position)
-          </span>
-        </p>
-      </li>
-      <!-- SLIDE 4 -->
-      <li class="diapo">
-        <p>
-          <h3>Plongée Astrale</h3>
-          <span class="presentation">
-            <img src="https://festival2020.iutmmi.fr/img/project/eps_313.png">
-            Cette animation est un projet personnel d'une ancienne étudiante en DUT MMI à l'IUT de Tarbes. Doralice
-            Macaire a souhaité réaliser un film animé pour le concours Un'Anime 2019 dans le département MMI de Rouen
-            dont le thème imposé était « La tête dans les étoiles ». Ce projet présenté au Festival MMI 2020 a obtenu un
-            prix dans la catégorie Animation (2e position).
-          </span>
-        </p>
-      </li>
-    </ul>
-    <div class="diaposNavigation">
-      <label for="radio-1" id="dotForRadio-1"></label>
-      <label for="radio-2" id="dotForRadio-2"></label>
-      <label for="radio-3" id="dotForRadio-3"></label>
-      <label for="radio-4" id="dotForRadio-4"></label>
-    </div>
-  </div>
+          echo $domaine;
+
+        ?>
+        <div class="projetCheck">
+          <div class="projetCheckLast">
+            <svg width="63" height="60" viewBox="0 0 63 60" fill="none">
+  <path d="M61.8284 32.8284C63.3905 31.2663 63.3905 28.7337 61.8284 27.1716L36.3726 1.71573C34.8105 0.153635 32.2778 0.153634 30.7157 1.71573C29.1536 3.27783 29.1536 5.81049 30.7157 7.37259L53.3431 30L30.7157 52.6274C29.1536 54.1895 29.1536 56.7222 30.7157 58.2843C32.2778 59.8464 34.8105 59.8464 36.3726 58.2843L61.8284 32.8284ZM-3.49691e-07 34L59 34L59 26L3.49691e-07 26L-3.49691e-07 34Z" fill="black"/>
+  </svg>
+            <!-- <img src="../medias/projetArrow.svg" alt="naviguer vers le projet précédent"> -->
+          </div>
+          <div class="projetCheckNext">
+          <svg width="63" height="60" viewBox="0 0 63 60" fill="none">
+  <path d="M61.8284 32.8284C63.3905 31.2663 63.3905 28.7337 61.8284 27.1716L36.3726 1.71573C34.8105 0.153635 32.2778 0.153634 30.7157 1.71573C29.1536 3.27783 29.1536 5.81049 30.7157 7.37259L53.3431 30L30.7157 52.6274C29.1536 54.1895 29.1536 56.7222 30.7157 58.2843C32.2778 59.8464 34.8105 59.8464 36.3726 58.2843L61.8284 32.8284ZM-3.49691e-07 34L59 34L59 26L3.49691e-07 26L-3.49691e-07 34Z" fill="black"/>
+  </svg>
+            <!-- <img src="../medias/projetArrow.svg" alt="naviguer vers le projet suivant"> -->
+          </div>
+        </div>
+        </span></h2>
+        <input type="radio" name="diapos" id="radio-1" checked>
+        <input type="radio" name="diapos" id="radio-2">
+        <input type="radio" name="diapos" id="radio-3">
+        <input type="radio" name="diapos" id="radio-4">
+        <ul class="diapos">
+          <!-- DIAPOS -->
+          <?php 
+            for ($i = 0; $i < count($nomProjet); $i++) {
+              echo '<li class="diapo"><h3>'.$nomProjet[$i].'<span> - '.$nomAuteur[$i].'</span></h3><span class="presentation"><img src="'.$imageProjet[$i].'"><p class="description">'.$presentationProjet[$i].'</p><a href="'.$lienOeuvre[$i].'">Lien vers l\'oeuvre</a></span></li>';
+            }
+          ?>
+        </ul>
+        <div class="diaposNavigation">
+          <label for="radio-1" id="dotForRadio-1"></label>
+          <label for="radio-2" id="dotForRadio-2"></label>
+          <label for="radio-3" id="dotForRadio-3"></label>
+          <label for="radio-4" id="dotForRadio-4"></label>
+        </div>
+      </div>
     </section>
     <footer><?php
         include 'footer.php';

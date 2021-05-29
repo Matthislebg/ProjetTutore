@@ -41,7 +41,7 @@ h1 {
     color: #000000;
 }
 
-/* TOUTES LES DIAPOS  : 4 DIAPOS DONT 400%*/
+/* TOUTES LES DIAPOS  : 4 DIAPOS DONC 400%*/
 .carrousel .diapos {
     width: 400%;
     left: 0;
@@ -67,11 +67,17 @@ h1 {
 }
 
 .carrousel li h3 {
-    max-width: 30%;
-    /* margin: auto; */
+    padding-left: 2vw;
+    text-align: left;
     color: #666666;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.carrousel li h3 span{
+    
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .carrousel li img {
@@ -165,3 +171,27 @@ h1 {
     }
 
   } */
+
+
+/* JS arrows */
+
+.projetCheck{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.projetCheckLast:hover{
+    transform: scale(1.1) scaleX(-1);
+}
+
+.projetCheckNext:hover{
+    transform: scale(1.1);
+}
+
+.projetCheckLast{
+    transform: scaleX(-1);
+    margin-right: 10px;
+}

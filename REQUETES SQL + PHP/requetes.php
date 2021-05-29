@@ -1,3 +1,5 @@
+
+
 <?php
 
 
@@ -66,6 +68,17 @@ SELECT * FROM domaine INNER JOIN metier ON domaine.idDomaine = metier.domaineId 
         echo $data['presentation'];
     }
     $req = null;
+
+
+
+//  section projet test 1
+
+SELECT nomProjet, nomAuteur, projet.presentation, projet.siteUrl, projet.imageUrl, projet.domaineId, domaine.idDomaine, nomDomaine FROM projet INNER JOIN domaine ON domaine.idDomaine = projet.domaineId WHERE nomDomaine = 'design'
+
+
+
+
+
 
 
 // métiers
