@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  sqletud.u-pem.fr
--- Généré le :  Mer 02 Juin 2021 à 22:24
+-- Généré le :  Mer 02 Juin 2021 à 22:44
 -- Version du serveur :  5.5.62-0+deb8u1-log
 -- Version de PHP :  7.0.33-0+deb9u7
 
@@ -154,6 +154,16 @@ CREATE TABLE `profil` (
   `urlCvPapier` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `profil`
+--
+
+INSERT INTO `profil` (`id`, `nom`, `role`, `texte`, `urlPhoto`, `urlCvNum`, `urlCvPapier`) VALUES
+(1, 'MATTHIS ROUSSELLE', 'Ux Designer, CHO ', '<p> En tant que UX Designer de ce projet, j’ai pu réaliser de nombreuses maquettes pour définir notre identité graphique et notre site web dans son ensemble. J’ai donc dû choisir les couleurs, les typographies, ainsi que le design de nos différentes pages. Cela m’a permis de créer les différentes icônes réalisées notamment dans les pages métiers. </p>\r\n<p> Je suis aussi le C.H.O du projet, le Chief Happiness Officer de l’équipe MMI FYW, je suis responsable du bonheur de mes trois camarades. S’ils ont besoin de s’exprimer face à un problème interne, comme un conflit avec un camarade, j’essaie de résoudre le problème dans un discours respectant les règles de la CNV. </p>\r\n', '../media/profil/matthis.png', 'lien', 'lien'),
+(2, 'CELINE REX-HARRISON ', 'Chargé de communication -  Développeuse Back-end', '<p> En tant que chargée de communication durant ce projet de groupe, j’ai pu rechercher et rédiger une grande partie du contenu du site web (fiches métiers, description des domaines, recherche des projets d’anciens étudiants…). Je me suis chargé de réaliser les visuels pour le site (illustrations) mais aussi des posts pour les réseaux sociaux à l’aide de Mathis, le webdesigner de l\'équipe. </p>\r\n<p> J’ai aussi été développeuse back-end pour MMI Find your Way. Je me suis occupé de la conception des modèles conceptuels et physiques des données mais aussi de la création de la base de données  (PhpMyAdmin/SQL). En parallèle j’ai dû intégrer certaines pages de la plateforme à l’aide de langages tels que le HTML, le CSS mais aussi le PHP (pour le formulaire par exemple). </p>\r\n', '../media/profil/celine.png', 'lien', 'lien'),
+(3, 'LUCIEN BOISSEAU-SABLE', 'Développeur full-stack', '<p> Étant le principal développeur du projet, j’ai eu la chance de pouvoir me focaliser sur le code de ce dernier sans pour autant abandonner les autres domaines nécessaires au bon déroulement du projet. Le travail d’équipe est au centre de notre travail afin de tirer le meilleur de l’équipe! </p>\r\n\r\n<p> Pour répondre aux attentes de MMI FYW, j’ai manié différents langages de code tels que le html, css, javascript (incluant le jQuery) et php. La combinaison de ces codes nous a permis d’exprimer nos idées et nos convictions du mieux possible. A l’aide de ces derniers j’ai entre autres développé les mini-jeux présents sur le site (hormis celui du domaine du design). </p>', '../media/profil/lucien.png', 'lien', 'lien'),
+(4, 'MARIN BOUANCHAUD', 'Chef de projet, développeur back-end, monteur', '<p> Initiateur du projet MMI - Find Your Way, j’ai apprécié organiser le travail de l’équipe sur toute la durée du projet. J’ai assuré la coordination et la définition des tâches, la mise en place d’outils de gestion de projet, ou encore préparé l’ordre du jour des réunions. J’ai réalisé le suivi de l’avancement des tâches de chaque membre de l’équipe pour m’assurer de la bonne progression du projet et avoir à chaque instant une vision globale de la direction à donner, tout en proposant mon aide lorsqu’un collaborateur est bloqué sur une tâche technique et en organisant des points individuels si nécessaire. </p>\r\n<p> Au-delà de mes tâches de Chef de Projet, j’ai participé comme chaque membre du groupe aux tâches de chaque phase du projet : wireframing pendant la phase de webdesign, programmation HTML et CSS pendant la phase d’intégration, programmation PHP pendant la phase de développement back-end, ou encore programmation jQuery pour décharger le développeur JavaScript de certaines tâches qu’il n’avait pas le temps de réaliser. </p>', '../media/profil/marin.png', 'lien', 'lien');
+
 -- --------------------------------------------------------
 
 --
@@ -246,6 +256,11 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `jeucm`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT pour la table `profil`
+--
+ALTER TABLE `profil`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
