@@ -81,7 +81,8 @@ h1 {
 }
 
 .carrousel li img {
-    width: 500px;
+    max-width: 500px;
+    max-height: 300px;
     border-radius: 10px;
     float: left;
     margin-left: 2vw;
@@ -194,4 +195,29 @@ h1 {
 .projetCheckLast{
     transform: scaleX(-1);
     margin-right: 10px;
+}
+
+
+/* ANIMATION */
+
+.tremble{
+    animation: 0.5s linear tremble;
+}
+
+@keyframes tremble {
+    0%{
+        transform: scale(1) rotate(-5deg);
+    }
+    25%{
+        transform: scale(1.03) rotate(5deg);
+    }
+    50%{
+        transform: scale(1.03) rotate(-5deg);
+    }
+    75%{
+        transform: scale(1.03) rotate(5deg);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+    }
 }

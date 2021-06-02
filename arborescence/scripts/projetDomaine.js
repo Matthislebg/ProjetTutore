@@ -18,9 +18,21 @@ $(document).ready(function(){
     }
 
     $('.projetCheckNext').on('click',function(){
+        if ( $('#radio-4').prop('checked') ){
+            $('.carrousel').css('animation','0.5s linear tremble')
+            setTimeout(function(){
+                $('.carrousel').css('animation','')
+            }, 500)
+        }
         checkNext()
     })
     $('.projetCheckLast').on('click',function(){
+        if ( $('#radio-1').prop('checked') ){
+            $('.carrousel').css('animation','0.5s linear tremble')
+            setTimeout(function(){
+                $('.carrousel').css('animation','')
+            }, 500)
+        }
         checkLast()
     })
 })
