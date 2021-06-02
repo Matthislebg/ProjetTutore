@@ -13,29 +13,29 @@
 <?php
     include "../connexionPDO.php";
 
-    if(isset($_POST['envoyer'])){
-        $sql = "INSERT INTO `jeucm`(`pseudo`, `textMsg`, `couleur`) VALUES (:pseudo,:textMsg,:couleur)";
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
-        $stmt->bindParam(':textMsg', $_POST['textMsg'], PDO::PARAM_STR);
-        $stmt->bindParam(':couleur', $_POST['color'], PDO::PARAM_STR);
-        $stmt->execute();
+    // if(isset($_POST['envoyer'])){
+    //     $sql = "INSERT INTO `jeucm`(`pseudo`, `textMsg`, `couleur`) VALUES (:pseudo,:textMsg,:couleur)";
+    //     $stmt = $db->prepare($sql);
+    //     $stmt->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
+    //     $stmt->bindParam(':textMsg', $_POST['textMsg'], PDO::PARAM_STR);
+    //     $stmt->bindParam(':couleur', $_POST['color'], PDO::PARAM_STR);
+    //     $stmt->execute();
 
-        // Envoi de mail
-        $to  = 'sb.lucien77144@gmail.com, mmifyw@gmail.com, celine.rexharrison@gmail.com, matthis.rousselle@gmail.com, marin.bouanchaud@gmail.com';
-        $subject = 'Nouveau message sur le jeu du CM !';
+    //     // Envoi de mail
+    //     $to  = 'sb.lucien77144@gmail.com, mmifyw@gmail.com, celine.rexharrison@gmail.com, matthis.rousselle@gmail.com, marin.bouanchaud@gmail.com';
+    //     $subject = 'Nouveau message sur le jeu du CM !';
 
-        $message = 'Nouveau message sur le jeu du CM du projet tutoré ! Rendez-vous sur la page admin pour le consulter et/ou le valider !';
+    //     $message = 'Nouveau message sur le jeu du CM du projet tutoré ! Rendez-vous sur la page admin pour le consulter et/ou le valider !';
 
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    //     $headers = "MIME-Version: 1.0" . "\r\n";
+    //     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        $headers .= 'From: jeuCM <CMMMMIFYW@etudiant.u-pem.fr>' . "\r\n";
+    //     $headers .= 'From: jeuCM <CMMMMIFYW@etudiant.u-pem.fr>' . "\r\n";
 
-        mail($to,$subject,$message,$headers);
+    //     mail($to,$subject,$message,$headers);
 
-        header('Location: communicationJeu.php?success');
-    }
+    //     header('Location: communicationJeu.php?success');
+    // }
 ?>
 
     <div class="cm">
@@ -102,15 +102,15 @@
             ?>
             </div>
 
-            <form class="Smsg" action="" method="POST">
+            <div class="Smsg">
                 <div>
                     <input type="text" placeholder="Pseudo" maxlength="20" class="pseudo" name="pseudo" required="">
                     <input type="color" name="color" class="color" value="#0B83C6">
                 </div>
                 <textarea rows="20" placeholder="Que souhaitez-vous dire à la communauté ?" maxlength="200"  class="textMsg" name="textMsg" required=""></textarea>
                 <h3 class="charact"><span class="counter"></span> / 200</h3>
-                <input type="submit" name="envoyer" value="Envoyer" class="envoyer">
-            </form>
+                <p class="envoyer">Envoyer</p>
+        </div>
         </div>
             <a href="communicationJeu/connection.php" class="admin">Page d'administration</a>
     </div>

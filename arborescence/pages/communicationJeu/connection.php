@@ -15,7 +15,7 @@
 
         <div class="jeuCm">
             <div class="headAdmin">
-                <a href="../communicationJeu.php"><img class="logotop" src="../../medias/logo.svg"></a>
+                <a href="../domaine.php?page=communication" class="admin">Retour</a>
             </div>
 
             <div class="portal">
