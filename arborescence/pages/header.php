@@ -13,7 +13,10 @@
             ?>
         </h1>
         <div class="container_3">
-            <div class="search_bar">
+            <div class="recherche">
+                <div class="propositions">
+                </div>
+                <input type="search" class="search" placeholder="Rechercher" autocomplete="off">
                 <img src="../medias/loupe.svg">
             </div>
         </div>  

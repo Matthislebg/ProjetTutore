@@ -75,6 +75,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../scripts/domaine.js"></script>
     <script src="../scripts/projetDomaine.js"></script>
+    <script src="../scripts/recherche.js"></script>
 
     <?php
       echo '<script src="../scripts/'.$domaine.'Jeu.js"></script>'
