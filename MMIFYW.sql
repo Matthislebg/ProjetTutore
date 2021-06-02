@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : lun. 24 mai 2021 à 16:40
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.2
+-- Client :  sqletud.u-pem.fr
+-- Généré le :  Mer 02 Juin 2021 à 22:24
+-- Version du serveur :  5.5.62-0+deb8u1-log
+-- Version de PHP :  7.0.33-0+deb9u7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `mmifyw`
+-- Base de données :  `crexharr_db`
 --
 
 -- --------------------------------------------------------
@@ -35,11 +34,11 @@ CREATE TABLE `contact` (
   `email` varchar(100) NOT NULL,
   `sujet` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `dateHeure` timestamp NOT NULL DEFAULT current_timestamp()
+  `dateHeure` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `contact`
+-- Contenu de la table `contact`
 --
 
 INSERT INTO `contact` (`idContact`, `nom`, `prenom`, `codePostal`, `email`, `sujet`, `message`, `dateHeure`) VALUES
@@ -52,16 +51,16 @@ INSERT INTO `contact` (`idContact`, `nom`, `prenom`, `codePostal`, `email`, `suj
 --
 
 CREATE TABLE `domaine` (
-  `idDomaine` int(4) NOT NULL DEFAULT 0,
+  `idDomaine` int(4) NOT NULL DEFAULT '0',
   `nomDomaine` varchar(30) DEFAULT NULL,
-  `presentation` text DEFAULT NULL,
-  `videoDescription` text DEFAULT NULL,
+  `presentation` text,
+  `videoDescription` text,
   `videoUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `domaine`
+-- Contenu de la table `domaine`
 --
 
 INSERT INTO `domaine` (`idDomaine`, `nomDomaine`, `presentation`, `videoDescription`, `videoUrl`, `imageUrl`) VALUES
@@ -85,12 +84,13 @@ CREATE TABLE `jeucm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `jeucm`
+-- Contenu de la table `jeucm`
 --
 
 INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
 (9, 'Lucien', 'Wouhou !!!\r\nC\'est le premier message de ce mini-jeu, on a passé pas mal de temps dessus mais bon, nous sommes content du résultat !!!', 1, '#00a6ff'),
-(10, 'Lucien', 'Ceci est un test pour le main automatique', 1, '#0b83c6');
+(10, 'Lucien', 'Ceci est un test pour le main automatique', 1, '#0b83c6'),
+(11, 'Matthis', 'Je trouve que Lucien est très beau et seduisant', NULL, '#0b83c6');
 
 -- --------------------------------------------------------
 
@@ -99,20 +99,20 @@ INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
 --
 
 CREATE TABLE `metier` (
-  `idMetier` int(20) NOT NULL DEFAULT 0,
+  `idMetier` int(20) NOT NULL DEFAULT '0',
   `nomMetier` varchar(50) DEFAULT NULL,
-  `presentation` text DEFAULT NULL,
-  `qualite` text DEFAULT NULL,
-  `competence` text DEFAULT NULL,
-  `formation` text DEFAULT NULL,
-  `salaire` text DEFAULT NULL,
-  `structure` text DEFAULT NULL,
+  `presentation` text,
+  `qualite` text,
+  `competence` text,
+  `formation` text,
+  `salaire` text,
+  `structure` text,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `metier`
+-- Contenu de la table `metier`
 --
 
 INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
@@ -163,15 +163,15 @@ CREATE TABLE `profil` (
 CREATE TABLE `projet` (
   `idProjet` varchar(10) NOT NULL DEFAULT '',
   `nomProjet` varchar(200) DEFAULT NULL,
-  `nomAuteur` text DEFAULT NULL,
-  `presentation` text DEFAULT NULL,
+  `nomAuteur` text,
+  `presentation` text,
   `siteUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `projet`
+-- Contenu de la table `projet`
 --
 
 INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `siteUrl`, `imageUrl`, `domaineId`) VALUES
@@ -181,7 +181,7 @@ INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `sit
 ('12', 'Affiche JPO', 'Manar B., Julie S.M., et Minal L. - IUT de Champs-sur-Marne', 'Cette affiche a été réalisé par trois étudiantes en deuxième année de DUT MMI pour la journée portes ouvertes MMI de l’IUT de Champs-sur-Marne. ', '', '../medias/projetmmi/design3.jpg', '3'),
 ('13', 'Ecokid', 'Serena Leandri, Aubin Olivrie, Thibault Paulard, Minosoa Andrianomanana, Hugo Leroy  - IUT de Champs-sur-Marne', 'Ce site web interactif a été réalisé par 5 étudiants en DUT MMI à Champs-sur-Marne pour le projet tutoré de deuxième année. Ce site a pour but de sensibiliser les enfants de 6 à 10 ans à l’écologie. Ils ont cherchés à répondre aux besoins du manque d’informations pour les enfants sur l’écologie et les conditions environnementales pour pouvoir changer les mauvaises conditions environnementales de notre planète. ', 'https://www.ecokid.fr/', '../medias/projetmmi/comm4.jpg', '2'),
 ('14', 'CrocMMI', 'Laurence Wang, Keïsha-Faty Pafadnam - IUT de Champs-sur-Marne', 'Ce site web a été réalisé par 2 étudiants en DUT MMI à Champs-sur-Marne pour le projet tutoré de première année. Le but de ce site est de présenter les différents débouchées possibles après un DUT MMI. Un test de personnalité sous la forme d’un burger à composer peut être fait par les étudiants pour s’informer sur les métiers, de plus ils ont la possibilité de consulter le profil de chaque métier. ', 'https://laurencewang.fr/crocMMI/', '../medias/projetmmi/prog3.png', '4'),
-('15', 'Redesign Youtube', 'Marin Bouanchaud', 'Ce projet a été réalisé par deux étudiants en première année de DUT MMI cette année. Le but de ce travail était tout d’abord de repenser le design de Youtube ainsi que l’expérience utilisateur de cette plateforme en y ajoutant des fonctionnalités, existantes ou non chez les concurrents. L’objectif était de redonner à Youtube un design jeune et innovant en conservant sa charte graphique et toutes les fonctionnalités présentes actuellement afin de faire de cette application un outil quasi indispensable. ', 'https://drive.google.com/file/d/1gr2w59h6xAE7b5kXURsYM3hnDxBA6yYn/view?usp=sharing', '../medias/projetmmi/design4.jpg', '3'),
+('15', 'Redesign Youtube', 'Marin Bouanchaud', 'Ce projet a été réalisé par deux étudiants en première année de DUT MMI cette année. Le but de ce travail était tout d’abord de repenser le design de Youtube ainsi que l’expérience utilisateur de cette plateforme en y ajoutant des fonctionnalités, existantes ou non chez les concurrents. L’objectif était de redonner à Youtube un design jeune et innovant en conservant sa charte graphique et toutes les fonctionnalités présentes actuellement afin de faire de cette application un outil quasi indispensable. ', 'https://drive.google.com/file/d/1gr2w59h6xAE7b5kXURsYM3hnDxBA6yYn/view?usp=sharing', '../medias/projetmmi/design4.png', '3'),
 ('16', 'Portrait chinois', 'Lucien Boisseau-Sable, Marin Bouanchaud - IUT de Champs-sur-Marne', 'Ce projet a été réalisé par deux étudiants en première année de DUT MMI cette année. Le but de ce travail était de réaliser une page web en quelques heures (3h ou plus) type portrait chinois. Les thématiques ont été imposées par groupe : 5 sens, Onomatopée, Friandise, Hashtag, Émotion, Jeu vidéo. Ce groupe a du travaille sur la thématique des jeux vidéos. Sur chaque page devait apparaître les pseudos des deux étudiants du binôme, “si j’étais..., je serais…”, ainsi que le lien vers le projet suivant.', 'http://gaellecharpentier.fr/pc/H/1/index.html', '../medias/projetmmi/prog4.png', '4'),
 ('2', 'CV Video', 'Anastasiya Balan', 'Ce CV vidéo est un projet commun en audiovisuel et en anglais. Ce n’est pas un CV traditionnel comme on a l’habitude de voir, en effet Anastasiya Balan, ancienne élève à l’IUT Gustave Eiffel a cherché à démontrer ses compétences et son savoir-être sans simplement les énoncer.\r\nCe CV Vidéo présenté au Festival MMI 2020 a obtenu le premier prix dans la catégorie Audiovisuel.', 'https://www.youtube.com/watch?v=PV3bbVQLLYg&feature=youtu.be&ab_channel=FestivalMMI', '../medias/projetmmi/audio1.jpg', '1'),
 ('3', 'Shoot', 'É. Pageard, B. Kinet, C. Sallaud, Y. Gasnière, N. Tessier, Q. Darphel, F. Vignaud, A. Rigaud, L. Stringari, F. Renon, S. Daviaud, É.Dumasdelage - IUT de Limoges', 'Ce projet est un court-métrage réalisé par des anciens élèves en DUT MMI à Limoges en 2020. Cette vidéo raconte l’histoire de Ben, un photographe qui, après avoir essuyé plusieurs échecs, se voit proposer un ultime contrat qui déterminera son avenir dans l’agence. Il n’a qu’un seul cliché à prendre mais cette mission s’annonce périlleuse car la concurrence est rude. Ce court-métrage présenté au Festival MMI 2020 a obtenu un prix dans la catégorie Audiovisuel (2e position) et un prix du public (3e position).', 'https://www.youtube.com/watch?v=434Yh7Otnos&ab_channel=FestivalMMI', '../medias/projetmmi/audio2.png', '1'),
@@ -193,7 +193,7 @@ INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `sit
 ('9', 'The Quiet', 'Laurence Wang - IUT de Champs-sur-Marrne', 'Cette couverture de livre fictif, The Quiet est un projet personnel de Laurence Wang. Ce livre serait un guide pour apprécier le silence, inspiré par la période de confinement. Ce projet présenté au Festival MMI 2020 a obtenu un prix dans la catégorie Infographie (3e position).', '', '../medias/projetmmi/design2.jpg', '3');
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -207,6 +207,12 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `domaine`
   ADD PRIMARY KEY (`idDomaine`);
+
+--
+-- Index pour la table `jeucm`
+--
+ALTER TABLE `jeucm`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `metier`
@@ -227,7 +233,7 @@ ALTER TABLE `projet`
   ADD PRIMARY KEY (`idProjet`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -235,8 +241,11 @@ ALTER TABLE `projet`
 --
 ALTER TABLE `contact`
   MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+--
+-- AUTO_INCREMENT pour la table `jeucm`
+--
+ALTER TABLE `jeucm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
