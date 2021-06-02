@@ -1,7 +1,6 @@
 <?php
     include "../../connexionPDO.php";
 
-
     $sql = "INSERT INTO `jeucm`(`pseudo`, `textMsg`, `couleur`) VALUES (:pseudo,:textMsg,:couleur)";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':pseudo', $_GET['pseudo'], PDO::PARAM_STR);

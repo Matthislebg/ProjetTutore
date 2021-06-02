@@ -9,6 +9,13 @@ $(document).ready(function(){
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
+
+    $("body").on("mouseenter", ".jeuCm", function(){
+        scrollTrue = false
+    })
+    $("body").on("mouseleave", ".jeuCm", function(){
+        scrollTrue = true
+    })
     
     // listen wheel event
     $(window).on('wheel', function(e){

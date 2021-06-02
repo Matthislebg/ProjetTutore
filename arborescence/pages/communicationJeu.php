@@ -102,15 +102,15 @@
             ?>
             </div>
 
-            <div class="Smsg">
+            <div class="Smsg">  <!-- N'est pas en balise form afin de pouvoir rendre le jeu interactif sans rechargement de page -->
                 <div>
-                    <input type="text" placeholder="Pseudo" maxlength="20" class="pseudo" name="pseudo" required="">
+                    <input type="text" placeholder="Pseudo" maxlength="20" class="pseudo" name="pseudo">
                     <input type="color" name="color" class="color" value="#0B83C6">
                 </div>
-                <textarea rows="20" placeholder="Que souhaitez-vous dire à la communauté ?" maxlength="200"  class="textMsg" name="textMsg" required=""></textarea>
+                <textarea rows="20" placeholder="Que souhaitez-vous dire à la communauté ?" maxlength="200"  class="textMsg" name="textMsg"></textarea>
                 <h3 class="charact"><span class="counter"></span> / 200</h3>
-                <p class="envoyer">Envoyer</p>
-        </div>
+                <p class="envoyer">Envoyer</p>  <!-- N'est pas en balise input afin de pouvoir rendre le jeu interactif sans rechargement de page -->
+            </div>
         </div>
             <a href="communicationJeu/connection.php" class="admin">Page d'administration</a>
     </div>
