@@ -10,7 +10,7 @@ $(document).ready(function(){
         })
     });
 
-    $(".search").on("click", function(e){
+    $("body").on("click", function(e){
         if(!$(".recherche").is(e.target) && $(".recherche").has(e.target).length === 0){
             $(".propositions").css({
                 "height": "0vw"
