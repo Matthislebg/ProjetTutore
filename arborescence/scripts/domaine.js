@@ -4,12 +4,35 @@ $(document).ready(function(){
     var position = 0
     var timer = 1000
     var scrolling = false
+    var delta
+    var touch = false
+    var ts
+    
+    // listen touchscreen events
+    $(document).on('touchstart',function(e){
+        ts = e.originalEvent.touches[0].clientY
+    })
+
+    $(document).on('touchmove', function(e) {
+        touch = true
+
+        // detect touch direction
+        if (ts > e.originalEvent.changedTouches[0].clientY){
+            delta = 1
+        } else {
+            delta = -1
+        }
+
+        console.log('touchmove')
+        $(document).trigger('wheel')
+    });
 
     // reset position on refresh
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
 
+    // unable scroll while hovering jeuCm
     $("body").on("mouseenter", ".jeuCm", function(){
         scrollTrue = false
     })
@@ -28,7 +51,9 @@ $(document).ready(function(){
             scrollTrue = true
         }, 400);
 
-        var delta = e.originalEvent.deltaY // detect scroll direction
+        if (!touch){
+            delta = e.originalEvent.deltaY // detect scroll direction
+        }        
         
         if (delta > 0) { // going down
             position++            
@@ -41,6 +66,7 @@ $(document).ready(function(){
             scrolling = true
             setTimeout(function(){
                 scrolling = false
+                touch = false
             }, timer);
             
         } else { // going up
@@ -55,6 +81,7 @@ $(document).ready(function(){
             scrolling = true
             setTimeout(function(){
                 scrolling = false
+                touch = false
             }, timer);
             timer = 1000            
         }
