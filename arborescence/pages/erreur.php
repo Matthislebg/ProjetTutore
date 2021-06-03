@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Erreur</title>
     <link rel="stylesheet" href="../styles/erreur.css">
+    <link rel="stylesheet" href="../styles/header.css">
   </head>
   <body>
-    <header></header>
+    <header><?php 
+        $titre = "";
+        include 'header.php';
+        ?></header>
     <div class="container">
       <img src="../medias/erreur.svg" />
       <p>La page que vous avez demandé n'existe pas</p>

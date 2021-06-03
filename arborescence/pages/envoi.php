@@ -12,7 +12,7 @@
  include "../connexionPDO.php";
 // pour le serveur de l'UPEM, remplacer localhost par sqletud.u-pem.fr
  
-if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & isset($_POST["codepostal"]) & isset($_POST["objet"]) & isset($_POST["envoyer"])){
+if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & isset($_POST["codepostal"]) & isset($_POST["objet"]) & isset($_POST["message"])){
   $sql = "INSERT INTO contact(nom, prenom, email, codePostal, sujet, message) VALUES (:nom, :prenom, :email, :codePostal, :sujet, :message)";
   // On prépare la requête avant l'envoi :
   $req = $db -> prepare($sql);
@@ -24,8 +24,9 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         'sujet' => $_POST["objet"], 
                         'message' => $_POST["message"]));
 
-                        $to  = 'lboiss01@etud-upem.fr, mmifyw@gmail.com, celine.rexharrison@gmail.com, mrouss23@etud.u-pem.fr, mbouanch@etud.u-pem.fr';
-                        $subject = 'Nouveau contact sur le CV numérique !';
+                        $to  = 'lboiss01@etud-upem.fr, crexharr@etud.u-pem.fr, mrouss23@etud.u-pem.fr, mbouanch@etud.u-pem.fr';
+                        /*mmifyw@gmail.com*/
+                        $subject = 'Nouveau message sur votre site! !';
             
                         $message = '
                         <html>
@@ -33,8 +34,8 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         <title>Nouveau messsage </title>
                         </head>
                         <body>
-                        <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau message reçu, il s\'agit de '.$_POST['nom'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
-                        <p> '.$_POST['msg'].' </p>
+                        <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau message reçu, il s\'agit de '.$_POST['name'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
+                        <p> '.$_POST['message'].' </p>
                         </body>
                         </html>
                         ';
@@ -47,8 +48,7 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         mail($to,$subject,$message,$headers);
 
 
-  // $req = null;
-  // On affiche l'adresse inscrite en évitant une injection de code JS
+  $req = null;
   echo "<h1>Merci pour votre message !</h1>";
 }
 ?>

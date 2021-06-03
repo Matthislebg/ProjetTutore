@@ -102,9 +102,8 @@ section{
 section .container p{    
     padding-right: 30px;
     margin: 0px;
-    max-width: 50%; 
+    max-width: 40%; 
     text-align: left;
-
 }
 
 section .container>img{
@@ -131,68 +130,40 @@ section:first-of-type{
 
 section:first-of-type .container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 50%;
-    width: 100%;
 }
-
 
 /* METIERS */
 
-section:nth-of-type(2) {
+section:nth-of-type(2) .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.metierItem{
+    height: 200px;
+    width: 400px;
+    margin: 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.carrousel_metiers {
-    width: 70vw;
-    height: 35vw;
-    background-color: gray;
-    position: relative;
-}
-.carrousel_metiers a {
-    width: 14vw;
-    height: 35vw;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3vw ;
-    color: white;
     text-align: center;
-    border: 2px solid white;
+    color: white;
+    font-size: 1.7rem;
+    transition: transform 0.3s ease-in-out;
 }
-.carrousel_metiers a:nth-child(1) {
-    left: 0;
-    transition: 1s ease;
-    z-index: 0;
+
+.metierItem:hover{
+    transform: scale(1.1);
 }
-.carrousel_metiers a:nth-child(2) {
-    left: 14vw;
-    transition: 1s ease;
-    z-index: 0;
-}
-.carrousel_metiers a:nth-child(3) {
-    left: 28vw;
-    transition: 1s ease;
-    z-index: 1;
-}
-.carrousel_metiers a:nth-child(4) {
-    left: 42vw;
-    transition: 1s ease;
-    z-index: 0;
-}
-.carrousel_metiers a:nth-child(5) {
-    left: 56vw;
-    transition: 1s ease;
-    z-index: 0;
-}
-.carrousel_metiers a:hover  {
-    left: 0;
-    width: 70vw;
-    z-index: 100;
-    font-size: 3vw;
+
+.ligne1, .ligne2, .ligne3{
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Interview */
@@ -215,7 +186,6 @@ section:nth-of-type(2) {
     width: 30%;
     padding-right: 20px;
     text-align: justify;
-    font-size: 1.2vw;
 }
 
 .interview{

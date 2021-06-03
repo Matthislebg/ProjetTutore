@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Client :  sqletud.u-pem.fr
--- Généré le :  Mer 02 Juin 2021 à 22:44
--- Version du serveur :  5.5.62-0+deb8u1-log
--- Version de PHP :  7.0.33-0+deb9u7
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 03 juin 2021 à 11:57
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `crexharr_db`
+-- Base de données : `mmifyw`
 --
 
 -- --------------------------------------------------------
@@ -34,11 +35,11 @@ CREATE TABLE `contact` (
   `email` varchar(100) NOT NULL,
   `sujet` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `dateHeure` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `dateHeure` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `contact`
+-- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`idContact`, `nom`, `prenom`, `codePostal`, `email`, `sujet`, `message`, `dateHeure`) VALUES
@@ -51,23 +52,23 @@ INSERT INTO `contact` (`idContact`, `nom`, `prenom`, `codePostal`, `email`, `suj
 --
 
 CREATE TABLE `domaine` (
-  `idDomaine` int(4) NOT NULL DEFAULT '0',
+  `idDomaine` int(4) NOT NULL DEFAULT 0,
   `nomDomaine` varchar(30) DEFAULT NULL,
-  `presentation` text,
-  `videoDescription` text,
+  `presentation` text DEFAULT NULL,
+  `videoDescription` text DEFAULT NULL,
   `videoUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `domaine`
+-- Déchargement des données de la table `domaine`
 --
 
 INSERT INTO `domaine` (`idDomaine`, `nomDomaine`, `presentation`, `videoDescription`, `videoUrl`, `imageUrl`) VALUES
-(1, 'Audiovisuel', 'Le domaine de l’audiovisuel correspond à la fois aux matériels, techniques et méthodes d’information, de communication ou d’enseignement associant le son et l’image. On part de  la conception à la diffusion en passant par la réalisation, le tournage et la finalisation. \r\nLes métiers de l’audiovisuel sont assez nombreux et variés avec des activités de différentes natures que ce soit au niveau technique ou artistique. Ces métiers peuvent concerner divers médias : le cinéma, la télévision, la radio, le jeu vidéo, la vidéo en streaming… \r\n\r\nVoici quelques métiers de l’audiovisuel que vous pourrez exercer après un DUT MMI : \r\n', 'Anne Tasso, enseignante en BUT MMI à Champs-sur-Marne, vous présente les différents métiers de l’audiovisuel, du réalisateur au monteur, en vous décrivant les étapes de réalisation d’un film et en vous détaillant la journée type d’un scénariste.', 'https://www.youtube.com/embed/gQOrfziq35c', '../medias/pagedomaine/audiovisuel.png'),
-(2, 'Communication', 'Le domaine de la communication-marketing correspond à la gestion de toutes les informations qui émanent d’une structure afin de transmettre un message à un public ciblé en promouvant l’image d’un produit, d’un service, d’une personne, d’une organisation ou d’un événement. Il s’agit aussi de déterminer les conditions dans lesquelles sera vendu un produit (prix, distribution, promotion etc.) afin de remplir les objectifs commerciaux. \r\nLes métiers de ce domaine peuvent être exercés dans différents types d’entreprises : en agence (de communication, de publicité), dans les services internes de communication d’une organisation (entreprise, association..), en indépendant (journalistes d’entreprise, conseillers en communication…). \r\n\r\nVoici quelques métiers en communication que vous pourrez exercer après un DUT MMI : ', 'Clarisse Henry, ancienne étudiante en MMI et entrepreneuse, vous fait découvrir le quotidien d’une freelance dans le domaine de la communication, en décrivant ses multiples activités et réalisations, comme la conception de revues ou dossiers de presse, mais aussi de son site de e-commerce.', 'https://www.youtube.com/embed/eWf9FZHl-gE', '../medias/pagedomaine/comm.png'),
-(3, 'Design', 'Le domaine du design graphique (aussi appelé design de communication) correspond à l’activité de conception ayant pour but de mettre en œuvre et coordonner la réalisation d’une communication visuelle en associant image et texte, sur imprimé ou écran. \r\nLes métiers du design graphique interviennent dans l’élaboration de supports de communication variés : les produits numériques et interactifs (site web, séquences animées en motion design, logo), les imprimés (livres, revues, affiches, brochures…),  le packaging, la publicité… \r\nVoici quelques métiers du design graphique que vous pourrez exercer après un DUT MMI : ', 'Robin Llopis, enseignant en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier d\'UX/UI Designer au travers de son quotidien, en commençant par le travail de veille et la discussion avec le client jusqu\'à la réalisation des wireframes, les maquettes des sites web.', 'https://www.youtube.com/embed/t5vIAKs8WLE', '../medias/pagedomaine/design.png'),
-(4, 'Programmation', 'Le domaine de la programmation (aussi appelé développement informatique) est un sous-domaine du secteur de l’informatique et correspond à la conception et au développement  de logiciels, de jeux vidéo, de sites web et d’applications à l’aide des différents langages de programmation. Les métiers de ce domaine très divers sont utiles dans tous les secteurs professionnels actuels : les boîtes de communication/marketing, les banques, les entreprises de jeux vidéo… \r\nVoici quelques métiers en programmation que vous pourrez exercer après un DUT MMI : \r\n', 'Gaëlle Charpentier, enseignante en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier de développeur front, son quotidien et une journée type qui peut varier entre réunions et travail d’équipe, réalisation de projets ou encore veille technologique.', 'https://www.youtube.com/embed/qTJ-tk8z47c', '../medias/pagedomaine/prog.png');
+(1, 'Audiovisuel', 'Le domaine de l’audiovisuel correspond à la fois aux matériels, techniques et méthodes d’information, de communication ou d’enseignement associant le son et l’image.<br> On part de  la conception à la diffusion en passant par la réalisation, le tournage et la finalisation. \r\nLes métiers de l’audiovisuel sont assez nombreux et variés avec des activités de différentes natures que ce soit au niveau technique ou artistique. <br>Ces métiers peuvent concerner divers médias : <br> le cinéma, la télévision, la radio, le jeu vidéo, la vidéo en streaming… \r\n<br>\r\nVoici quelques métiers de l’audiovisuel que vous pourrez exercer après un DUT MMI : \r\n', 'Anne Tasso, enseignante en BUT MMI à Champs-sur-Marne, vous présente les différents métiers de l’audiovisuel, du réalisateur au monteur, en vous décrivant les étapes de réalisation d’un film et en vous détaillant la journée type d’un scénariste.', 'https://www.youtube.com/embed/gQOrfziq35c', '../medias/pagedomaine/audiovisuel.png'),
+(2, 'Communication', 'Le domaine de la communication-marketing correspond à la gestion de toutes les informations qui émanent d’une structure afin de transmettre un message à un public ciblé en promouvant l’image d’un produit, d’un service, d’une personne, d’une organisation ou d’un événement. <br> Il s’agit aussi de déterminer les conditions dans lesquelles sera vendu un produit (prix, distribution, promotion etc.) afin de remplir les objectifs commerciaux. <br>\r\nLes métiers de ce domaine peuvent être exercés dans différents types d’entreprises :<br> en agence (de communication, de publicité), dans les services internes de communication d’une organisation (entreprise, association..), en indépendant (journalistes d’entreprise, conseillers en communication…). \r\n<br>\r\nVoici quelques métiers en communication que vous pourrez exercer après un DUT MMI : ', 'Clarisse Henry, ancienne étudiante en MMI et entrepreneuse, vous fait découvrir le quotidien d’une freelance dans le domaine de la communication, en décrivant ses multiples activités et réalisations, comme la conception de revues ou dossiers de presse, mais aussi de son site de e-commerce.', 'https://www.youtube.com/embed/eWf9FZHl-gE', '../medias/pagedomaine/comm.png'),
+(3, 'Design', 'Le domaine du design graphique (aussi appelé design de communication) correspond à l’activité de conception ayant pour but de mettre en œuvre et coordonner la réalisation d’une communication visuelle en associant image et texte, sur imprimé ou écran.<br> \r\nLes métiers du design graphique interviennent dans l’élaboration de supports de communication variés : les produits numériques et interactifs (site web, séquences animées en motion design, logo), les imprimés (livres, revues, affiches, brochures…),  le packaging, la publicité…  <br>\r\nVoici quelques métiers du design graphique que vous pourrez exercer après un DUT MMI : ', 'Robin Llopis, enseignant en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier d\'UX/UI Designer au travers de son quotidien, en commençant par le travail de veille et la discussion avec le client jusqu\'à la réalisation des wireframes, les maquettes des sites web.', 'https://www.youtube.com/embed/t5vIAKs8WLE', '../medias/pagedomaine/design.png'),
+(4, 'Programmation', 'Le domaine de la programmation (aussi appelé développement informatique) est un sous-domaine du secteur de l’informatique et correspond à la conception et au développement  de logiciels, de jeux vidéo, de sites web et d’applications à l’aide des différents langages de programmation.<br> Les métiers de ce domaine très divers sont utiles dans tous les secteurs professionnels actuels :<br> les boîtes de communication/marketing, les banques, les entreprises de jeux vidéo… \r\n<br>\r\nVoici quelques métiers en programmation que vous pourrez exercer après un DUT MMI : \r\n', 'Gaëlle Charpentier, enseignante en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier de développeur front, son quotidien et une journée type qui peut varier entre réunions et travail d’équipe, réalisation de projets ou encore veille technologique.', 'https://www.youtube.com/embed/qTJ-tk8z47c', '../medias/pagedomaine/prog.png');
 
 -- --------------------------------------------------------
 
@@ -84,13 +85,14 @@ CREATE TABLE `jeucm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `jeucm`
+-- Déchargement des données de la table `jeucm`
 --
 
 INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
 (9, 'Lucien', 'Wouhou !!!\r\nC\'est le premier message de ce mini-jeu, on a passé pas mal de temps dessus mais bon, nous sommes content du résultat !!!', 1, '#00a6ff'),
 (10, 'Lucien', 'Ceci est un test pour le main automatique', 1, '#0b83c6'),
-(11, 'Matthis', 'Je trouve que Lucien est très beau et seduisant', NULL, '#0b83c6');
+(11, 'Matthis', 'Je trouve que Lucien est très beau et seduisant', NULL, '#0b83c6'),
+(12, 'Robert', 'Robert effectue des tests', 0, '#ff0000');
 
 -- --------------------------------------------------------
 
@@ -99,20 +101,20 @@ INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
 --
 
 CREATE TABLE `metier` (
-  `idMetier` int(20) NOT NULL DEFAULT '0',
+  `idMetier` int(20) NOT NULL DEFAULT 0,
   `nomMetier` varchar(50) DEFAULT NULL,
-  `presentation` text,
-  `qualite` text,
-  `competence` text,
-  `formation` text,
-  `salaire` text,
-  `structure` text,
+  `presentation` text DEFAULT NULL,
+  `qualite` text DEFAULT NULL,
+  `competence` text DEFAULT NULL,
+  `formation` text DEFAULT NULL,
+  `salaire` text DEFAULT NULL,
+  `structure` text DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `metier`
+-- Déchargement des données de la table `metier`
 --
 
 INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
@@ -135,7 +137,7 @@ INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `compe
 (16, 'Administrateur réseau', '<p> Le métier d’administrateur réseau consiste à s’occuper du bon fonctionnement et de l’optimisation des réseaux de\r\n        la structure (entreprise, association). Ils ont pour but de garantir la bonne circulation de l’information dans\r\n        l’entreprise en analysant les performances du réseau informatique, en veillant au bon fonctionnement des\r\n        équipements et en répondant au besoin des utilisateurs.</p>\r\n    <h4> Missions :</h4>\r\n\r\n    <ul>\r\n        <li> Il gére le câblage physique du réseau.</li>\r\n        <li> Il gére le bon routage (la bonne circulation des informations immatérielles).</li>\r\n        <li> Il assure la sécurité du réseau.</li>\r\n        <li> Il gére les différents comptes utilisateurs et droits d’accès.</li>\r\n        <li> Il repére les anomalies et trouve des solutions pour les résoudre.</li>\r\n        <li> Il gére l’accès des utilisateurs.</li>\r\n        <li> Il vérifie la compatibilité du nouveau matériel.</li>\r\n        <li> Il assure la bonne gestion des droits d’accès, pour les machines d’une part, et pour les utilisateurs\r\n            d’autre part, dans le respect des règles de sécurité de l’entreprise.</li>\r\n        <li> Il suit le budget d’exploitation des réseaux.</li>\r\n        <li> Il installe les logiciels d’administration de réseau.</li>\r\n        <li> Il effectue les réglages des paramètres.</li>\r\n        <li> Il assure l’ensemble des sauvegardes nécessaires pour maintenir la sécurité des données circulant dans le\r\n            réseau de l’entreprise.</li>\r\n        <li> Il met en place les normes de sécurité, notamment celles liées aux conditions d’accès.</li>\r\n        <li> Il assure une veille technologique afin d’anticiper les évolutions nécessaires à l’optimisation du réseau.\r\n        </li>\r\n        <li> Il suit les évolutions technologiques des systèmes et définit les plans de rénovation ou d’extension du\r\n            réseau avec les ingénieurs et les techniciens.</li>\r\n    </ul>\r\n', '<ul>\r\n        <li> Qualités relationnelles</li>\r\n        <li> Sens de l’écoute et du dialogue pour bien comprendre les besoins des utilisateurs</li>\r\n        <li> Rigueur et sens de la méthode</li>\r\n        <li> Méthode</li>\r\n        <li> Autonomie</li>\r\n        <li> Réactivité et disponibilité pour assurer un service performant aux utilisateurs</li>\r\n        <li> Résistance au stress </li>\r\n        <li> Patience</li>\r\n        <li> Adaptabilité et curiosité</li>\r\n    </ul>\r\n', '<ul>\r\n        <li> Bonnes compétences en informatique.</li>\r\n        <li> Bonnes compétences en informatique des réseaux (câblage, protocole de routage, cybersécurité et gestions\r\n            des\r\n            droits d’accès).</li>\r\n        <li> Bonnes connaissances de l’architecture et des fonctionnalités du système informatique de l’entreprise.</li>\r\n        <li> Bonne compétences en systèmes d’exploitation.</li>\r\n        <li> Capacité à résoudre des problèmes complexes et nouveaux.</li>\r\n        <li> Capacités en gestion de projet.</li>\r\n        <li> Savoir se tenir au courant de toutes les évolutions technologiques, des changements dans les normes (pour\r\n            fournir\r\n            à l’entreprise la meilleure solution possible).</li>\r\n        <li> Connaître les infrastructures et supports qui permettent de relier les matériaux entre eux.</li>\r\n        <li> Maîtrise des protocoles de communication.</li>\r\n        <li> Maîtrise de logiciels d’analyse pour surveiller le fonctionne du réseau.</li>\r\n        <li> Bonne connaissance en technologies télécoms, Internet (Web, XML, PHP…), ainsi qu’en bases de données\r\n            (Oracle, SQL\r\n            Server...).</li>\r\n        <li> Très bonnes connaissances des principaux systèmes d’exploitation (Windows et Unix).</li>\r\n        <li> Maîtrise de l’anglais technique.</li>\r\n    </ul>\r\n', '<ul>\r\n        <li> Niveau bac +2 : BTS en informatique, réseaux et télécommunication.\r\n            <br> ex : BTS Systèmes numériques option A informatique et réseaux </li>\r\n\r\n        <li> Niveau bac +3: BUT ou Licences pro en informatique, télécommunications et réseaux.\r\n            <br> ex : BUT réseaux et télécommunications\r\n            <br> ex : Licence pro mention métiers de l’informatique : administration et sécurité</li>\r\n\r\n        <li> Niveau bac +5: master professionnel ou master de recherche spécialité ingénierie des réseaux ou spécialité\r\n            systèmes, réseaux et architecture.\r\n            <br> ex : Master mention méthodes informatiques appliquées à la gestion des entreprises</li>\r\n\r\n        <li> ou, Niveau bac +5: Diplôme d’ingénieur orienté réseaux.\r\n            <br> ex : Diplôme d’ingénieur de l’École nationale supérieure d’électronique</li>\r\n    </ul>', '<p>\r\n        Le salaire d’un administrateur réseau varie entre 32 000 à 48 000 € brut par an en fonction du niveau\r\n        d’expérience\r\n        et du secteur. </p>\r\n\r\n    <ul>\r\n        <li> Jeune cadre : entre 20 000 et 35 000€ brut par an</li>\r\n        <li> Cadre confirmé : entre 35 000 et 50 000€ brut par an</li>\r\n    </ul>\r\n', '<p>L’administrateur réseau peut virtuellement exercer partout où il y a un réseau plus ou moins complexe à installer\r\n    et/ou à faire évoluer.\r\n    <br>Dans la pratique, il peut être embauché au sein d’une entreprise, d’une structure gouvernementale ou d’une\r\n    association. Il peut même être employé par une société de services externe qui la mettra sous contrat de mission\r\n    avec diverses structures clientes.</p>', '', 4),
 (17, 'CTO/Directeur Technique Web', '<p> Le directeur technique web d’une entreprise est responsable de la partie technique et des équipes qui le mettent\r\n        en œuvre. Acteur de l’innovation, il assure la maintenance complète (disponibilité et évolution) de toutes les\r\n        techniques liées aux sites web et mobile.</p>\r\n    <h4>Missions :</h4>\r\n\r\n    <ul>\r\n        <li> Il définit la stratégie entrepreneuriale concernant les projets digitaux.</li>\r\n        <li> Il élabe d’une roadmap.</li>\r\n        <li> Il assure la conception des plateformes Web.</li>\r\n        <li> Il assure la conception des interfaces avec le back office avec leurs évolutions futures.</li>\r\n        <li> Il conduit les actions de veille concernant l’innovation technologique et sectorielle.</li>\r\n        <li> Il anime l’équipe technique composée des développeurs, chefs de projets, architectes.</li>\r\n        <li> Il coordonne les prestataires régie ou forfait.</li>\r\n        <li> Il évalue les projets en fonction des budgets dont il est responsable.</li>\r\n        <li> Il rend compte de ses actions à la direction générale.</li>\r\n    </ul>', '<ul>\r\n        <li> Savoir s’organiser et planifier différents projets.</li>\r\n        <li> Être rigoureux dans son travail afin de piloter un projet.</li>\r\n        <li> Capacité à stimuler et canaliser la créativité des équipes.</li>\r\n        <li> Calme et sang froid pour résister à la pression des utilisateurs.</li>\r\n        <li> Capacité à prendre des décisions soudaines qui engagent son entreprise.</li>\r\n        <li> Bonne capacité d’adaptation.</li>\r\n        <li> Curiosité.</li>\r\n        <li> Goût du changement.</li>\r\n    </ul>\r\n', '<ul>\r\n        <li> Expérience significative du management, aptitude à encadrer et à former ses équipes.</li>\r\n        <li> Maîtrise des méthodologies agiles.</li>\r\n        <li> Force de conviction pour préconiser les choix technologiques.</li>\r\n        <li> Qualité d’écoute et d’empathie.</li>\r\n        <li> Expertise sur le digital et dans les différents langages et frameworks de développement / importante\r\n            culture technologique.</li>\r\n    </ul>', '<p>Pour devenir directeur, cinq années d’études au moins sont nécessaires après le bac.\r\n    <br>\r\n    Le mieux est d’être diplômé d’une école d’ingénieur ou d’un master d’informatique en Université.\r\n    Il est aussi très intéressant d’avoir une solide expérience dans le développement technique web. </p>', '<p> Le salaire d’un directeur technique web peut varier selon la taille de la structure qu’il intègre. </p>\r\n    <ul>\r\n        <li> Dans une start-up ou une PME ebusiness, son salaire peut varier de 60 à 80 000€ brut par an.</li>\r\n        <li> Au sein d’une grosse PME à la pointe d’une technologie informatique par exemple, il peut monter jusqu’à 100\r\n            000€\r\n            brut par an.</li>\r\n        <li> Enfin, si le CTO travaille dans une direction digitale des grands groupes, son salaire peut parfois monter\r\n            jusqu’à\r\n            110 000€ brut par an.</li>\r\n    </ul>\r\n', '<p>Le Directeur Technique Web doit travailler en entreprise pour pouvoir responsabiliser et gérer ses différentes équipes.</p> \r\n', '', 4),
 (18, 'Développeur Back', '<p> Alors que le développeur front-end se charge exclusivement de créer une interface claire et simple pour les\r\n        internautes, le développeur back-end travaille principalement sur le back-office ainsi que sur tous les éléments\r\n        d’un projet web qui sont ”invisibles” (mais indispensables) lorsque l’on navigue sur un site Internet.</p>\r\n    <h4> Missions :</h4>\r\n    <ul>\r\n        <li> Il se charge de la mise en place du site.</li>\r\n        <li> Il effectue la configuration, du développement et de la maintenance du serveur.</li>\r\n        <li> Il s’occupe de la base de données.</li>\r\n        <li> Il gère l’application web en général.</li>\r\n    </ul>', '<p>Le développeur back-end doit savoir travailler en toute autonomie, respecter les délais mais également dialoguer efficacement avec le client et ses équipes, notamment pour ce qui concerne le front-end. \r\n<br> Une certaine polyvalence dans les deux domaines peut quelquefois être recherchée.</p>\r\n', '<ul>\r\n<li> En plus d’un grand intérêt pour l’informatique en général, le développeur Back-end se doit de s’intéresser et de connaître parfaitement les langages de programmation et les bases de données : PHP, Ruby, Python et SQL qui seront ses meilleurs amis. </li>\r\n<li> L’utilisation parfaite de frameworks comme Cake PHP, Symfony ou encore Code Igniter est aussi indispensable. </li>\r\n</ul>\r\n', '<p>\r\n        Comme pour de nombreux autres métiers liés à l’informatique, plusieurs cursus sont possibles pour devenir\r\n        programmeur back-end : </p>\r\n    <ul>\r\n        <li> Intégrer une université.</li>\r\n        <li> Intégrer une école d’informatique ou une école d’ingénieur pour apprendre à bien manier les langages de\r\n            programmation ainsi que les bases de données.</li>\r\n        <li> Commencer votre cursus par un DUT comme notre DUT MMI ou un BTS informatique avant d’approfondir vos\r\n            connaissances en second cycle.</li>\r\n    </ul>\r\n', '<p> La rémunération du développeur Back-end est bien souvent considérée comme un peu plus importante que pour celle du programmeur Front-end, même si la différence est de moins en moins palpable. \r\n<br> Ainsi, alors qu’un débutant sortant d’une école d’informatique peut espérer toucher 30.000 € par an, un développeur confirmé ayant une connaissance poussée des langages de programmation peut obtenir une rémunération de 40.000 € par an. Sans parler des profils experts que les grandes entreprises n’hésitent pas à fidéliser avec un salaire à la hauteur de leurs compétences </p>\r\n', '<p>Le métier peut s’exercer : </p>\r\n    <ul>\r\n        <li> dans une agence web</li>\r\n        <li> dans une SSII (société de services en ingénierie informatique)</li>\r\n        <li> en tant que salarié ou en indépendant, ou encore directement chez le client.</li>\r\n    </ul>\r\n', '', 4),
-(19, 'Développeur Front', '    Le développeur front end se doit de :\r\n    <ul>\r\n        <li> Il réalise l’intégration web du site à partir d’une maquette (fournie par un web designer).</li>\r\n        <li> Il assure l’ergonomie visuelle et fonctionnelle du site.</li>\r\n        <li> Il assure la portabilité et interopérabilité du site par la prise en compte des différentes plateformes et\r\n            navigateurs.</li>\r\n        <li> Il maîtrise du responsive design, de l’UX et des interfaces mobiles.</li>\r\n        <li> Il utilise des outils collaboratifs.</li>\r\n        <li> Il garantit l’accessibilité du site grâce au respect des normes W3C.</li>\r\n        <li> Il participe à l’optimisation du SEO (référencement naturel) par l’intégration de la sémantique du web lors\r\n            du développement (balises, mots clefs, optimisation d’URL.</li>\r\n    </ul>', '<ul>\r\n        <li> Le développeur Front-end doit faire preuve de créativité afin de créer une interface web conforme au cahier\r\n            des charges.</li>\r\n        <li> Une excellente connaissance des spécificités de chaque navigateur est également indispensable de façon à ce\r\n            que les sites fonctionnent de façon agréable et fluide quelle que soit la configuration. </li>\r\n        <li> La curiosité est également une qualité nécessaire pour rester à jour, les technologies évoluant très\r\n            rapidement.</li>\r\n    </ul>\r\n', '<ul>\r\n        <li> Il doit parfaitement maîtriser les normes émises par le W3C et posséder de solides compétences en HTML5 et\r\n            CSS3 afin de rendre les interfaces accessibles.</li>\r\n        <li> La maîtrise du JavaScript avec des frameworks comme JQuery, AngularJS, Backbone.js ou ExtJS est un plus\r\n            indéniable dans la mesure où il s’agit du langage le plus utilisé pour gérer les interactions avec\r\n            l’utilisateur dans un navigateur. </li>\r\n        <li> Le développeur Front-end doit également être familier avec des logiciels de PAO et de traitement d’images.\r\n        </li>\r\n    </ul>\r\n', '<p>Le développeur Front-end possède généralement un diplôme universitaire de type DUT ou BTS ou un diplôme de second cycle d’une école d’ingénieur ou d’informatique. \r\n<br> Ces formations fournissent de bonnes bases pour ensuite travailler sur le terrain dans des équipes projets.</p>\r\n', '<ul>\r\n        <li> Junior : environ 25 000€ brut par an </li>\r\n        <li> Senior : jusqu’à 50 000€ brut par an </li>\r\n    </ul>\r\n\r\n', '<p>Les principaux employeurs des développeurs Front-end sont les agences web et les entreprises de services du numérique (ESN). \r\n<br> Il peut aussi être freelance et être contacté par des entreprises ou domaines extérieurs. </p>\r\n', '', 4),
+(19, 'Développeur Front', '    <p> Le développeur front end se doit de : </p>\r\n    <ul>\r\n        <li> Il réalise l’intégration web du site à partir d’une maquette (fournie par un web designer).</li>\r\n        <li> Il assure l’ergonomie visuelle et fonctionnelle du site.</li>\r\n        <li> Il assure la portabilité et interopérabilité du site par la prise en compte des différentes plateformes et\r\n            navigateurs.</li>\r\n        <li> Il maîtrise du responsive design, de l’UX et des interfaces mobiles.</li>\r\n        <li> Il utilise des outils collaboratifs.</li>\r\n        <li> Il garantit l’accessibilité du site grâce au respect des normes W3C.</li>\r\n        <li> Il participe à l’optimisation du SEO (référencement naturel) par l’intégration de la sémantique du web lors\r\n            du développement (balises, mots clefs, optimisation d’URL.</li>\r\n    </ul>', '<ul>\r\n        <li> Le développeur Front-end doit faire preuve de créativité afin de créer une interface web conforme au cahier\r\n            des charges.</li>\r\n        <li> Une excellente connaissance des spécificités de chaque navigateur est également indispensable de façon à ce\r\n            que les sites fonctionnent de façon agréable et fluide quelle que soit la configuration. </li>\r\n        <li> La curiosité est également une qualité nécessaire pour rester à jour, les technologies évoluant très\r\n            rapidement.</li>\r\n    </ul>\r\n', '<ul>\r\n        <li> Il doit parfaitement maîtriser les normes émises par le W3C et posséder de solides compétences en HTML5 et\r\n            CSS3 afin de rendre les interfaces accessibles.</li>\r\n        <li> La maîtrise du JavaScript avec des frameworks comme JQuery, AngularJS, Backbone.js ou ExtJS est un plus\r\n            indéniable dans la mesure où il s’agit du langage le plus utilisé pour gérer les interactions avec\r\n            l’utilisateur dans un navigateur. </li>\r\n        <li> Le développeur Front-end doit également être familier avec des logiciels de PAO et de traitement d’images.\r\n        </li>\r\n    </ul>\r\n', '<p>Le développeur Front-end possède généralement un diplôme universitaire de type DUT ou BTS ou un diplôme de second cycle d’une école d’ingénieur ou d’informatique. \r\n<br> Ces formations fournissent de bonnes bases pour ensuite travailler sur le terrain dans des équipes projets.</p>\r\n', '<ul>\r\n        <li> Junior : environ 25 000€ brut par an </li>\r\n        <li> Senior : jusqu’à 50 000€ brut par an </li>\r\n    </ul>\r\n\r\n', '<p>Les principaux employeurs des développeurs Front-end sont les agences web et les entreprises de services du numérique (ESN). \r\n<br> Il peut aussi être freelance et être contacté par des entreprises ou domaines extérieurs. </p>\r\n', '', 4),
 (20, 'Lead-développeur', '<p> Le métier de lead-développeur consiste à diriger, accompagner une équipe de développeurs et assurer le\r\n        développement technique d’un projet. Ce manager pilote des équipes et encadre le projet grâce à ses\r\n        connaissances techniques approfondies. Il doit aussi créer un programme suivant les besoins de l’entreprise, et\r\n        en restant au plus près du cahier des charges élaboré par l’utilisateur</p>\r\n    <h4> Missions :</h4>\r\n\r\n    <ul>\r\n        <li> Il supervise le projet : contrôle de la bonne progression des développements, définition de la ligne\r\n            directrice, des choix techniques, méthodes à utiliser.</li>\r\n        <li> Il manage son équipe : accompagnement des développeurs, résolution des problèmes, les faire monter en\r\n            compétences et gérer les savoir-faire de son équipe technique.</li>\r\n        <li> Il est le référent en matière de code, met en place de bonnes pratiques, et vérifie les actions menées par\r\n            son équipe, Assure la qualité du code des programmes informatiques.</li>\r\n        <li> Il se charge du codage de parties spécifiques du programme.</li>\r\n        <li> Il s’assure de la qualité du code grâce à des outils d’analyse et du code automatique.</li>\r\n        <li> Il garantit le respect des délais imposés.</li>\r\n        <li> Il respecte le budget alloué.</li>\r\n        <li> Il met en place des tests/de recettage.</li>\r\n        <li> Il s’occupe de la veille technologique.</li>\r\n    </ul>', '<ul>\r\n        <li> Souplesse</li>\r\n        <li> Capacité d’analyse </li>\r\n        <li> Sens relationnel</li>\r\n        <li> Pédagogie</li>\r\n        <li> Curiosité</li>\r\n    </ul>', ' <ul>\r\n        <li> Compétences managériales et techniques.</li>\r\n        <li> Connaissances du langage informatique et de développement (JAVA, PHP, CSS, HTML…).</li>\r\n        <li> Capacité de former ses équipes, encadrer et motiver les développeurs.</li>\r\n        <li> Capacité à animer et collaborer avec son équipe et à faire l’interface avec les interlocuteurs métiers.\r\n        </li>\r\n        <li> Maîtrise de l’environnement de développement (IDE, Eclipse, ASP, J2EE…)</li>\r\n        <li> Bonnes connaissances en CMS(Système de gestion de contenu)(Drupal, Wordpress…).</li>\r\n        <li> Se tenir informé en permanence de toutes les modifications et changements éventuels.</li>\r\n        <li> Connaissances en méthodes et techniques de programmation.</li>\r\n        <li> Connaissances en outils de maîtrise totale d’un ou plusieurs systèmes d’exploitation informatique.</li>\r\n        <li> Connaissance des outils de tests et du domaine fonctionnel.</li>\r\n    </ul>\r\n', '<p>Le métier de lead développeur est accessible après un parcours en études supérieures et quelques années passées en\r\n    tant que développeur.\r\n    <br>\r\n    <br>\r\n    Les formations à privilégier sont les écoles d’ingénieur ou les diplômes en informatique amenant à un niveau bac + 3\r\n    ou bac + 5.\r\n    <br>\r\n    Cette profession est ouverte aux titulaires d’un diplôme de niveau bac+2 (BTS ou DUT informatique, Licence pro\r\n    informatique, École d’ingénieurs informatique...) dans le secteur des services informatiques, des systèmes réseaux,\r\n    ou même de l’informatique appliquée aux services techniques des industries.\r\n    <br>\r\n    Ex : Ecole d’ingénieur en informatique ou Bac+5 en informatique\r\n</p>', '    <p>\r\n        Le salaire d’un lead développeur dépend de plusieurs critères : taille de l’entreprise/start-up, lieu, le nombre\r\n        d’années d’expérience, l’ancienneté...\r\n        <br>La rémunération d’un lead développeur est comprise entre 50 000€ et 80 000€\r\n    </p>\r\n    <ul>\r\n        <li> Junior : entre 55 000 et 65 000€ brut par an</li>\r\n        <li> Senior : entre 65 000 et 75 000€ brut par an</li>\r\n    </ul>', '<p> Les studios de développement de jeux vidéo recrutent ces profils. \r\n<br> Un lead-développeur peut aussi travailler en tant que freelance, et répondre à différents contrats ou propositions venant d’entreprises ou particuliers. </p> \r\n\r\n\r\n', '', 4);
 
 -- --------------------------------------------------------
@@ -155,7 +157,7 @@ CREATE TABLE `profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `profil`
+-- Déchargement des données de la table `profil`
 --
 
 INSERT INTO `profil` (`id`, `nom`, `role`, `texte`, `urlPhoto`, `urlCvNum`, `urlCvPapier`) VALUES
@@ -173,15 +175,15 @@ INSERT INTO `profil` (`id`, `nom`, `role`, `texte`, `urlPhoto`, `urlCvNum`, `url
 CREATE TABLE `projet` (
   `idProjet` varchar(10) NOT NULL DEFAULT '',
   `nomProjet` varchar(200) DEFAULT NULL,
-  `nomAuteur` text,
-  `presentation` text,
+  `nomAuteur` text DEFAULT NULL,
+  `presentation` text DEFAULT NULL,
   `siteUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `projet`
+-- Déchargement des données de la table `projet`
 --
 
 INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `siteUrl`, `imageUrl`, `domaineId`) VALUES
@@ -203,7 +205,7 @@ INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `sit
 ('9', 'The Quiet', 'Laurence Wang - IUT de Champs-sur-Marrne', 'Cette couverture de livre fictif, The Quiet est un projet personnel de Laurence Wang. Ce livre serait un guide pour apprécier le silence, inspiré par la période de confinement. Ce projet présenté au Festival MMI 2020 a obtenu un prix dans la catégorie Infographie (3e position).', '', '../medias/projetmmi/design2.jpg', '3');
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -243,7 +245,7 @@ ALTER TABLE `projet`
   ADD PRIMARY KEY (`idProjet`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -251,16 +253,20 @@ ALTER TABLE `projet`
 --
 ALTER TABLE `contact`
   MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT pour la table `jeucm`
 --
 ALTER TABLE `jeucm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT pour la table `profil`
 --
 ALTER TABLE `profil`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
