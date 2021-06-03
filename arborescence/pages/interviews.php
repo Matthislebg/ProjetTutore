@@ -27,7 +27,7 @@ $('.interview_2').on('click',function(){
    $('.popup_4').css('display','block');
    $('.background').css('display','flex');
  })
- $('.popup_button').on('click',function(){
+ $('.background').on('click',function(){
   $('.popup').css('display','none');
    $('.background').css('display','none');
 })
@@ -40,13 +40,13 @@ $('.interview_2').on('click',function(){
         include 'header.php';
         ?>
     </header>
-    <section>   
-
+    <section> 
         <div class="interview_1"><p>DESIGN</p></div>
         <div class="interview_2"><p>PROGRAMMATION</p></div>  
         <div class="interview_3"><p>COMMUNICATION</p></div>       
         <div class="interview_4"><p>AUDIOVISUEL</p></div>
-        <div class="popup_1 popup">
+    </section>
+    <div class="popup_1 popup">
             <h2>DESIGN - ROBIN LLOPIS </h2>
             <iframe width="100%" height="100%" src="<?php  echo $video;  ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
         <div class="popup_2 popup">
@@ -62,6 +62,5 @@ $('.interview_2').on('click',function(){
         <iframe width="100%" height="100%" src="<?php  echo $video;  ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
         </div>
         <div class="background"></div>
-    </section>
 </body>
 </html>
