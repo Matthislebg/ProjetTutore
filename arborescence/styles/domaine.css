@@ -102,8 +102,9 @@ section{
 section .container p{    
     padding-right: 30px;
     margin: 0px;
-    max-width: 40%; 
+    max-width: 50%; 
     text-align: left;
+
 }
 
 section .container>img{
