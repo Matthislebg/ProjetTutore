@@ -170,7 +170,7 @@ $(document).ready(function(){
             }
 
             if(!hover){
-                $(".logo-container").css('width', "30vh");
+                $(".logo-container").css('width', "38vh");
                 hover=true;
             }
             high = 0;
