@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Client :  sqletud.u-pem.fr
--- Généré le :  Jeu 03 Juin 2021 à 09:25
--- Version du serveur :  5.5.62-0+deb8u1-log
--- Version de PHP :  7.0.33-0+deb9u7
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 03 juin 2021 à 11:57
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `crexharr_db`
+-- Base de données : `mmifyw`
 --
 
 -- --------------------------------------------------------
@@ -34,11 +35,11 @@ CREATE TABLE `contact` (
   `email` varchar(100) NOT NULL,
   `sujet` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `dateHeure` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `dateHeure` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `contact`
+-- Déchargement des données de la table `contact`
 --
 
 INSERT INTO `contact` (`idContact`, `nom`, `prenom`, `codePostal`, `email`, `sujet`, `message`, `dateHeure`) VALUES
@@ -51,23 +52,23 @@ INSERT INTO `contact` (`idContact`, `nom`, `prenom`, `codePostal`, `email`, `suj
 --
 
 CREATE TABLE `domaine` (
-  `idDomaine` int(4) NOT NULL DEFAULT '0',
+  `idDomaine` int(4) NOT NULL DEFAULT 0,
   `nomDomaine` varchar(30) DEFAULT NULL,
-  `presentation` text,
-  `videoDescription` text,
+  `presentation` text DEFAULT NULL,
+  `videoDescription` text DEFAULT NULL,
   `videoUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `domaine`
+-- Déchargement des données de la table `domaine`
 --
 
 INSERT INTO `domaine` (`idDomaine`, `nomDomaine`, `presentation`, `videoDescription`, `videoUrl`, `imageUrl`) VALUES
-(1, 'Audiovisuel', 'Le domaine de l’audiovisuel correspond à la fois aux matériels, techniques et méthodes d’information, de communication ou d’enseignement associant le son et l’image. On part de  la conception à la diffusion en passant par la réalisation, le tournage et la finalisation. \r\nLes métiers de l’audiovisuel sont assez nombreux et variés avec des activités de différentes natures que ce soit au niveau technique ou artistique. Ces métiers peuvent concerner divers médias : le cinéma, la télévision, la radio, le jeu vidéo, la vidéo en streaming… \r\n\r\nVoici quelques métiers de l’audiovisuel que vous pourrez exercer après un DUT MMI : \r\n', 'Anne Tasso, enseignante en BUT MMI à Champs-sur-Marne, vous présente les différents métiers de l’audiovisuel, du réalisateur au monteur, en vous décrivant les étapes de réalisation d’un film et en vous détaillant la journée type d’un scénariste.', 'https://www.youtube.com/embed/gQOrfziq35c', '../medias/pagedomaine/audiovisuel.png'),
-(2, 'Communication', 'Le domaine de la communication-marketing correspond à la gestion de toutes les informations qui émanent d’une structure afin de transmettre un message à un public ciblé en promouvant l’image d’un produit, d’un service, d’une personne, d’une organisation ou d’un événement. Il s’agit aussi de déterminer les conditions dans lesquelles sera vendu un produit (prix, distribution, promotion etc.) afin de remplir les objectifs commerciaux. \r\nLes métiers de ce domaine peuvent être exercés dans différents types d’entreprises : en agence (de communication, de publicité), dans les services internes de communication d’une organisation (entreprise, association..), en indépendant (journalistes d’entreprise, conseillers en communication…). \r\n\r\nVoici quelques métiers en communication que vous pourrez exercer après un DUT MMI : ', 'Clarisse Henry, ancienne étudiante en MMI et entrepreneuse, vous fait découvrir le quotidien d’une freelance dans le domaine de la communication, en décrivant ses multiples activités et réalisations, comme la conception de revues ou dossiers de presse, mais aussi de son site de e-commerce.', 'https://www.youtube.com/embed/eWf9FZHl-gE', '../medias/pagedomaine/comm.png'),
-(3, 'Design', 'Le domaine du design graphique (aussi appelé design de communication) correspond à l’activité de conception ayant pour but de mettre en œuvre et coordonner la réalisation d’une communication visuelle en associant image et texte, sur imprimé ou écran. \r\nLes métiers du design graphique interviennent dans l’élaboration de supports de communication variés : les produits numériques et interactifs (site web, séquences animées en motion design, logo), les imprimés (livres, revues, affiches, brochures…),  le packaging, la publicité… \r\nVoici quelques métiers du design graphique que vous pourrez exercer après un DUT MMI : ', 'Robin Llopis, enseignant en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier d\'UX/UI Designer au travers de son quotidien, en commençant par le travail de veille et la discussion avec le client jusqu\'à la réalisation des wireframes, les maquettes des sites web.', 'https://www.youtube.com/embed/t5vIAKs8WLE', '../medias/pagedomaine/design.png'),
-(4, 'Programmation', 'Le domaine de la programmation (aussi appelé développement informatique) est un sous-domaine du secteur de l’informatique et correspond à la conception et au développement  de logiciels, de jeux vidéo, de sites web et d’applications à l’aide des différents langages de programmation. Les métiers de ce domaine très divers sont utiles dans tous les secteurs professionnels actuels : les boîtes de communication/marketing, les banques, les entreprises de jeux vidéo… \r\nVoici quelques métiers en programmation que vous pourrez exercer après un DUT MMI : \r\n', 'Gaëlle Charpentier, enseignante en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier de développeur front, son quotidien et une journée type qui peut varier entre réunions et travail d’équipe, réalisation de projets ou encore veille technologique.', 'https://www.youtube.com/embed/qTJ-tk8z47c', '../medias/pagedomaine/prog.png');
+(1, 'Audiovisuel', 'Le domaine de l’audiovisuel correspond à la fois aux matériels, techniques et méthodes d’information, de communication ou d’enseignement associant le son et l’image.<br> On part de  la conception à la diffusion en passant par la réalisation, le tournage et la finalisation. \r\nLes métiers de l’audiovisuel sont assez nombreux et variés avec des activités de différentes natures que ce soit au niveau technique ou artistique. <br>Ces métiers peuvent concerner divers médias : <br> le cinéma, la télévision, la radio, le jeu vidéo, la vidéo en streaming… \r\n<br>\r\nVoici quelques métiers de l’audiovisuel que vous pourrez exercer après un DUT MMI : \r\n', 'Anne Tasso, enseignante en BUT MMI à Champs-sur-Marne, vous présente les différents métiers de l’audiovisuel, du réalisateur au monteur, en vous décrivant les étapes de réalisation d’un film et en vous détaillant la journée type d’un scénariste.', 'https://www.youtube.com/embed/gQOrfziq35c', '../medias/pagedomaine/audiovisuel.png'),
+(2, 'Communication', 'Le domaine de la communication-marketing correspond à la gestion de toutes les informations qui émanent d’une structure afin de transmettre un message à un public ciblé en promouvant l’image d’un produit, d’un service, d’une personne, d’une organisation ou d’un événement. <br> Il s’agit aussi de déterminer les conditions dans lesquelles sera vendu un produit (prix, distribution, promotion etc.) afin de remplir les objectifs commerciaux. <br>\r\nLes métiers de ce domaine peuvent être exercés dans différents types d’entreprises :<br> en agence (de communication, de publicité), dans les services internes de communication d’une organisation (entreprise, association..), en indépendant (journalistes d’entreprise, conseillers en communication…). \r\n<br>\r\nVoici quelques métiers en communication que vous pourrez exercer après un DUT MMI : ', 'Clarisse Henry, ancienne étudiante en MMI et entrepreneuse, vous fait découvrir le quotidien d’une freelance dans le domaine de la communication, en décrivant ses multiples activités et réalisations, comme la conception de revues ou dossiers de presse, mais aussi de son site de e-commerce.', 'https://www.youtube.com/embed/eWf9FZHl-gE', '../medias/pagedomaine/comm.png'),
+(3, 'Design', 'Le domaine du design graphique (aussi appelé design de communication) correspond à l’activité de conception ayant pour but de mettre en œuvre et coordonner la réalisation d’une communication visuelle en associant image et texte, sur imprimé ou écran.<br> \r\nLes métiers du design graphique interviennent dans l’élaboration de supports de communication variés : les produits numériques et interactifs (site web, séquences animées en motion design, logo), les imprimés (livres, revues, affiches, brochures…),  le packaging, la publicité…  <br>\r\nVoici quelques métiers du design graphique que vous pourrez exercer après un DUT MMI : ', 'Robin Llopis, enseignant en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier d\'UX/UI Designer au travers de son quotidien, en commençant par le travail de veille et la discussion avec le client jusqu\'à la réalisation des wireframes, les maquettes des sites web.', 'https://www.youtube.com/embed/t5vIAKs8WLE', '../medias/pagedomaine/design.png'),
+(4, 'Programmation', 'Le domaine de la programmation (aussi appelé développement informatique) est un sous-domaine du secteur de l’informatique et correspond à la conception et au développement  de logiciels, de jeux vidéo, de sites web et d’applications à l’aide des différents langages de programmation.<br> Les métiers de ce domaine très divers sont utiles dans tous les secteurs professionnels actuels :<br> les boîtes de communication/marketing, les banques, les entreprises de jeux vidéo… \r\n<br>\r\nVoici quelques métiers en programmation que vous pourrez exercer après un DUT MMI : \r\n', 'Gaëlle Charpentier, enseignante en BUT MMI à Champs-sur-Marne, vous fait découvrir le métier de développeur front, son quotidien et une journée type qui peut varier entre réunions et travail d’équipe, réalisation de projets ou encore veille technologique.', 'https://www.youtube.com/embed/qTJ-tk8z47c', '../medias/pagedomaine/prog.png');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `jeucm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `jeucm`
+-- Déchargement des données de la table `jeucm`
 --
 
 INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
@@ -100,20 +101,20 @@ INSERT INTO `jeucm` (`id`, `pseudo`, `textMsg`, `certif`, `couleur`) VALUES
 --
 
 CREATE TABLE `metier` (
-  `idMetier` int(20) NOT NULL DEFAULT '0',
+  `idMetier` int(20) NOT NULL DEFAULT 0,
   `nomMetier` varchar(50) DEFAULT NULL,
-  `presentation` text,
-  `qualite` text,
-  `competence` text,
-  `formation` text,
-  `salaire` text,
-  `structure` text,
+  `presentation` text DEFAULT NULL,
+  `qualite` text DEFAULT NULL,
+  `competence` text DEFAULT NULL,
+  `formation` text DEFAULT NULL,
+  `salaire` text DEFAULT NULL,
+  `structure` text DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` int(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `metier`
+-- Déchargement des données de la table `metier`
 --
 
 INSERT INTO `metier` (`idMetier`, `nomMetier`, `presentation`, `qualite`, `competence`, `formation`, `salaire`, `structure`, `imageUrl`, `domaineId`) VALUES
@@ -156,7 +157,7 @@ CREATE TABLE `profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `profil`
+-- Déchargement des données de la table `profil`
 --
 
 INSERT INTO `profil` (`id`, `nom`, `role`, `texte`, `urlPhoto`, `urlCvNum`, `urlCvPapier`) VALUES
@@ -174,15 +175,15 @@ INSERT INTO `profil` (`id`, `nom`, `role`, `texte`, `urlPhoto`, `urlCvNum`, `url
 CREATE TABLE `projet` (
   `idProjet` varchar(10) NOT NULL DEFAULT '',
   `nomProjet` varchar(200) DEFAULT NULL,
-  `nomAuteur` text,
-  `presentation` text,
+  `nomAuteur` text DEFAULT NULL,
+  `presentation` text DEFAULT NULL,
   `siteUrl` varchar(200) DEFAULT NULL,
   `imageUrl` varchar(200) DEFAULT NULL,
   `domaineId` varchar(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `projet`
+-- Déchargement des données de la table `projet`
 --
 
 INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `siteUrl`, `imageUrl`, `domaineId`) VALUES
@@ -204,7 +205,7 @@ INSERT INTO `projet` (`idProjet`, `nomProjet`, `nomAuteur`, `presentation`, `sit
 ('9', 'The Quiet', 'Laurence Wang - IUT de Champs-sur-Marrne', 'Cette couverture de livre fictif, The Quiet est un projet personnel de Laurence Wang. Ce livre serait un guide pour apprécier le silence, inspiré par la période de confinement. Ce projet présenté au Festival MMI 2020 a obtenu un prix dans la catégorie Infographie (3e position).', '', '../medias/projetmmi/design2.jpg', '3');
 
 --
--- Index pour les tables exportées
+-- Index pour les tables déchargées
 --
 
 --
@@ -244,7 +245,7 @@ ALTER TABLE `projet`
   ADD PRIMARY KEY (`idProjet`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
@@ -252,16 +253,20 @@ ALTER TABLE `projet`
 --
 ALTER TABLE `contact`
   MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT pour la table `jeucm`
 --
 ALTER TABLE `jeucm`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT pour la table `profil`
 --
 ALTER TABLE `profil`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
