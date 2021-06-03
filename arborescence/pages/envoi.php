@@ -3,11 +3,19 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Contact - </title>
-  <link rel="stylesheet" href="../styles/envoi.css">
+  <title>Merci pour votre message !</title>
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/envoi.css">
 </head>
+
 <body>
- 
+ <header>
+    <?php 
+        $titre = "";
+        include 'header.php';
+        ?>
+        </header>
 <?php
  include "../connexionPDO.php";
 // pour le serveur de l'UPEM, remplacer localhost par sqletud.u-pem.fr
@@ -52,8 +60,12 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
   echo "<h1>Merci pour votre message !</h1>";
 }
 ?>
- 
-  
-  <a href="../index.php">Retour à l'accueil</a>
+<section>
+    <img src="../medias/logo.svg" alt="logo MMI FYW">
+    <h2>Merci pour votre message !</h2>
+    <p>L'équipe MMI FYW le prendra en charge dès que possible. </p>
+    <a href="../index.php">ACCUEIL</a>
+</section>
+     
 </body>
 </html>

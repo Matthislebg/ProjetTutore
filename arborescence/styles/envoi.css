@@ -1,18 +1,37 @@
 body {
-    background-color: #EEB81D;
+    margin: 0;
     font-family: 'Lexend Exa', sans-serif;
     text-align: center;
 }
-
-a {
+section img {
+    width: 20vw;
+    margin-top: 4vw;
+    transition: 0.8s ease;
+}
+section img:hover {
+    transform: scale(1.3);
+}
+h2 {
+    margin-top: 5vw;
+    font-size: 2vw;
+    color: #0B83C6;
+}
+p {
+    font-size: 1.5vw;
+    margin-bottom: 6vw;
+}
+section a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.3vw;
+    transition: 0.5s ease;
+    padding: 15px;
+    background-color: #0B83C6;
+    border-radius: 15px;
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #50370a;
-    font-weight: bold;
+section a:hover {
+    padding: 20px;
+    font-size: 1.5vw;
 }
