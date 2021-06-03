@@ -43,3 +43,22 @@ footer .link_footer>a:hover {
 .carrousel #radio-4:checked~.diaposNavigation label#dotForRadio-4 {
     background: #D4499A;
 }
+/* Carrousel metiers */
+.carrousel_metiers a:nth-child(1) {
+    background-color: #D4499A;
+}
+.carrousel_metiers a:nth-child(2) {
+    background-color: #E76DB4;
+}
+.carrousel_metiers a:nth-child(3) {
+    background-color: #F384C5;
+}
+.carrousel_metiers a:nth-child(4) {
+    background-color: #E76DB4;
+}
+.carrousel_metiers a:nth-child(5) {
+    background-color: #D4499A;
+}
+.carrousel_metiers a:hover  {
+    background-color: #D4499A;
+}

@@ -104,13 +104,41 @@
 
     <section>
         <h1>LES MÉTIERS</h1>
-      <div class="carrousel_metiers">
-        <a href="metier.php<?php echo "?page=" . $idMetier[0]; ?>"><?php echo $metier[0]; ?></a>
-        <a href="metier.php<?php echo "?page=" . $idMetier[1]; ?>"><?php echo $metier[1]; ?></a>
-        <a href="metier.php<?php echo "?page=" . $idMetier[2]; ?>"><?php echo $metier[2]; ?></a>
-        <a href="metier.php<?php echo "?page=" . $idMetier[3]; ?>"><?php echo $metier[3]; ?></a>
-        <a href="metier.php<?php echo "?page=" . $idMetier[4]; ?>"><?php echo $metier[4]; ?></a>   
-    </div>
+        <div class="container">
+            <div class="ligne1">
+                <a href="metier.php<?php
+                        echo "?page=" . $idMetier[0];
+                    ?>">
+                    <div class="metierItem"><?php
+                            echo $metier[0];
+                        ?></div>
+                </a>
+                <a href="metier.php<?php
+                        echo "?page=" . $idMetier[1];
+                    ?>">
+                    <div class="metierItem"><?php
+                            echo $metier[1];
+                        ?></div>
+                </a>
+            </div>
+            <div class="ligne2"></div>
+            <div class="ligne3">
+            <a href="metier.php<?php
+                        echo "?page=" . $idMetier[2];
+                    ?>">
+                    <div class="metierItem"><?php
+                            echo $metier[2];
+                        ?></div>
+                </a>
+                <a href="metier.php<?php 
+                        echo "?page=" . $idMetier[3];
+                    ?>">
+                    <div class="metierItem"><?php
+                            echo $metier[3];
+                    ?></div>
+                </a>
+        </div>
+        </div>
     </section>
 
     <section class="interview2">
