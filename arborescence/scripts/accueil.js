@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     function printPic (X, Y, i){
         
-
+    if(position==0){
         $("body").add($("<img src="+imageSrc[Math.floor(Math.random()*imageSrc.length)]+" id="+i+" class='pop'>")).appendTo($("body"))
 
         $("#"+i).css({"left": X, "top": Y, "transform": "rotate("+(Math.floor(Math.random()*60)-30)+"deg)"});
@@ -59,6 +59,7 @@ $(document).ready(function(){
         setTimeout(function(){
             $("#"+i).remove();
         }, 1750)
+    }
 
     }
 
