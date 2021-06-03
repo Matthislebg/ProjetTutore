@@ -12,7 +12,7 @@
  include "../connexionPDO.php";
 // pour le serveur de l'UPEM, remplacer localhost par sqletud.u-pem.fr
  
-if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & isset($_POST["codepostal"]) & isset($_POST["objet"]) & isset($_POST["envoyer"])){
+if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & isset($_POST["codepostal"]) & isset($_POST["objet"]) & isset($_POST["message"])){
   $sql = "INSERT INTO contact(nom, prenom, email, codePostal, sujet, message) VALUES (:nom, :prenom, :email, :codePostal, :sujet, :message)";
   // On prépare la requête avant l'envoi :
   $req = $db -> prepare($sql);
@@ -22,7 +22,7 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         'email' => $_POST["mail"], 
                         'codePostal' => $_POST["codepostal"], 
                         'sujet' => $_POST["objet"], 
-                        'message' => $_POST["envoyer"]));
+                        'message' => $_POST["message"]));
 
                         $to  = 'lboiss01@etud-upem.fr, crexharr@etud.u-pem.fr, mrouss23@etud.u-pem.fr, mbouanch@etud.u-pem.fr';
                         /*mmifyw@gmail.com*/
@@ -35,7 +35,7 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         </head>
                         <body>
                         <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau message reçu, il s\'agit de '.$_POST['name'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
-                        <p> '.$_POST['envoyer'].' </p>
+                        <p> '.$_POST['message'].' </p>
                         </body>
                         </html>
                         ';
