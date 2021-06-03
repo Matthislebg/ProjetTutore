@@ -6,7 +6,7 @@
         <a href="../pages/domaine.php?page=audiovisuel"><p>AUDIOVISUEL</p></a>
     </div>
     <div class="container_2">
-        <a href="../index.php"><img src="../medias/logo.png"></a>
+        <a href="../index.php"><img src="../medias/logo.svg"></a>
         <h1>
             <?php 
                 echo $titre;

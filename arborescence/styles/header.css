@@ -56,13 +56,13 @@ header .container_3 {
     margin-right: 2%;
 }
 
-header img[src="../medias/logo.png"] {
+header img[src="../medias/logo.svg"] {
     height: 50px;
     float: left;
     transition: 1s;
     margin-left: 2vw;
 }
-header img[src="../medias/logo.png"]:hover {
+header img[src="../medias/logo.svg"]:hover {
     transform: scale(1.2);
     transition: 1s;
 }
@@ -116,6 +116,7 @@ input[type="search"]{
     font-family: 'Roboto', sans-serif;
     font-size: 1vw;
     position: relative;
+    cursor: text;
 }
 
 input[type="search"]::-webkit-search-cancel-button{
