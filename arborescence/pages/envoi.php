@@ -20,7 +20,7 @@
 <?php
 include "../connexionPDO.php";
  
-if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & isset($_POST["codepostal"]) & isset($_POST["objet"]) & isset($_POST["message"])){
+if( isset($_POST["name"], $_POST["prenom"], $_POST["mail"], $_POST["objet"], $_POST["message"]) ){
   $sql = "INSERT INTO contact(nom, prenom, email, codePostal, sujet, message) VALUES (:nom, :prenom, :email, :codePostal, :sujet, :message)";
   // On prépare la requête avant l'envoi :
   $req = $db -> prepare($sql);
@@ -54,7 +54,7 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
     <p>'.$_POST['message'].'</p>
   </body>
   </html>
-  ' . '\r\n';
+  ';
 
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
