@@ -12,8 +12,32 @@ body {
   background-color: #D4499A;
 }
 
-.design .container_2>a {
+.design .containerCvLinks>a {
   background-color: #D4499A;
+}
+
+.communication section .blob{
+  background-color: #0B83C6;
+}
+
+.communication .containerCvLinks>a {
+  background-color: #0B83C6;
+}
+
+.audiovisuel section .blob{
+  background-color: #EEB81D;
+}
+
+.audiovisuel .containerCvLinks>a {
+  background-color: #EEB81D;
+}
+
+.programmation section .blob{
+  background-color: #1DB250;
+}
+
+.programmation .containerCvLinks>a {
+  background-color: #1DB250;
 }
 
 section {
@@ -44,14 +68,14 @@ section .blob {
 section .blob img{
   height: 100%;
 }
-.container_2 {
+.containerCvLinks {
     width: 100vw;
     height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
 }
-.container_2>a {
+.containerCvLinks>a {
     text-decoration: none;
     color: white;
     padding: 30px;
@@ -59,7 +83,7 @@ section .blob img{
     font-size: 2rem;
     transition: 1s ease;
 }
-.container_2>a:hover {
+.containerCvLinks>a:hover {
     transform: scale(1.1);
 } 
 @keyframes animate {

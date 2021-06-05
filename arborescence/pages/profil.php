@@ -2,6 +2,16 @@
   include "../connexionPDO.php";
   $id = $_GET['id'];
 
+  if ($id == 4){
+    $couleur = "audiovisuel";
+  } else if ($id == 2){
+    $couleur = "communication";
+  } else if ($id == 3){
+    $couleur = "programmation";
+  } else {
+    $couleur = "design";
+  }
+
   // REQUETE contenu du profil
   $sql = "SELECT * FROM profil WHERE id = '" . $id . "'";
   $req = $db -> prepare($sql);
@@ -29,7 +39,7 @@
     <link rel="icon" href="../medias/icon.png" type="image/png">
   </head>
 
-  <body>
+  <body class="<?php echo $couleur ?>">
     <header><?php
       $titre = $nom;
       include 'header.php';
@@ -41,12 +51,10 @@
       </div>
       <div class="blob"><img src="<?php echo $photo ?>" alt="" /></div>
     </section>
-    <nav>
-      <div class="container_2">
-        <a href="<?php echo $cvNum ?>">CV NUMÉRIQUE</a>
-        <a href="<?php echo $cvPapier ?>">CV PAPIER</a>
-      </div>
-    </nav>
+    <div class="containerCvLinks">
+      <a href="<?php echo $cvNum ?>">CV NUMÉRIQUE</a>
+      <a href="<?php echo $cvPapier ?>">CV PAPIER</a>
+    </div>
 
     <div class="wave"></div>
     <?php
