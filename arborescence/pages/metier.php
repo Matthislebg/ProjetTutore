@@ -17,7 +17,7 @@
     }
 
     // REQUETE contenu du métier
-    $sql = "SELECT idMetier, nomMetier, metier.presentation, qualite, competence, formation, salaire, structure, metier.imageUrl, domaineId, domaine.idDomaine, domaine.nomDomaine FROM metier INNER JOIN domaine ON domaine.idDomaine = metier.domaineId WHERE idMetier = " . $idMetier;
+    $sql = "SELECT idMetier, nomMetier, metier.presentation, qualite, competence, formation, salaire, structure, domaineId, domaine.idDomaine, domaine.nomDomaine FROM metier INNER JOIN domaine ON domaine.idDomaine = metier.domaineId WHERE idMetier = " . $idMetier;
     $req = $db -> prepare($sql);
     $req -> execute();
     while ($data = $req -> fetch()){
@@ -28,7 +28,6 @@
         $formation = $data['formation'];
         $salaire = $data['salaire'];
         $structure = $data['structure'];
-        $image = $data['imageUrl'];
         $domaine = $data['nomDomaine'];
     }
     $req = null;
