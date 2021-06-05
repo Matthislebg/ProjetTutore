@@ -2,6 +2,7 @@
   include "../connexionPDO.php";
   $id = $_GET['id'];
 
+  // REQUETE contenu du profil
   $sql = "SELECT * FROM profil WHERE id = '" . $id . "'";
   $req = $db -> prepare($sql);
   $req -> execute();
@@ -16,7 +17,7 @@
   $req = null;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,13 +25,14 @@
     <title>L'équipe - MMI Find Your Way</title>
     <link rel="stylesheet" href="../styles/profil.css" />
     <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="icon" href="../medias/icon.png" type="image/png">
   </head>
 
   <body>
     <header><?php
-    $titre = $nom;
-    include 'header.php';
-  ?></header>
+      $titre = $nom;
+      include 'header.php';
+    ?></header>
     <section>
       <div class="container_1">
         <h2><?php echo $role ?></h2>
@@ -39,16 +41,15 @@
       <div class="blob"><img src="<?php echo $photo ?>" alt="" /></div>
     </section>
     <nav>
-  <div class="container_2">
-      <a href="<?php echo $cvNum ?>">CV NUMÉRIQUE</a>
-      <a href="<?php echo $cvPapier ?>">CV PAPIER</a>
-    </div>
+      <div class="container_2">
+        <a href="<?php echo $cvNum ?>">CV NUMÉRIQUE</a>
+        <a href="<?php echo $cvPapier ?>">CV PAPIER</a>
+      </div>
     </nav>
-    
 
     <div class="wave"></div>
-    <footer><?php
+    <?php
         include 'footer.php';
-    ?></footer>
+    ?>
   </body>
 </html>

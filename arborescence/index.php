@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMI - Find Your Way</title>
-    <link href="styles/accueil.css" rel="stylesheet">
+    <link href="styles/accueil.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="icon" href="medias/icon.png" type="image/png">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="scripts/accueil.js"></script>
+    
 </head>
 
 

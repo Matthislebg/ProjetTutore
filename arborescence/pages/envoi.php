@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -7,6 +6,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/envoi.css">
+    <link rel="icon" href="../medias/icon.png" type="image/png">
 </head>
 
 <body>
@@ -14,11 +14,11 @@
     <?php 
         $titre = "";
         include 'header.php';
-        ?>
-        </header>
+  ?>
+  </header>
+
 <?php
- include "../connexionPDO.php";
-// pour le serveur de l'UPEM, remplacer localhost par sqletud.u-pem.fr
+include "../connexionPDO.php";
  
 if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & isset($_POST["codepostal"]) & isset($_POST["objet"]) & isset($_POST["message"])){
   $sql = "INSERT INTO contact(nom, prenom, email, codePostal, sujet, message) VALUES (:nom, :prenom, :email, :codePostal, :sujet, :message)";
@@ -32,40 +32,46 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
                         'sujet' => $_POST["objet"], 
                         'message' => $_POST["message"]));
 
-                        $to  = 'lboiss01@etud-upem.fr, crexharr@etud.u-pem.fr, mrouss23@etud.u-pem.fr, mbouanch@etud.u-pem.fr';
-                        /*mmifyw@gmail.com*/
-                        $subject = 'Nouveau message sur votre site! !';
-            
-                        $message = '
-                        <html>
-                        <head>
-                        <title>Nouveau messsage </title>
-                        </head>
-                        <body>
-                        <h3>['.date("Y-m-d H:i:s").']</h3><h2> Nouveau message reçu, il s\'agit de '.$_POST['name'].' son mail est : <a href="'.$_POST['mail'].'">'.$_POST['mail'].'</a> voici son message :</h2>
-                        <p> '.$_POST['message'].' </p>
-                        </body>
-                        </html>
-                        ';
-            
-                        $headers = "MIME-Version: 1.0" . "\r\n";
-                        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            
-                        $headers .= 'From: crexharr@etud.u-pem.fr' . "\r\n";
-            
-                        mail($to,$subject,$message,$headers);
+  $to  = 'mmifyw@gmail.com';
 
+  $subject = 'Nouveau message sur le formulaire de contact MMI FYW !';
 
+  $message = '
+  <html>
+  <head>
+  <title>Nouveau messsage MMI FYW</title>
+  </head>
+  <body>
+    <h3>Nouveau message reçu</h3>
+    <ul>
+      <li>date : '.date("Y-m-d H:i:s").'</li>
+      <li>prénom : '.$_POST["prenom"].'</li>
+      <li>nom : '.$_POST["name"].'</li>
+      <li>adresse e-mail : '.$_POST["mail"].'</li>
+      <li>code postal : '.$_POST["codepostal"].'</li>
+      <li>objet : '.$_POST["objet"].'</li>
+    </ul>
+    <p>'.$_POST['message'].'</p>
+  </body>
+  </html>
+  ';
+
+  $headers = "MIME-Version: 1.0" . "\r\n";
+  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+  $headers .= 'From: crexharr@etud.u-pem.fr' . "\r\n";
+
+  mail($to,$subject,$message,$headers);
   $req = null;
-  echo "<h1>Merci pour votre message !</h1>";
 }
 ?>
-<section>
-    <img src="../medias/logo.svg" alt="logo MMI FYW">
-    <h2>Merci pour votre message !</h2>
-    <p>L'équipe MMI FYW le prendra en charge dès que possible. </p>
-    <a href="../index.php">ACCUEIL</a>
-</section>
+
+  <section>
+      <img src="../medias/logo.svg" alt="">
+      <h2>Merci pour votre message !</h2>
+      <p>L'équipe MMI Find Your Way le prendra en charge dès que possible.</p>
+      <a href="../index.php">ACCUEIL</a>
+  </section>
      
 </body>
 </html>

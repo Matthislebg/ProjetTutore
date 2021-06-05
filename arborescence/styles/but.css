@@ -11,6 +11,10 @@ h1 {
     font-size: 3rem;
 }
 
+h3{
+    margin-top: 40px;
+}
+
 section {
     margin: 10vh 10vw 10vh 10vw;
     text-align: justify;

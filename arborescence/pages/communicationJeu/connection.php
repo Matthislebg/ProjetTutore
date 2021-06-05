@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Admin CM (jeu)</title>
     <link href="../../styles/communicationJeu.css" rel="stylesheet">
+    <link rel="icon" href="../../medias/icon.png" type="image/png">
 </head>
 <body>
     <div class="cm">

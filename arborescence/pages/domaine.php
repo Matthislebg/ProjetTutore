@@ -62,6 +62,7 @@
     <link rel="stylesheet" href="../styles/projetDomaine.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="icon" href="../medias/icon.png" type="image/png">
 
     <?php
       echo '<link rel="stylesheet" href="../styles/' . $domaine . 'Jeu.css">'
@@ -120,14 +121,9 @@
             <?php
                 echo $description;
             ?>
-
-          </div>
+            </div>
 
             <div class="video">
-
-                                        <!-- /!\ REGLAGE TAILLE VIDEO A REVOIR /!\ -->
-
-                <!-- taille à régler soit ici soit en css (en supprimant la ligne ci dessous)-->
                 <iframe
                 width="100%" height="100%"
                 src="<?php
@@ -135,8 +131,6 @@
                     echo $video;
 
                 ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
             </div>
         </div>
     </section>
@@ -158,22 +152,19 @@
 
           echo $domaine;
 
-        ?>
+        ?></span></h2>
         <div class="projetCheck">
           <div class="projetCheckLast">
-            <svg width="63" height="60" viewBox="0 0 63 60" fill="none">
-  <path d="M61.8284 32.8284C63.3905 31.2663 63.3905 28.7337 61.8284 27.1716L36.3726 1.71573C34.8105 0.153635 32.2778 0.153634 30.7157 1.71573C29.1536 3.27783 29.1536 5.81049 30.7157 7.37259L53.3431 30L30.7157 52.6274C29.1536 54.1895 29.1536 56.7222 30.7157 58.2843C32.2778 59.8464 34.8105 59.8464 36.3726 58.2843L61.8284 32.8284ZM-3.49691e-07 34L59 34L59 26L3.49691e-07 26L-3.49691e-07 34Z" fill="black"/>
-  </svg>
-            <!-- <img src="../medias/projetArrow.svg" alt="naviguer vers le projet précédent"> -->
+            <svg width="63" height="60" viewBox="0 0 63 60" fill="none"><title>Naviguer vers le projet précédent</title>
+              <path d="M61.8284 32.8284C63.3905 31.2663 63.3905 28.7337 61.8284 27.1716L36.3726 1.71573C34.8105 0.153635 32.2778 0.153634 30.7157 1.71573C29.1536 3.27783 29.1536 5.81049 30.7157 7.37259L53.3431 30L30.7157 52.6274C29.1536 54.1895 29.1536 56.7222 30.7157 58.2843C32.2778 59.8464 34.8105 59.8464 36.3726 58.2843L61.8284 32.8284ZM-3.49691e-07 34L59 34L59 26L3.49691e-07 26L-3.49691e-07 34Z" fill="black"/>
+            </svg>
           </div>
           <div class="projetCheckNext">
-          <svg width="63" height="60" viewBox="0 0 63 60" fill="none">
-  <path d="M61.8284 32.8284C63.3905 31.2663 63.3905 28.7337 61.8284 27.1716L36.3726 1.71573C34.8105 0.153635 32.2778 0.153634 30.7157 1.71573C29.1536 3.27783 29.1536 5.81049 30.7157 7.37259L53.3431 30L30.7157 52.6274C29.1536 54.1895 29.1536 56.7222 30.7157 58.2843C32.2778 59.8464 34.8105 59.8464 36.3726 58.2843L61.8284 32.8284ZM-3.49691e-07 34L59 34L59 26L3.49691e-07 26L-3.49691e-07 34Z" fill="black"/>
-  </svg>
-            <!-- <img src="../medias/projetArrow.svg" alt="naviguer vers le projet suivant"> -->
+            <svg width="63" height="60" viewBox="0 0 63 60" fill="none"><title>Naviguer vers le projet précédent</title>
+              <path d="M61.8284 32.8284C63.3905 31.2663 63.3905 28.7337 61.8284 27.1716L36.3726 1.71573C34.8105 0.153635 32.2778 0.153634 30.7157 1.71573C29.1536 3.27783 29.1536 5.81049 30.7157 7.37259L53.3431 30L30.7157 52.6274C29.1536 54.1895 29.1536 56.7222 30.7157 58.2843C32.2778 59.8464 34.8105 59.8464 36.3726 58.2843L61.8284 32.8284ZM-3.49691e-07 34L59 34L59 26L3.49691e-07 26L-3.49691e-07 34Z" fill="black"/>
+            </svg>
           </div>
-        </div>
-        </span></h2>
+        </div>        
         <input type="radio" name="diapos" id="radio-1" checked>
         <input type="radio" name="diapos" id="radio-2">
         <input type="radio" name="diapos" id="radio-3">
@@ -201,9 +192,9 @@
         </div>
       </div>
     </section>
-    <footer><?php
+    <?php
         include 'footer.php';
-    ?></footer>
+    ?>
 
   <div class="btnNav">
     <div class="btnNavContainer">

@@ -7,6 +7,7 @@
     <title>Erreur</title>
     <link rel="stylesheet" href="../styles/erreur.css">
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="icon" href="../medias/icon.png" type="image/png">
   </head>
   <body>
     <header><?php 
@@ -15,7 +16,7 @@
         ?></header>
     <div class="container">
       <img src="../medias/erreur.svg" />
-      <p>La page que vous avez demandé n'existe pas</p>
+      <p>La page que vous avez demandé n'existe pas.</p>
       <a href="../index.php">ACCUEIL</a>
     </div>
     <footer></footer>

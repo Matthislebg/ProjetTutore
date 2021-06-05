@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/interviews.css">
+    <link rel="icon" href="../medias/icon.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../scripts/recherche.js"></script>
     <script src="../scripts/interviews.js"></script>
@@ -26,20 +27,21 @@
         <div class="interview_4"><p>AUDIOVISUEL</p></div>
     </section>
     <div class="popup_1 popup">
-            <h2>DESIGN - ROBIN LLOPIS </h2>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t5vIAKs8WLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
-        <div class="popup_2 popup">
-            <h2>PROGRAMMATION - GAËLLE CHARPENTIER </h2>
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qTJ-tk8z47c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
-        </div>
-        <div class="popup_3 popup">
-        <h2> COMMUNICATION - CLARISSE HENRY  </h2>
+        <h2>DESIGN - ROBIN LLOPIS</h2>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t5vIAKs8WLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="popup_2 popup">
+        <h2>PROGRAMMATION - GAËLLE CHARPENTIER</h2>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qTJ-tk8z47c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="popup_3 popup">
+        <h2>COMMUNICATION - CLARISSE HENRY</h2>
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eWf9FZHl-gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
-        </div>
-        <div class="popup_4 popup">
-        <h2> AUDIOVISUEL - ANNE TASSO  </h2>  
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gQOrfziq35c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
-        </div>
-        <div class="background"></div>
+    </div>
+    <div class="popup_4 popup">
+        <h2>AUDIOVISUEL - ANNE TASSO</h2>  
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gQOrfziq35c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="background"></div>
 </body>
 </html>

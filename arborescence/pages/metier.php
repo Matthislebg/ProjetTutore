@@ -45,6 +45,8 @@
     ?></title>
     <link rel="stylesheet" href="../styles/metier.css">    
     <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="icon" href="../medias/icon.png" type="image/png">
     <?php
       echo '<link rel="stylesheet" href="../styles/' . $domaine . 'MetierColor.css">'
     ?>
@@ -66,7 +68,6 @@
     <section>
         <div class="container">
             <img src="../medias/presentation.svg">
-            <div class="bar_1"></div>
             <div class="text_container">
                 <h3>PRÉSENTATION</h3>
                     <?php 
@@ -76,36 +77,28 @@
         </div>
         <div class="container">
             <img src="../medias/qualites.svg">
-            <div class="bar_2"></div>
             <div class="text_container">
                 <h3>QUALITÉS</h3>
-                <p>
-                    <?php 
+                <p><?php 
                         echo $qualite;
-                    ?>
-                </p>
+                ?></p>
             </div>
         </div>
         <div class="container">
             <img src="../medias/competences.svg">
-            <div class="bar_3"></div>
             <div class="text_container">
                 <h3>COMPÉTENCES</h3>
-                <p>
-                <?php 
+                <p><?php 
                     echo $competence;
-                ?>
-                </p>
+                ?></p>
             </div>
         </div>
         
         <div class="container last">
             <img src="../medias/formation.svg">
-            <div class="bar_4"></div>
             <div class="text_container">
                 <h3>FORMATION ET SALAIRE</h3>
-                <p>
-                <?php 
+                <p><?php 
                     echo $formation;
                 ?>
                 <?php 
@@ -113,14 +106,13 @@
                 ?>
                 <?php 
                     echo $structure;
-                ?>
-                </p>
+                ?></p>
             </div>
         </div>
     </section>
-    <footer><?php 
+    <?php 
         include 'footer.php';
-    ?></footer>
+    ?>
 </body>
 
 </html>

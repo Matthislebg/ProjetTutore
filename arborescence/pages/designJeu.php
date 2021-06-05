@@ -1,21 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Jeu Design</title>
-  <link rel="stylesheet" href="designJeu.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-</head>
-<body> -->
-  <!-- <div class="top">
-    <h1>Devenez notre Graphiste</h1>
-    <div><p>Laissez votre créativité prendre le contrôle</p></div>
-  </div> -->
-
 <div id="toolBar" class="toolbar">
   <div>
     <div id="selectColors" class="select__colors">
@@ -54,6 +36,3 @@
 <canvas id="canvas">
   Désolé, votre navigateur ne prends pas en charge ce mini-jeu. Mettez à jour votre navigateur avant de venir en MMI ! Et si vous avez encore Internet explorer, c'est le moment de changer. <a href="https://www.mozilla.org/fr/firefox/download/thanks/">Cliquez ici pour télécharger la dernière version du navigateur Mozilla Firefox.</a>
 </canvas>
-  <script  src="designJeu.js"></script>
-</body>
-<!-- </html> -->

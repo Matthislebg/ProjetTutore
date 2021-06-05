@@ -8,6 +8,7 @@
     <title>Contact</title>
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/contact.css">
+    <link rel="icon" href="../medias/icon.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../scripts/recherche.js"></script>
 </head>
