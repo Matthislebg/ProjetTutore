@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="icon" href="../medias/icon.png" type="image/png">
     <?php
-      echo '<link rel="stylesheet" href="../styles/' . $domaine . 'MetierColor.css">'
+      echo '<link rel="stylesheet" href="../styles/' . strtolower($domaine) . 'MetierColor.css">'
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../scripts/recherche.js"></script>
