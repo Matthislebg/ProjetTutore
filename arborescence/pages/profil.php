@@ -25,6 +25,7 @@
     <title>L'équipe - MMI Find Your Way</title>
     <link rel="stylesheet" href="../styles/profil.css" />
     <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
     <link rel="icon" href="../medias/icon.png" type="image/png">
   </head>
 
