@@ -4,6 +4,10 @@ footer{
     height: fit-content;
 }
 
+footer a{
+    text-decoration: underline;
+}
+
 footer .link_footer {
     text-align: center;
     display: flex;

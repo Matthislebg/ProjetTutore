@@ -25,13 +25,13 @@
         <form action="envoi.php" method="POST">
             
             <div class="champ">
-                <label for="name">nom </label>
-                <input type="text" id="name" name="name" required />
+                <label for="nom">nom </label>
+                <input type="text" id="nom" name="name" required />
             </div>
  
             <div class="champ">
-                <label for="name">prénom </label>
-                <input type="text" id="name" name="prenom" />
+                <label for="prenom">prénom </label>
+                <input type="text" id="prenom" name="prenom" />
             </div>
  
             <div class="champ">

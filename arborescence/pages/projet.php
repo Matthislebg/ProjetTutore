@@ -32,10 +32,10 @@
         </div>
 
       <section>
-        <a href=""> Voir Profil </a>
-        <a href=""> Voir Profil </a>
-        <a href=""> Voir profil </a>
-        <a href="profil.php"> Voir Profil </a>
+        <a href="profil.php?id=3"> Voir Profil </a>
+        <a href="profil.php?id=4"> Voir Profil </a>
+        <a href="profil.php?id=2"> Voir profil </a>
+        <a href="profil.php?id=1"> Voir Profil </a>
       <section>
 
     </div>

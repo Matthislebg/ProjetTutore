@@ -121,16 +121,7 @@
                 echo $description;
             ?>
 
-            <!-- en attendant de mettre dans la bdd -->
-                <!-- <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nobis ullam dolorum nam, quasi voluptas officiis. Inventore dolor facilis quibusdam, pariatur nihil laboriosam sint numquam quas corporis obcaecati! Ab, enim.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorum iure sequi in labore necessitatibus vel delectus nam eum quaerat molestiae et tempora nostrum ut, blanditiis perspiciatis hic quidem similique.
-                </p> -->
-
-
-            </div>
+          </div>
 
             <div class="video">
 
@@ -190,8 +181,15 @@
         <ul class="diapos">
           <!-- DIAPOS -->
           <?php 
-            for ($i = 0; $i < count($nomProjet); $i++) {
-              echo '<li class="diapo"><h3>'.$nomProjet[$i].'<span> - '.$nomAuteur[$i].'</span></h3><span class="presentation"><img src="'.$imageProjet[$i].'"><p class="description">'.$presentationProjet[$i].'</p><a href="'.$lienOeuvre[$i].'">Lien vers l\'oeuvre</a></span></li>';
+            for ($i = 0; $i < count($nomProjet); $i++){              
+              echo '<li class="diapo"><h3>'.$nomProjet[$i].'<span> - '.$nomAuteur[$i].'</span></h3><span class="presentation"><img src="'.$imageProjet[$i].'"><p class="description">'.$presentationProjet[$i].'</p>';
+
+              if ($lienOeuvre[$i] != ""){
+                echo '<a href="'.$lienOeuvre[$i].'">Lien vers l\'oeuvre</a></span></li>';
+              } else {
+                echo '<a href="'.$imageProjet[$i].'">Lien vers l\'oeuvre</a></span></li>';
+              }
+              
             }
           ?>
         </ul>

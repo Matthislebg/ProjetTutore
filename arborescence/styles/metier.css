@@ -14,7 +14,7 @@ header{
 }
 
 .image {
-    background-image: url("../medias/background_metier.png") ;
+    /* bgUrl from MetierColor */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;

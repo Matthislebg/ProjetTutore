@@ -10,34 +10,13 @@
     <link rel="stylesheet" href="../styles/interviews.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../scripts/recherche.js"></script>
-<SCRIPT TYPE="text/javascript">$(document).ready(function(){
- $('.interview_1').on('click',function(){
-   $('.popup_1').css('display','block');
-   $('.background').css('display','flex');
- })
-$('.interview_2').on('click',function(){
-   $('.popup_2').css('display','block');
-   $('.background').css('display','flex');
- })
- $('.interview_3').on('click',function(){
-   $('.popup_3').css('display','block');
-   $('.background').css('display','flex');
- })
- $('.interview_4').on('click',function(){
-   $('.popup_4').css('display','block');
-   $('.background').css('display','flex');
- })
- $('.background').on('click',function(){
-  $('.popup').css('display','none');
-   $('.background').css('display','none');
-})
-})</SCRIPT>
+    <script src="../scripts/interviews.js"></script>
 </head>
 <body>
     <header>
         <?php 
-        $titre = "";
-        include 'header.php';
+          $titre = "Interviews";
+          include 'header.php';
         ?>
     </header>
     <section> 
@@ -48,18 +27,18 @@ $('.interview_2').on('click',function(){
     </section>
     <div class="popup_1 popup">
             <h2>DESIGN - ROBIN LLOPIS </h2>
-            <iframe width="100%" height="100%" src="<?php  echo $video;  ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t5vIAKs8WLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
         <div class="popup_2 popup">
             <h2>PROGRAMMATION - GAËLLE CHARPENTIER </h2>
-            <iframe width="100%" height="100%" src="<?php  echo $video;  ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qTJ-tk8z47c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
         </div>
         <div class="popup_3 popup">
         <h2> COMMUNICATION - CLARISSE HENRY  </h2>
-        <iframe width="100%" height="100%" src="<?php  echo $video;  ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eWf9FZHl-gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
         </div>
         <div class="popup_4 popup">
         <h2> AUDIOVISUEL - ANNE TASSO  </h2>  
-        <iframe width="100%" height="100%" src="<?php  echo $video;  ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gQOrfziq35c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
         </div>
         <div class="background"></div>
 </body>

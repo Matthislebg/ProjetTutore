@@ -1,0 +1,22 @@
+$(document).ready(function(){
+    $('.interview_1').on('click',function(){
+        $('.popup_1').css('display','block');
+        $('.background').css('display','flex');
+    })
+    $('.interview_2').on('click',function(){
+        $('.popup_2').css('display','block');
+        $('.background').css('display','flex');
+    })
+    $('.interview_3').on('click',function(){
+        $('.popup_3').css('display','block');
+        $('.background').css('display','flex');
+    })
+    $('.interview_4').on('click',function(){
+        $('.popup_4').css('display','block');
+        $('.background').css('display','flex');
+    })
+    $('.background').on('click',function(){
+        $('.popup').css('display','none');
+        $('.background').css('display','none');
+    })
+})

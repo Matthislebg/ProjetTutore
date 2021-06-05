@@ -30,6 +30,10 @@ section .blob {
     height: 25vw;
     width: 25vw;
     animation: animate 5s linear infinite;
+    overflow: hidden;
+}
+section .blob img{
+  height: 100%;
 }
 nav .container_2 {
     width: 100vw;

@@ -51,6 +51,6 @@
         <br>
     </section>
 
-    <img src="/medias/Image Salle.png" alt="">
+    <img src="/medias/ButMMI.jpg" alt="Salle Mac de l'IUT de Champs-sur-Marne">
 </body>
 </html>

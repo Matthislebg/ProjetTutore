@@ -15,3 +15,7 @@ section h3::first-letter{
 footer .link_footer>a:hover {
     color: #D4499A;
 }
+
+.image{
+    background-image: url("../medias/bgDesign.jpg");
+}

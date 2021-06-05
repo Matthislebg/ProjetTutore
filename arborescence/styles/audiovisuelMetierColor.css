@@ -15,3 +15,7 @@ section h3::first-letter{
 footer .link_footer>a:hover {
     color: #EEB81D;
 }
+
+.image{
+    background-image: url("../medias/bgAudiovisuel.jpg");
+}

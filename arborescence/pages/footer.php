@@ -14,7 +14,7 @@
 
     <footer>
         <div class="link_footer">
-            <a href="projet.php">MMI FYW © 2021</a>
+            MMI FYW © 2021
             <a href="projet.php">Qui sommes-nous ?</a>
             <a href="../index.php">Retourner à l’accueil</a>
         </div>
