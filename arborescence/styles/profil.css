@@ -60,6 +60,7 @@ section p {
 }
 section .blob {
     margin-top: 50px;
+    background-color: #D4499A;
     height: 25vw;
     width: 25vw;
     animation: animate 5s linear infinite;
@@ -78,6 +79,7 @@ section .blob img{
 .containerCvLinks>a {
     text-decoration: none;
     color: white;
+    background-color: #D4499A;
     padding: 30px;
     border-radius: 20px;
     font-size: 2rem;
@@ -85,7 +87,7 @@ section .blob img{
 }
 .containerCvLinks>a:hover {
     transform: scale(1.1);
-} 
+}
 @keyframes animate {
     0% {
       border-radius: 57% 43% 70% 30% / 57% 39% 61% 43% ;
