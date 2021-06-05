@@ -44,6 +44,6 @@
         <p>Le BUT MMI est une formation sélective accessible par la plateforme Parcoursup. Le BUT permet d’accueillir des candidats issus de toutes les séries de baccalauréat ou titre équivalent. L’accès à la formation se fait sur dossier (lettres de motivation, dossier scolaire, CV examinés par un jury d’admission). Certains IUT organisent également des entretiens ou des tests.</p>
     </section>
 
-    <img src="/medias/ButMMI.jpg" alt="Salle Mac de l'IUT de Champs-sur-Marne">
+    <img src="../medias/ButMMI.jpg" alt="Salle Mac de l'IUT de Champs-sur-Marne">
 </body>
 </html>

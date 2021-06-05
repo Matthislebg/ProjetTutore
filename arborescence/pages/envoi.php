@@ -54,7 +54,7 @@ if(isset($_POST["name"]) & isset($_POST["prenom"]) & isset($_POST["mail"]) & iss
     <p>'.$_POST['message'].'</p>
   </body>
   </html>
-  ';
+  ' . '\r\n';
 
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
