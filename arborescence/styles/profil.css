@@ -6,6 +6,16 @@ body {
     font-family: 'Lexend Deca', sans-serif;
 }
 
+/* color php */
+
+section .blob{
+  background-color: #D4499A;
+}
+
+nav .container_2>a {
+  background-color: #D4499A;
+}
+
 section {
     width: 100vw;
     height: fit-content;
@@ -26,7 +36,6 @@ section p {
 }
 section .blob {
     margin-top: 50px;
-    background-color: #D4499A;
     height: 25vw;
     width: 25vw;
     animation: animate 5s linear infinite;
@@ -45,7 +54,6 @@ nav .container_2 {
 nav .container_2>a {
     text-decoration: none;
     color: white;
-    background-color: #D4499A;
     padding: 30px;
     border-radius: 20px;
     font-size: 2rem;
