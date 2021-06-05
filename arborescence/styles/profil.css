@@ -35,14 +35,14 @@ section .blob {
 section .blob img{
   height: 100%;
 }
-nav .container_2 {
+.link_container .container_2 {
     width: 100vw;
     height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
 }
-nav .container_2>a {
+.link_container .container_2>a {
     text-decoration: none;
     color: white;
     background-color: #D4499A;
@@ -51,7 +51,7 @@ nav .container_2>a {
     font-size: 2rem;
     transition: 1s ease;
 }
-nav .container_2>a:hover {
+.link_container .container_2>a:hover {
     transform: scale(1.1);
 } 
 @keyframes animate {

@@ -41,12 +41,12 @@
       </div>
       <div class="blob"><img src="<?php echo $photo ?>" alt="" /></div>
     </section>
-    <nav>
+    <div class="link_container">
       <div class="container_2">
         <a href="<?php echo $cvNum ?>">CV NUMÉRIQUE</a>
         <a href="<?php echo $cvPapier ?>">CV PAPIER</a>
       </div>
-    </nav>
+    </div>
 
     <div class="wave"></div>
     <?php
