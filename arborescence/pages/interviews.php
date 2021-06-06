@@ -26,21 +26,21 @@
         <div class="interview_3"><p>COMMUNICATION</p></div>       
         <div class="interview_4"><p>AUDIOVISUEL</p></div>
     </section>
-    <div class="popup_1 popup">
+    <div class="popup">
         <h2>DESIGN - ROBIN LLOPIS</h2>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t5vIAKs8WLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videos" width="100%" height="100%" src="https://www.youtube.com/embed/t5vIAKs8WLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="popup_2 popup">
+    <div class="popup">
         <h2>PROGRAMMATION - GAËLLE CHARPENTIER</h2>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qTJ-tk8z47c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videos" width="100%" height="100%" src="https://www.youtube.com/embed/qTJ-tk8z47c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="popup_3 popup">
+    <div class="popup">
         <h2>COMMUNICATION - CLARISSE HENRY</h2>
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eWf9FZHl-gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+        <iframe id="videos" width="100%" height="100%" src="https://www.youtube.com/embed/eWf9FZHl-gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
     </div>
-    <div class="popup_4 popup">
+    <div class="popup">
         <h2>AUDIOVISUEL - ANNE TASSO</h2>  
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gQOrfziq35c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videos" width="100%" height="100%" src="https://www.youtube.com/embed/gQOrfziq35c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="background"></div>
 </body>
