@@ -2,6 +2,28 @@ section h3::first-letter{
     color: #D4499A;
 }
 
+body{
+    scrollbar-color: #D4499A #f0f0f0;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar{
+    width: 0.4vw;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #D4499A;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e25caa;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #e25caa;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
 ::-moz-selection { 
     color: white;
     background: #D4499A;
