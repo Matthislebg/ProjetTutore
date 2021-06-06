@@ -52,8 +52,8 @@
       <div class="blob"><img src="<?php echo $photo ?>" alt="" /></div>
     </section>
     <div class="containerCvLinks">
-      <a href="<?php echo $cvNum ?>">CV NUMÉRIQUE</a>
-      <a href="<?php echo $cvPapier ?>">CV PAPIER</a>
+      <a href="<?php echo $cvNum ?>" target="_blank" >CV NUMÉRIQUE</a>
+      <a href="<?php echo $cvPapier ?>" target="_blank" >CV PAPIER</a>
     </div>
 
     <div class="wave"></div>
