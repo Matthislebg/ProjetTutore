@@ -157,7 +157,6 @@ input[type="search"]::-ms-input-placeholder{
 .propositions{
     position: absolute;
     top: 50%;
-    height: 0;
     width: 13vw;
     background: black;
     z-index: 0;
