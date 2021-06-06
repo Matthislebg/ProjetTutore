@@ -239,8 +239,10 @@ $(document).ready(function(){
     // Due à l'arborescence, nous devons remettre le script de la barre de recherche ici :
 
     $("input[type='search']").on("click", function(){
-        $(".propositions").css({
-            "height": "fit-content",
+        $(".propositions").css({    // Chrome (fusionner les deux .css() cass tout)
+            "height": "fit-content"
+        });
+        $(".propositions").css({    // Firefox (fusionner les deux .css() cass tout)
             "height": "-moz-fit-content"
         });
 
