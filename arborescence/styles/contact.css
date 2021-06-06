@@ -111,6 +111,8 @@ textarea {
     outline: none;
     font-size: 1.2rem;
     font-family: 'Lexend Exa', sans-serif;
+    transition: transform 0.1s ease-in-out;
+    resize: none;
 }
 
 textarea::placeholder {
