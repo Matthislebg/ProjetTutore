@@ -13,9 +13,12 @@
     $subject = 'Nouveau message de '.$_GET['pseudo'].' le jeu du CM !';
 
     $message = '
-    <h1 style="font-size: 2rem; border-bottom: solid 2px black; margin-bottom: 3vh; margin-left: 2vw;"><span style="color: '.$_GET['color'].';">L</span>\'utilisateur nommé <span color="'.$_GET['color'].'">'.$_GET['pseudo'].'</span> à écrit :</h1><br>
+    <h1 style="font-size: 2rem; border-bottom: solid 2px black; margin-bottom: 3vh; margin-left: 2vw; width: fit-content; width: moz-fit-content;">
+    <span style="color: '.$_GET['color'].';">L</span>\'utilisateur nommé <span style="color:'.$_GET['color'].';">'.$_GET['pseudo'].'</span> à écrit :
+    </h1>
     <p>'.$_GET['textMsg'].'</p>
-    <a style="background-color: #00acee; border-radius: 7px; border: none; text-decoration: none; color: white; position: relative;" href="https://etudiant.u-pem.fr/~crexharr/arborescence/pages/communicationJeu/connection.php">Page d\'administration</a>
+    <a style="background-color: #00acee; border-radius: 7px; border: none; text-decoration: none; color: white; padding: 0.5vw 1vw; margin-bottom: 1vw;" href="https://etudiant.u-pem.fr/~crexharr/arborescence/pages/communicationJeu/connection.php">Page d\'administration</a>
+    <p>Merci de ne pas répondre à cet email - MMI Find Your Way</p>
     ';
 
     $headers = "MIME-Version: 1.0" . "\r\n";

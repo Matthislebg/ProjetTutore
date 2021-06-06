@@ -289,9 +289,10 @@ $(document).ready(function(){
             "background-color": $(this).css("background-color")
         })
     }, function(){
+        var color = ["#1DB250","#D4499A","#0B83C6","#EEB81D"];
         for(var i=0; i<4; i++){
             $("header .container>a:nth-child("+(i+1)+")").css({
-                "background-color": $("section>a:nth-child("+(i+1)+")").css("background-color")
+                "background-color": color[i]
             });
         }
     });

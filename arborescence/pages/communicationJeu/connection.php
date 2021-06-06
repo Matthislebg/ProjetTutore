@@ -11,7 +11,6 @@
 <body>
     <div class="cm">
         <h1>Page d'administration du jeu CM</h1>
-        <div></div>
         <p>MMI FYW</p>
 
         <div class="jeuCm">
