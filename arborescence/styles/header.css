@@ -137,6 +137,8 @@ input[type="search"]::-ms-input-placeholder{
 .recherche{
     width: fit-content;
     height: fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
     position: relative;
 }
 

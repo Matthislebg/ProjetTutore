@@ -2,7 +2,8 @@ $(document).ready(function(){
 
     $("input[type='search']").on("click", function(){
         $(".propositions").css({
-            "height": "fit-content"
+            "height": "fit-content",
+            "height": "-moz-fit-content"
         });
 
         $(".recherche>img").css({
