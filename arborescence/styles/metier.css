@@ -101,3 +101,11 @@ opacity: 0%;
 transition: 0.5s ease-in-out;
 border: none;
 }
+
+.pop{
+    transition: 0.75s ease-in-out;
+    width: 2.5vh;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+}
