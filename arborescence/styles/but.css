@@ -5,6 +5,8 @@ body {
     background-color: #D4499A;
     font-family: 'Lexend Exa', sans-serif;
     color: white;
+    scrollbar-color: #D4499A #f0f0f0;
+    scrollbar-width: thin;
 }
 
 h1 {
@@ -26,4 +28,21 @@ section + img {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
+}
+
+::-webkit-scrollbar{
+    width: 0.4vw;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #D4499A;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e25caa;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #e25caa;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
 }

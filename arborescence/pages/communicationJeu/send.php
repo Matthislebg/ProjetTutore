@@ -13,26 +13,9 @@
     $subject = 'Nouveau message de '.$_GET['pseudo'].' le jeu du CM !';
 
     $message = '
-    <style>
-    @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap");
-
-    h1::first-letter {
-        color: '.$_GET['color'].';
-    }
-    h1{
-        font-family: "Lexend Exa", sans-serif;
-        font-size: 2rem;
-        border-bottom: solid 2px black;
-        margin-bottom: 8vh;
-        margin-left: 2vw;
-    }
-    p{
-        font-family: "Lexend Exa", sans-serif;
-        font-size: 1rem;
-    }
-    </style>
-    <h1>L\'utilisateur nommé <span color="'.$_GET['color'].'">'.$_GET['pseudo'].'</span> à écrit :</h1><br>
+    <h1 style="font-size: 2rem; border-bottom: solid 2px black; margin-bottom: 3vh; margin-left: 2vw;"><span style="color: '.$_GET['color'].';">L</span>\'utilisateur nommé <span color="'.$_GET['color'].'">'.$_GET['pseudo'].'</span> à écrit :</h1><br>
     <p>'.$_GET['textMsg'].'</p>
+    <a style="background-color: #00acee; border-radius: 7px; border: none; text-decoration: none; color: white; position: relative;" href="https://etudiant.u-pem.fr/~crexharr/arborescence/pages/communicationJeu/connection.php">Page d\'administration</a>
     ';
 
     $headers = "MIME-Version: 1.0" . "\r\n";
