@@ -365,7 +365,7 @@ input[type="search"]{
     font-size: 1vw;
     position: relative;
     cursor: text;
-    z-index: 2;
+    z-index: 20;
 }
 
 input[type="search"]::-webkit-search-cancel-button{
@@ -409,7 +409,7 @@ input[type="search"]::-ms-input-placeholder{
     top: 50%;
     width: 13vw;
     background: black;
-    z-index: 1;
+    z-index: 10;
     border-radius: 0 0 1vw 1vw;
     transition: height 0.25s ease-in-out;
     padding-top: 1vw;
