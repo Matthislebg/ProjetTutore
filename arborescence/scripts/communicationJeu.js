@@ -15,7 +15,6 @@ $(document).ready(function(){
             $(".heure").text(time);     //  changer l'heure en html
             oldtime=time;    // Remplacer l'ancienne heure
         }
-        $(".reseau").text(navigator.connection.effectiveType);  // Définir le réseau (slow-2g / 2g / 3g / 4g) en fonction du débit
 
     }
 

@@ -7,7 +7,7 @@
         <div class="headjeu">
             <p class="heure">--:--</p>
             <div class="periph"></div>
-            <p class="reseau">x</p>
+            <p class="reseau">4g</p>
         </div>
         <div class="headReseau">
             <span class="paramlogo">
