@@ -2,6 +2,7 @@ footer{
     width: 100vw;
     padding-top: 20px;
     height: fit-content;
+    height: -moz-fit-content;
 }
 
 footer a{

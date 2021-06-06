@@ -43,12 +43,14 @@ body {
 section {
     width: 100vw;
     height: fit-content;
+    height: -moz-fit-content;
     display: flex;
     justify-content: center;
 }
 section .container_1 {
     width: 60vw;
     height: fit-content;
+    height: -moz-fit-content;
 }
 section h2 {
     font-size: 3vw;

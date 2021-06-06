@@ -164,6 +164,7 @@ img.msg:hover{
 
 .mPost{
     height: fit-content;
+    height: -moz-fit-content;
     border-radius: 10px;
     border: 1px solid black;
     margin-bottom: 10px;
