@@ -9,10 +9,31 @@
     $stmt->execute();
 
     // Envoi de mail
-    $to  = 'sb.lucien77144@gmail.com, mmifyw@gmail.com, celine.rexharrison@gmail.com, matthis.rousselle@gmail.com, marin.bouanchaud@gmail.com';
-    $subject = 'Nouveau message sur le jeu du CM !';
+    $to  = 'mmifyw@gmail.com';
+    $subject = 'Nouveau message de '.$_GET['pseudo'].' le jeu du CM !';
 
-    $message = 'Nouveau message sur le jeu du CM du projet tutoré ! Rendez-vous sur la page admin pour le consulter et/ou le valider !';
+    $message = '
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Exa&display=swap");
+
+    h1::first-letter {
+        color: '.$_GET['color'].';
+    }
+    h1{
+        font-family: "Lexend Exa", sans-serif;
+        font-size: 2rem;
+        border-bottom: solid 2px black;
+        margin-bottom: 8vh;
+        margin-left: 2vw;
+    }
+    p{
+        font-family: "Lexend Exa", sans-serif;
+        font-size: 1rem;
+    }
+    </style>
+    <h1>L\'utilisateur nommé <span color="'.$_GET['color'].'">'.$_GET['pseudo'].'</span> à écrit :</h1><br>
+    <p>'.$_GET['textMsg'].'</p>
+    ';
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
