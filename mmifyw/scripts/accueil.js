@@ -274,7 +274,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST",
                 
-                url: "pages/search.php",
+                url: "pages/search2.php",
                 
                 data: {
                     search: bRecherche
