@@ -152,6 +152,7 @@ input[type="search"]::-ms-input-placeholder{
     top: 50%;
     cursor: default;
     opacity: 0.5;
+    z-index: 21;
     transition: opacity 0.10s ease-in-out;
 }
 
